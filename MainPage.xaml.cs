@@ -38,5 +38,10 @@ namespace Human80Level
                 this.NavigationService.Navigate(new Uri("/PageProfile.xaml",UriKind.Relative));
             }
         }
+
+        private void btnStartFlow_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/PageAbilityList.xaml", UriKind.Relative));
+        }
     }
 }

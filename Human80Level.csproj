@@ -64,8 +64,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageAbilityLiat.xaml.cs">
-      <DependentUpon>PageAbilityLiat.xaml</DependentUpon>
+    <Compile Include="PageAbilityList.xaml.cs">
+      <DependentUpon>PageAbilityList.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageProfile.xaml.cs">
       <DependentUpon>PageProfile.xaml</DependentUpon>
@@ -83,7 +83,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageAbilityLiat.xaml">
+    <Page Include="PageAbilityList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

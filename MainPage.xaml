@@ -38,7 +38,7 @@
                 
             </Button>
             
-            <Button x:Name="btnStartFlow" Width="auto" Height="auto" Content="Start flow">                
+            <Button x:Name="btnStartFlow" Width="auto" Height="auto" Content="Start flow" Click="btnStartFlow_Click">                
                 
             </Button>
             
