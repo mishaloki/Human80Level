@@ -32,7 +32,7 @@
             <Button x:Name="btnEndurance" Content="Endurance"></Button>
             <Button x:Name="btnIntelligence" Content="Intelligence"></Button>
             <Button x:Name="btnPhysique" Content="Physique"></Button>
-            <Button x:Name="btnLuck" Content="Luck"></Button>
+            <Button x:Name="btnLuck" Content="Luck" Click="btnLuck_Click"></Button>
         </StackPanel>
     </Grid>
  
