@@ -13,11 +13,11 @@ using Human80Level.Profile;
 
 namespace Human80Level.Utils
 {
-    public class ProfileManager
+    public static class ProfileManager
     {
         private const string ProfileSettingsName = "Profile";
         
-        public Human80Level.Profile.Profile getProfile()
+        public static Human80Level.Profile.Profile getProfile()
         {       
             string name = string.Empty;
             string avatar = string.Empty;
@@ -36,7 +36,7 @@ namespace Human80Level.Utils
             return profile;
         }
 
-        public void UpdateProfile (Profile.Profile profile)
+        public static void UpdateProfile (Profile.Profile profile)
         {
             IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
             if (settings.Contains(ProfileSettingsName))
