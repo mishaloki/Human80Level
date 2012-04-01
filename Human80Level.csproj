@@ -59,6 +59,7 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ability\Luck\LuckEventMessage.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -68,7 +69,7 @@
     <Compile Include="PageAbilityList.xaml.cs">
       <DependentUpon>PageAbilityList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ability\PageAbilityLuck.xaml.cs">
+    <Compile Include="Ability\Luck\PageAbilityLuck.xaml.cs">
       <DependentUpon>PageAbilityLuck.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageAbout.xaml.cs">
@@ -97,7 +98,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ability\PageAbilityLuck.xaml">
+    <Page Include="Ability\Luck\PageAbilityLuck.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

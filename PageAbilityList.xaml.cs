@@ -22,27 +22,27 @@ namespace Human80Level
 
         private void btnLuck_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/PageAbilityLuck.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Ability/Luck/PageAbilityLuck.xaml", UriKind.Relative));
         }
 
         private void btnPower_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/PageAbilityPower.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Ability/Power/PageAbilityPower.xaml", UriKind.Relative));
         }
 
         private void btnEndurance_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/PageAbilityEndurance.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Ability/Endurance/PageAbilityEndurance.xaml", UriKind.Relative));
         }
 
         private void btnIntelligence_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/PageAbilityIntelligence.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Ability/Intelligence/PageAbilityIntelligence.xaml", UriKind.Relative));
         }
 
         private void btnPhysique_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/PageAbilityPhysique.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Ability/Physique/PageAbilityPhysique.xaml", UriKind.Relative));
         }
     }
 }
