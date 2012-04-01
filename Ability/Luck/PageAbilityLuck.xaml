@@ -59,8 +59,8 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image x:Name="imgLeft" Width="150" Height="150"></Image>
-                    <Image x:Name="imgRight" Width="150" Height="150" Grid.Column="1"></Image>
+                    <Image x:Name="imgLeft" Width="150" Height="150" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
+                    <Image x:Name="imgRight" Width="150" Height="150" Grid.Column="1" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
                 </Grid>
             </controls:PanoramaItem>
 
