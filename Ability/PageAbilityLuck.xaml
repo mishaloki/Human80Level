@@ -16,17 +16,54 @@
 
     <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="Luck">
+        <controls:Panorama Title="Ability - Luck">
 
             <!--Первый элемент Panorama-->
             <controls:PanoramaItem Header="add event">
-                <Grid/>
+                <StackPanel>
+                    <TextBlock Text="Enter event" Margin="12,0,0,0"></TextBlock>
+                    <TextBox Height="150" TextWrapping="Wrap"></TextBox>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnLuck" Content="Luck"></Button>
+                        <Button x:Name="btnFailure" Content="Failure" HorizontalAlignment="Stretch" Grid.Column="1"></Button>
+                    </Grid>
+                    </StackPanel>
             </controls:PanoramaItem>
 
             <!--Второй элемент Panorama-->
             <controls:PanoramaItem Header="event list">
-                <Grid/>
+                <Grid>
+                    <ListBox>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                                        <TextBlock Text="{Binding Message}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiLight}" Margin="0,0,0,0"></TextBlock>
+                                        <TextBlock Text="{Binding Date, StringFormat='dd.MM.yyyy'}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiLight}" Margin="0,0,0,0" Width="Auto" HorizontalAlignment="Left"></TextBlock>                                    
+                                    </StackPanel>
+                                    <Image Source="{Binding Status}"></Image>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
             </controls:PanoramaItem>
+
+            <controls:PanoramaItem Header="try your luck">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="imgLeft" Width="150" Height="150"></Image>
+                    <Image x:Name="imgRight" Width="150" Height="150" Grid.Column="1"></Image>
+                </Grid>
+            </controls:PanoramaItem>
+
         </controls:Panorama>
     </Grid>
 
