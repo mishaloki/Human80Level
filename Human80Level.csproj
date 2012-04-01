@@ -130,12 +130,20 @@
     <EmbeddedResource Include="Images\AppBarIcons\appbar.questionmark.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="Images\Ability\Luck\clover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Ability\Luck\trash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Ability\Luck\emptyBox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Ability\Endurance\" />
     <Folder Include="Images\Ability\Intelligence\" />
-    <Folder Include="Images\Ability\Luck\" />
     <Folder Include="Images\Ability\Physique\" />
     <Folder Include="Images\Ability\Power\" />
   </ItemGroup>
