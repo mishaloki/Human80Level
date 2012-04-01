@@ -13,9 +13,9 @@ using Microsoft.Phone.Controls;
 
 namespace Human80Level
 {
-    public partial class PageAbilityLiat : PhoneApplicationPage
+    public partial class PageAbilityList : PhoneApplicationPage
     {
-        public PageAbilityLiat()
+        public PageAbilityList()
         {
             InitializeComponent();
         }
