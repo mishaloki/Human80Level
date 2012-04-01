@@ -34,7 +34,7 @@
             <TextBlock Text="Progress" x:Name="textProgress" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <StackPanel x:Name="stackMenuButtons" Grid.Row="1" VerticalAlignment="Center">
-            <Button x:Name="btnNewProfile" Width="auto" Height="auto" Content="New profile">
+            <Button x:Name="btnNewProfile" Width="auto" Height="auto" Content="New profile" Click="btnNewProfile_Click">
                 
             </Button>
             
