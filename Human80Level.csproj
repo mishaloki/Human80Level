@@ -68,6 +68,9 @@
     <Compile Include="PageAbilityList.xaml.cs">
       <DependentUpon>PageAbilityList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ability\PageAbilityLuck.xaml.cs">
+      <DependentUpon>PageAbilityLuck.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageAbout.xaml.cs">
       <DependentUpon>PageAbout.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageAbilityList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ability\PageAbilityLuck.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,7 +131,6 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Ability\" />
     <Folder Include="Images\Ability\Endurance\" />
     <Folder Include="Images\Ability\Intelligence\" />
     <Folder Include="Images\Ability\Luck\" />
