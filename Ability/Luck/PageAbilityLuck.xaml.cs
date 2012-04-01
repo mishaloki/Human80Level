@@ -23,6 +23,12 @@ namespace Human80Level
 
         private const string DefaultEventMessage = "";
 
+        private const string NullOrEmptyMessageText = "Message can't be empty. Please enter some text";
+
+        private const string NullOrEmptyMessageTitle = "Error";
+
+
+
         private bool isLuck;
         
         public PageAbilityLuck()
@@ -46,5 +52,36 @@ namespace Human80Level
             string url = (isLuck) ? CloverImageUrl : TrashImageUrl;
             return url;
         }
+
+        private void btnLuck_Click(object sender, RoutedEventArgs e)
+        {
+           this.AddMessage(true);
+        }
+
+        private void btnFailure_Click(object sender, RoutedEventArgs e)
+        {
+            this.AddMessage(false);
+        }
+
+        private void AddMessage(bool isLuck)
+        {
+            if (!isMessageValid())
+            {
+                ShowValidationErrorMessage();
+                return;
+            }
+            LuckEventManager.AddEventMessage(new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck));
+        }
+
+        private bool isMessageValid()
+        {
+            return !string.IsNullOrEmpty(textMessage.Text);
+        }
+
+        private static void ShowValidationErrorMessage()
+        {
+            MessageBox.Show(NullOrEmptyMessageText, NullOrEmptyMessageTitle, MessageBoxButton.OK);
+        }
+        
     }
 }

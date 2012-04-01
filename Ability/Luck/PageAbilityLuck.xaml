@@ -22,14 +22,14 @@
             <controls:PanoramaItem Header="add event">
                 <StackPanel>
                     <TextBlock Text="Enter event" Margin="12,0,0,0"></TextBlock>
-                    <TextBox Height="150" TextWrapping="Wrap"></TextBox>
+                    <TextBox Height="150" TextWrapping="Wrap" Name="textMessage"></TextBox>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="btnLuck" Content="Luck"></Button>
-                        <Button x:Name="btnFailure" Content="Failure" HorizontalAlignment="Stretch" Grid.Column="1"></Button>
+                        <Button x:Name="btnLuck" Content="Luck" Click="btnLuck_Click"></Button>
+                        <Button x:Name="btnFailure" Content="Failure" HorizontalAlignment="Stretch" Grid.Column="1" Click="btnFailure_Click"></Button>
                     </Grid>
                     </StackPanel>
             </controls:PanoramaItem>
