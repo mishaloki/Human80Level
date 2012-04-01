@@ -21,13 +21,20 @@
 
     <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="Ability - Luck">
+        <controls:Panorama Title="Ability - Luck" Name="panoramaLuck">
 
             <!--Первый элемент Panorama-->
             <controls:PanoramaItem Header="add event">
                 <StackPanel>
-                    <TextBlock Text="Enter event" Margin="12,0,0,0"></TextBlock>
-                    <TextBox Height="150" TextWrapping="Wrap" Name="textMessage"></TextBox>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Enter event" Margin="12,0,0,0" VerticalAlignment="Bottom"></TextBlock>
+                        <Button Content="clear" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" HorizontalContentAlignment="Right" Name="btnClear" Click="btnClear_Click" Padding="10,3,10,5" IsEnabled="False"></Button>
+                    </Grid>
+                    <TextBox Height="150" TextWrapping="Wrap" Name="textMessage" TextChanged="textMessage_TextChanged"></TextBox>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
