@@ -17,22 +17,29 @@ namespace Human80Level.Ability.Luck
         public static List<LuckEventMessage> getEventList ()
         {
             List<LuckEventMessage> eventList = new List<LuckEventMessage>();
+            eventList.Add(new LuckEventMessage("message 1",DateTime.Now,true));
+            eventList.Add(new LuckEventMessage("message 2", DateTime.Now, true));
+            eventList.Add(new LuckEventMessage("message 3", DateTime.Now, true));
+            eventList.Add(new LuckEventMessage("message 4", DateTime.Now, true));
+            eventList.Add(new LuckEventMessage("message 5", DateTime.Now, true));
+            eventList.Add(new LuckEventMessage("message 6", DateTime.Now, true));
+            eventList.Add(new LuckEventMessage("message 7", DateTime.Now, true));
             return eventList;
         }
 
         public static void AddEventMessage(LuckEventMessage eventMessage)
         {
-                        
+            MessageBox.Show("AddEventMessage");
         }
 
         public static void RemoveEventMessage (LuckEventMessage eventMessage)
         {
-            
+            MessageBox.Show("RemoveEventMessage");
         }
 
         public static void UpdateEventMessage (LuckEventMessage eventMessage)
         {
-            
+            MessageBox.Show("UpdateEventMessage");
         }
     }
 }

@@ -37,7 +37,7 @@
             <!--Второй элемент Panorama-->
             <controls:PanoramaItem Header="event list">
                 <Grid>
-                    <ListBox>
+                    <ListBox Name="listEventList">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -45,7 +45,7 @@
                                         <TextBlock Text="{Binding Message}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiLight}" Margin="0,0,0,0"></TextBlock>
                                         <TextBlock Text="{Binding Date, StringFormat='dd.MM.yyyy'}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiLight}" Margin="0,0,0,0" Width="Auto" HorizontalAlignment="Left"></TextBlock>                                    
                                     </StackPanel>
-                                    <Image Source="{Binding Status}"></Image>
+                                    <Image Source="{Binding Status}" Width="40" Height="40"></Image>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -53,12 +53,13 @@
                 </Grid>
             </controls:PanoramaItem>
 
-            <controls:PanoramaItem Header="try your luck">
+            <controls:PanoramaItem Header="try your luck" IsEnabled="True" Name="panoramaTryItem">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
+                    <TextBlock Text="Hold the picture" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0,50,0,0" Name="textTryCaption" Height="60"></TextBlock>
                     <Image x:Name="imgLeft" Width="150" Height="150" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
                     <Image x:Name="imgRight" Width="150" Height="150" Grid.Column="1" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
                 </Grid>

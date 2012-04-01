@@ -9,9 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Human80Level.Ability.Luck;
 using Microsoft.Phone.Controls;
+using System.Linq;
 
 namespace Human80Level
 {
@@ -21,36 +23,75 @@ namespace Human80Level
 
         private const string TrashImageUrl = "/Images/Ability/Luck/trash.png";
 
-        private const string DefaultEventMessage = "";
+        private const string DefaultEventMessage = "Open clover";
 
         private const string NullOrEmptyMessageText = "Message can't be empty. Please enter some text";
 
         private const string NullOrEmptyMessageTitle = "Error";
 
+        private const string SuccessAddMessage = "Event has been added";
 
+        private const string AlreadyUseCloverMessage = "You have already use clover today";
 
-        private bool isLuck;
+        private List<LuckEventMessage> eventList;
         
         public PageAbilityLuck()
         {
             InitializeComponent();
         }
 
-        private void imgLeft_Hold(object sender, GestureEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            BitmapImage bitmapImage = new BitmapImage(new Uri(GetRandomImageUrl(),UriKind.Relative));
-            Image image = sender as Image;
-            image.Source = bitmapImage;
-            
+            base.OnNavigatedTo(e);
+            try
+            {
+                eventList = LuckEventManager.getEventList();
+                listEventList.ItemsSource = eventList;
+                LuckEventMessage message = (from luckEventMessage in eventList
+                                where
+                                    (luckEventMessage.Message == DefaultEventMessage) && (luckEventMessage.Date == DateTime.Now)
+                                select luckEventMessage).FirstOrDefault();
+                if (message!=null)
+                {
+                    textTryCaption.Text = AlreadyUseCloverMessage;
+                    panoramaTryItem.IsEnabled = false;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
+
+
         }
 
-        private string GetRandomImageUrl ()
+        private void imgLeft_Hold(object sender, GestureEventArgs e)
+        {
+            string url = string.Empty;
+            bool isLuck = this.isLuck();
+            if (isLuck)
+            {
+                url = CloverImageUrl;
+            }
+            else
+            {
+                url = TrashImageUrl;
+            } 
+            
+            BitmapImage bitmapImage = new BitmapImage(new Uri(url,UriKind.Relative));
+            Image image = sender as Image;
+            image.Source = bitmapImage;
+            panoramaTryItem.IsEnabled = false;
+            LuckEventManager.AddEventMessage(new LuckEventMessage(DefaultEventMessage,DateTime.Now,isLuck));
+            textTryCaption.Text = AlreadyUseCloverMessage;
+        }
+
+        private bool isLuck ()
         {
             Random random = new Random();
             int value = random.Next(0, 2);           
-            isLuck = (value == 0) ? true : false;
-            string url = (isLuck) ? CloverImageUrl : TrashImageUrl;
-            return url;
+            return (value == 0) ? true : false;            
         }
 
         private void btnLuck_Click(object sender, RoutedEventArgs e)
@@ -71,6 +112,7 @@ namespace Human80Level
                 return;
             }
             LuckEventManager.AddEventMessage(new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck));
+            MessageBox.Show(SuccessAddMessage);
         }
 
         private bool isMessageValid()
