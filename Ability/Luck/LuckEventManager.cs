@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,9 +15,9 @@ namespace Human80Level.Ability.Luck
 {
     public static class LuckEventManager
     {
-        public static List<LuckEventMessage> getEventList ()
+        public static ObservableCollection<LuckEventMessage> getEventList()
         {
-            List<LuckEventMessage> eventList = new List<LuckEventMessage>();
+            ObservableCollection<LuckEventMessage> eventList = new ObservableCollection<LuckEventMessage>();
             eventList.Add(new LuckEventMessage("message 1",DateTime.Now,true));
             eventList.Add(new LuckEventMessage("message 2", DateTime.Now, true));
             eventList.Add(new LuckEventMessage("message 3", DateTime.Now, true));

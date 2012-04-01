@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -33,7 +34,7 @@ namespace Human80Level
 
         private const string AlreadyUseCloverMessage = "You have already use clover today";
 
-        private List<LuckEventMessage> eventList;
+        private ObservableCollection <LuckEventMessage> eventList;
         
         public PageAbilityLuck()
         {
@@ -83,7 +84,9 @@ namespace Human80Level
             Image image = sender as Image;
             image.Source = bitmapImage;
             panoramaTryItem.IsEnabled = false;
-            LuckEventManager.AddEventMessage(new LuckEventMessage(DefaultEventMessage,DateTime.Now,isLuck));
+            LuckEventMessage message = new LuckEventMessage(DefaultEventMessage, DateTime.Now, isLuck);
+            LuckEventManager.AddEventMessage(message);
+            eventList.Add(message);
             textTryCaption.Text = AlreadyUseCloverMessage;
         }
 
@@ -111,7 +114,9 @@ namespace Human80Level
                 ShowValidationErrorMessage();
                 return;
             }
-            LuckEventManager.AddEventMessage(new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck));
+            LuckEventMessage message = new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck);
+            LuckEventManager.AddEventMessage(message);
+            eventList.Add(message);
             MessageBox.Show(SuccessAddMessage);
         }
 
@@ -123,6 +128,23 @@ namespace Human80Level
         private static void ShowValidationErrorMessage()
         {
             MessageBox.Show(NullOrEmptyMessageText, NullOrEmptyMessageTitle, MessageBoxButton.OK);
+        }
+
+        private void listEventList_Hold(object sender, GestureEventArgs e)
+        {
+
+        }
+
+        private void listEventList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void listEventList_DoubleTap(object sender, GestureEventArgs e)
+        {
+            LuckEventMessage message = (LuckEventMessage) listEventList.SelectedItem;
+            eventList.Remove(message);
+            LuckEventManager.RemoveEventMessage(message);
         }
         
     }
