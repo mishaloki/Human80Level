@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage 
+﻿<phone:PhoneApplicationPage xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
     x:Class="Human80Level.PageProfile"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -28,6 +28,7 @@
 
         <!--ContentPanel – поместите здесь дополнительное содержимое-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
             <StackPanel>
                 
                 <TextBlock x:Name="textAvatarTitle" Text="Select avatar" Margin="12,0,0,0"></TextBlock>
@@ -41,10 +42,15 @@
                 </StackPanel>
                 
                 <Image Width="150" Height="150" Margin="0,20"></Image>
-                <TextBlock x:Name="textNickname" Text="Enter you nickname" Margin="12,20,0,0"></TextBlock>
+                <TextBlock x:Name="textNickname" Text="Nickname" Margin="12,20,0,0"></TextBlock>
+                <TextBox></TextBox>
+                <TextBlock x:Name="textDateOfBirth" Text="Date of birtth" Margin="12,20,0,0"></TextBlock>
+                <toolkit:DatePicker />
+                <TextBlock x:Name="textHeight" Text="Height (kg.)" Margin="12,20,0,0"></TextBlock>
                 <TextBox></TextBox>
                 <Button x:Name="btnSaveProfile" Content="Save profile" Margin="0,20,0,0"></Button>
             </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Grid>
  
