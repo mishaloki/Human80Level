@@ -34,6 +34,10 @@ namespace Human80Level
 
         private const string AlreadyUseCloverMessage = "You have already use clover today";
 
+        private const string RemoveEventMessageText = "Event will be deleted. Are you sure?";
+
+        private const string RemoveEventMessageTitle = "Confirm removing";
+
         private ObservableCollection <LuckEventMessage> eventList;
         
         public PageAbilityLuck()
@@ -149,8 +153,12 @@ namespace Human80Level
         private void listEventList_DoubleTap(object sender, GestureEventArgs e)
         {
             LuckEventMessage message = (LuckEventMessage) listEventList.SelectedItem;
-            eventList.Remove(message);
-            LuckEventManager.RemoveEventMessage(message);
+            if (MessageBox.Show(RemoveEventMessageText,RemoveEventMessageTitle,MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+                eventList.Remove(message);
+                LuckEventManager.RemoveEventMessage(message);
+            }
+            
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
