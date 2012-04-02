@@ -61,6 +61,9 @@
   <ItemGroup>
     <Compile Include="Ability\Luck\LuckEventMessage.cs" />
     <Compile Include="Ability\Luck\LuckEventManager.cs" />
+    <Compile Include="Ability\Physique\PageAbilityPhysique.xaml.cs">
+      <DependentUpon>PageAbilityPhysique.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Ability\Physique\PageAbilityPhysique.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
