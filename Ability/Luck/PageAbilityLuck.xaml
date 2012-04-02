@@ -1,0 +1,89 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Human80Level.PageAbilityLuck"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:utils="clr-namespace:Human80Level.Utils"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <phone:PhoneApplicationPage.Resources>
+        <utils:LuckToImageUrlConverter x:Key="LuckToImageUrlConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+
+
+    <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="Ability - Luck" Name="panoramaLuck">
+
+            <!--Первый элемент Panorama-->
+            <controls:PanoramaItem Header="add event">
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Enter event" Margin="12,0,0,0" VerticalAlignment="Bottom"></TextBlock>
+                        <Button Content="clear" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" HorizontalContentAlignment="Right" Name="btnClear" Click="btnClear_Click" Padding="10,3,10,5" IsEnabled="False"></Button>
+                    </Grid>
+                    <TextBox Height="150" TextWrapping="Wrap" Name="textMessage" TextChanged="textMessage_TextChanged"></TextBox>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnLuck" Content="Luck" Click="btnLuck_Click"></Button>
+                        <Button x:Name="btnFailure" Content="Failure" HorizontalAlignment="Stretch" Grid.Column="1" Click="btnFailure_Click"></Button>
+                    </Grid>
+                    </StackPanel>
+            </controls:PanoramaItem>
+
+            <!--Второй элемент Panorama-->
+            <controls:PanoramaItem Header="event list">
+                <Grid>
+                    <ListBox Name="listEventList" Hold="listEventList_Hold" SelectionChanged="listEventList_SelectionChanged" DoubleTap="listEventList_DoubleTap">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Vertical" Margin="0,20,0,0" Width="300">
+                                        <TextBlock Text="{Binding Message}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiLight}" Margin="0,0,0,0"></TextBlock>
+                                        <TextBlock Text="{Binding Date, StringFormat='dd.MM.yyyy'}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiLight}" Margin="0,0,0,0" Width="Auto" HorizontalAlignment="Left"></TextBlock>                                    
+                                    </StackPanel>
+                                    <Image Source="{Binding IsLuck, Converter={StaticResource LuckToImageUrlConverter}}" Width="40" Height="40" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right"></Image>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <controls:PanoramaItem Header="try your luck" IsEnabled="True" Name="panoramaTryItem">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Hold the picture" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0,50,0,0" Name="textTryCaption" Height="60"></TextBlock>
+                    <Image x:Name="imgLeft" Width="150" Height="150" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
+                    <Image x:Name="imgRight" Width="150" Height="150" Grid.Column="1" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
+                </Grid>
+            </controls:PanoramaItem>
+
+        </controls:Panorama>
+    </Grid>
+
+    <!--Приложения на базе панорамы не должны содержать ApplicationBar-->
+
+</phone:PhoneApplicationPage>
