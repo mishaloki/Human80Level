@@ -54,12 +54,12 @@ namespace Human80Level
                 listEventList.ItemsSource = eventList;
                 LuckEventMessage message = (from luckEventMessage in eventList
                                 where
-                                    (luckEventMessage.Message == DefaultEventMessage) && (luckEventMessage.Date == DateTime.Now)
+                                    (luckEventMessage.Message == DefaultEventMessage) && (luckEventMessage.Date.ToShortDateString() == DateTime.Now.ToShortDateString())
                                 select luckEventMessage).FirstOrDefault();
                 if (message!=null)
                 {
                     textTryCaption.Text = AlreadyUseCloverMessage;
-                    panoramaTryItem.IsEnabled = false;
+                    pivotItemTryLuck.IsEnabled = false;
                 }
             }
             catch (Exception error)
@@ -87,7 +87,7 @@ namespace Human80Level
             BitmapImage bitmapImage = new BitmapImage(new Uri(url,UriKind.Relative));
             Image image = sender as Image;
             image.Source = bitmapImage;
-            panoramaTryItem.IsEnabled = false;
+            pivotItemTryLuck.IsEnabled = false;
             LuckEventMessage message = new LuckEventMessage(DefaultEventMessage, DateTime.Now, isLuck);
             LuckEventManager.AddEventMessage(message);
             eventList.Add(message);

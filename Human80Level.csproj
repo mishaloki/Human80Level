@@ -141,6 +141,9 @@
     <Content Include="Images\Ability\Luck\clover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Ability\Luck\luck-bg.jpg" />
+    <Content Include="Images\Ability\Luck\luck.png" />
+    <Content Include="Images\Ability\Luck\no-luck.png" />
     <Content Include="Images\Ability\Luck\trash.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
