@@ -41,7 +41,7 @@
                     
                 </StackPanel>
                 
-                <Image Width="150" Height="150" Margin="0,20"></Image>
+                <Image Width="150" Height="150" Margin="0,20" Name="imgAvatar"></Image>
                 <TextBlock x:Name="textNickname" Text="Nickname" Margin="12,20,0,0"></TextBlock>
                 <TextBox Name="textNickName"></TextBox>
                 <TextBlock x:Name="textDateOfBirth" Text="Date of birtth" Margin="12,20,0,0"></TextBlock>

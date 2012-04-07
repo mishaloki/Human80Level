@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using Human80Level.Utils;
 using Microsoft.Phone;
 using Microsoft.Phone.Controls;
@@ -22,7 +23,7 @@ namespace Human80Level
     {
         private string avatarUrl = string.Empty;
 
-        private const string isoFolder = "CapturedImagesCache";
+       
 
         PhotoChooserTask photoChooserTask;
 
@@ -44,6 +45,7 @@ namespace Human80Level
         private void btnImageEmpty_Click(object sender, RoutedEventArgs e)
         {
             avatarUrl = string.Empty;
+            imgAvatar.Source = null;
         }
 
         public void GetPicture(bool fromCamera)
@@ -78,8 +80,9 @@ namespace Human80Level
                     {
                         string imagePathOrContent = string.Empty;
                         WriteableBitmap image = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
-                        imagePathOrContent = this.SaveImageToLocalStorage(image, Path.GetFileName(e.OriginalFileName));
+                        imagePathOrContent = StorageManager.SaveImageToStorage(image);
                         avatarUrl = imagePathOrContent;
+                        imgAvatar.Source = StorageManager.GetImageFromStorage(avatarUrl);
                     }
                     catch (Exception ex)
                     {
@@ -105,38 +108,28 @@ namespace Human80Level
             this.GetPicture(true);
         }
 
-        private string SaveImageToLocalStorage(WriteableBitmap image, string imageFileName)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
 
-            if (image == null)
+            if (this.NavigationContext.QueryString.ContainsKey("new"))
             {
-                throw new ArgumentNullException("imageBytes");
+                
             }
-            try
+            else
             {
-
-
-                var isoFile = IsolatedStorageFile.GetUserStoreForApplication();
-
-                if (!isoFile.DirectoryExists(isoFolder))
-                {
-                    isoFile.CreateDirectory(isoFolder);
-                }
-
-                string filePath = System.IO.Path.Combine("/" + isoFolder + "/", imageFileName);
-
-                using (var stream = isoFile.CreateFile(filePath))
-                {                 
-                        image.SaveJpeg(stream, image.PixelWidth, image.PixelHeight, 0, 100);
-                }
-
-                return new Uri(filePath, UriKind.Relative).ToString();
+                ShowProfile();
             }
-            catch (Exception e)
-            {
-                //TODO: log or do something else
-                throw;
-            }
+            
+        }
+
+        private void ShowProfile()
+        {
+            Profile.Profile profile = ProfileManager.getProfile();
+            textNickName.Text = profile.NickName;
+            boxHeight.Text = profile.Heigth.ToString();
+            imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
+            dateBirth.Value = profile.Birth;
         }
     }
 }
