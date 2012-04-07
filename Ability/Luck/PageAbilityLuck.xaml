@@ -192,7 +192,18 @@
 
             <controls:PivotItem Header="{Binding Path=LocalizedResources.LuckPagePivotEventList, Source={StaticResource LocalizedStrings}}">
                 <Grid>
-                    <ListBox Name="listEventList" Hold="listEventList_Hold" SelectionChanged="listEventList_SelectionChanged" DoubleTap="listEventList_DoubleTap">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Height="50" Width="50" Source="/Images/Ability/Luck/clover.png"></Image>
+                        <TextBlock Text="luck" FontSize="28" VerticalAlignment="Center" Name="textLuckCounter"></TextBlock>
+                        <Image Height="50" Width="50" Source="/Images/Ability/Luck/trash.png" Margin="20,0,0,0"></Image>
+                        <TextBlock Text="trash" FontSize="28" VerticalAlignment="Center" Name="textFailureCounter"></TextBlock>
+
+                    </StackPanel>
+                    <ListBox Name="listEventList" Hold="listEventList_Hold" SelectionChanged="listEventList_SelectionChanged" DoubleTap="listEventList_DoubleTap" Grid.Row="1">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>

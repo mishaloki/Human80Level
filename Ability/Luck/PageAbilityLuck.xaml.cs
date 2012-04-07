@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -21,6 +22,8 @@ namespace Human80Level
 {
     public partial class PageAbilityLuck : PhoneApplicationPage
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        
         private readonly string CloverImageUrl = "/Images/Ability/Luck/clover.png";
 
         private readonly string TrashImageUrl = "/Images/Ability/Luck/trash.png";
@@ -40,6 +43,8 @@ namespace Human80Level
         private readonly string RemoveEventMessageTitle = AppResources.RemoveEventMessageTitle;
 
         private ObservableCollection <LuckEventMessage> eventList;
+
+        private static readonly string LoggerMessageFormat = "Errot in {0}, message: {1}";
         
         public PageAbilityLuck()
         {
@@ -49,57 +54,94 @@ namespace Human80Level
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            CheckTryLuckEvent();
+        }
+
+        private void CheckTryLuckEvent()
+        {
             try
             {
                 eventList = LuckEventManager.getEventList();
                 listEventList.ItemsSource = eventList;
                 LuckEventMessage message = (from luckEventMessage in eventList
-                                where
-                                    (luckEventMessage.Message == DefaultEventMessage) && (luckEventMessage.Date.ToShortDateString() == DateTime.Now.ToShortDateString())
-                                select luckEventMessage).FirstOrDefault();
-                if (message!=null)
+                                            where
+                                                (luckEventMessage.Message == DefaultEventMessage) && (luckEventMessage.Date.ToShortDateString() == DateTime.Now.ToShortDateString())
+                                            select luckEventMessage).FirstOrDefault();
+                if (message != null)
                 {
                     textTryCaption.Text = AlreadyUseCloverMessage;
                     pivotItemTryLuck.IsEnabled = false;
                 }
+                eventList.CollectionChanged += UpdateEventCounter;
+                this.UpdateEventCounter(eventList,null);
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
-
+                logger.Error(string.Format(LoggerMessageFormat, "CheckTryLuckEvent", error.Message));
             }
+        }
 
+        private void UpdateEventCounter(object sender, NotifyCollectionChangedEventArgs args)
+        {
+            ObservableCollection<LuckEventMessage> eventMessages = sender as ObservableCollection<LuckEventMessage>;
+            int luckNumb = (from luckEventMessage in eventMessages
+                           where luckEventMessage.IsLuck == true
+                           select luckEventMessage).Count();
+            int failureNumb = eventMessages.Count - luckNumb;
 
+            textFailureCounter.Text = failureNumb.ToString();
+            textLuckCounter.Text = luckNumb.ToString();
         }
 
         private void imgLeft_Hold(object sender, GestureEventArgs e)
         {
-            string url = string.Empty;
-            bool isLuck = this.isLuck();
-            if (isLuck)
-            {
-                url = CloverImageUrl;
-            }
-            else
-            {
-                url = TrashImageUrl;
-            } 
-            
-            BitmapImage bitmapImage = new BitmapImage(new Uri(url,UriKind.Relative));
             Image image = sender as Image;
-            image.Source = bitmapImage;
-            pivotItemTryLuck.IsEnabled = false;
-            LuckEventMessage message = new LuckEventMessage(DefaultEventMessage, DateTime.Now, isLuck);
-            LuckEventManager.AddEventMessage(message);
-            eventList.Add(message);
-            textTryCaption.Text = AlreadyUseCloverMessage;
+            this.TryLuck(image);
+        }
+
+        private void TryLuck(Image image)
+        {
+            try
+            {
+                string url = string.Empty;
+                bool isLuck = this.isLuck();
+                if (isLuck)
+                {
+                    url = CloverImageUrl;
+                }
+                else
+                {
+                    url = TrashImageUrl;
+                }
+
+                BitmapImage bitmapImage = new BitmapImage(new Uri(url, UriKind.Relative));                
+                image.Source = bitmapImage;
+                pivotItemTryLuck.IsEnabled = false;
+                LuckEventMessage message = new LuckEventMessage(DefaultEventMessage, DateTime.Now, isLuck);
+                LuckEventManager.AddEventMessage(message);
+                eventList.Add(message);
+                textTryCaption.Text = AlreadyUseCloverMessage;
+            }
+            catch (Exception error)
+            {
+                logger.Error(string.Format(LoggerMessageFormat, "TryLuck", error.Message));
+            }
         }
 
         private bool isLuck ()
         {
-            Random random = new Random();
-            int value = random.Next(0, 2);           
-            return (value == 0) ? true : false;            
+            try
+            {
+                Random random = new Random();
+                int value = random.Next(0, 2);
+                return (value == 0) ? true : false;  
+            }
+            catch (Exception error)
+            {
+                logger.Error(string.Format(LoggerMessageFormat, "isLuck", error.Message));
+                return false;
+            }
+          
         }
 
         private void btnLuck_Click(object sender, RoutedEventArgs e)
@@ -114,16 +156,24 @@ namespace Human80Level
 
         private void AddMessage(bool isLuck)
         {
-            if (!isMessageValid())
+            try
             {
-                ShowValidationErrorMessage();
-                return;
+                if (!isMessageValid())
+                {
+                    ShowValidationErrorMessage();
+                    return;
+                }
+                LuckEventMessage message = new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck);
+                LuckEventManager.AddEventMessage(message);
+                eventList.Add(message);
+                MessageBox.Show(SuccessAddMessage);
+                textMessage.Text = string.Empty;
             }
-            LuckEventMessage message = new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck);
-            LuckEventManager.AddEventMessage(message);
-            eventList.Add(message);
-            MessageBox.Show(SuccessAddMessage);
-            textMessage.Text = string.Empty;
+            catch (Exception error)
+            {
+                logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
+            }
+
         }
 
         private bool isMessageValid()
@@ -151,25 +201,38 @@ namespace Human80Level
             
         }
 
+        
+
         private void listEventList_DoubleTap(object sender, GestureEventArgs e)
         {
             LuckEventMessage message = (LuckEventMessage) listEventList.SelectedItem;
+            this.RemoveEventMessage(message);
+            
+        }
+
+        private void RemoveEventMessage(LuckEventMessage message)
+        {
             if (MessageBox.Show(RemoveEventMessageText,RemoveEventMessageTitle,MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
                 eventList.Remove(message);
                 LuckEventManager.RemoveEventMessage(message);
             }
-            
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            this.ClearMessageField();
+        }
+
+        private void ClearMessageField()
+        {
             textMessage.Text = string.Empty;
         }
 
+
         private void textMessage_TextChanged(object sender, TextChangedEventArgs e)
         {
-            SetClearButtonState();   
+            this.SetClearButtonState();   
         }
 
         private void SetClearButtonState()
@@ -185,9 +248,9 @@ namespace Human80Level
                     btnClear.IsEnabled = true;
                 }
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                
+                logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
             }
             
         }
