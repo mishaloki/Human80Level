@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Human80Level.Ability.Luck;
+using Human80Level.Resources;
 using Microsoft.Phone.Controls;
 using System.Linq;
 
@@ -20,23 +21,23 @@ namespace Human80Level
 {
     public partial class PageAbilityLuck : PhoneApplicationPage
     {
-        private const string CloverImageUrl = "/Images/Ability/Luck/clover.png";
+        private readonly string CloverImageUrl = "/Images/Ability/Luck/clover.png";
 
-        private const string TrashImageUrl = "/Images/Ability/Luck/trash.png";
+        private readonly string TrashImageUrl = "/Images/Ability/Luck/trash.png";
 
-        private const string DefaultEventMessage = "Open clover";
+        private readonly string DefaultEventMessage = AppResources.DefaultEventMessage;
 
-        private const string NullOrEmptyMessageText = "Message can't be empty. Please enter some text";
-
-        private const string NullOrEmptyMessageTitle = "Error";
-
-        private const string SuccessAddMessage = "Event has been added";
-
-        private const string AlreadyUseCloverMessage = "You have already use clover today";
-
-        private const string RemoveEventMessageText = "Event will be deleted. Are you sure?";
-
-        private const string RemoveEventMessageTitle = "Confirm removing";
+        private static readonly string NullOrEmptyMessageText = AppResources.NullOrEmptyMessageText;
+                
+        private static readonly string NullOrEmptyMessageTitle = AppResources.NullOrEmptyMessageTitle;
+                
+        private readonly string SuccessAddMessage = AppResources.SuccessAddMessage;
+                
+        private readonly string AlreadyUseCloverMessage = AppResources.AlreadyUseCloverMessage;
+                
+        private readonly string RemoveEventMessageText = AppResources.RemoveEventMessageText;
+                
+        private readonly string RemoveEventMessageTitle = AppResources.RemoveEventMessageTitle;
 
         private ObservableCollection <LuckEventMessage> eventList;
         
@@ -168,14 +169,27 @@ namespace Human80Level
 
         private void textMessage_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(textMessage.Text))
+            SetClearButtonState();   
+        }
+
+        private void SetClearButtonState()
+        {
+            try
             {
-                btnClear.IsEnabled = false;
+                if (string.IsNullOrEmpty(textMessage.Text))
+                {
+                    btnClear.IsEnabled = false;
+                }
+                else
+                {
+                    btnClear.IsEnabled = true;
+                }
             }
-            else
+            catch (Exception)
             {
-                btnClear.IsEnabled = true;
+                
             }
+            
         }
         
     }

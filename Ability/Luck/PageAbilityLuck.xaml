@@ -160,22 +160,22 @@
 
     <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
-        
-        <controls:Pivot Title="LUCK ABILITY">
+
+        <controls:Pivot Title="{Binding Path=LocalizedResources.LuckPagePivotTitle, Source={StaticResource LocalizedStrings}}">
             <controls:Pivot.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Ability/Luck/luck-bg.jpg" Opacity="0.3">
                     
                 </ImageBrush>
             </controls:Pivot.Background>
-            <controls:PivotItem Header="add event">
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.LuckPagePivotAddEvent, Source={StaticResource LocalizedStrings}}">
                 <StackPanel>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Enter event" Margin="12,0,0,0" VerticalAlignment="Bottom"></TextBlock>
-                        <Button Content="clear" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" HorizontalContentAlignment="Right" Name="btnClear" Click="btnClear_Click" Padding="10,3,10,5" IsEnabled="False"></Button>
+                        <TextBlock Text="{Binding Path=LocalizedResources.LuckPageMessageBoxCaption, Source={StaticResource LocalizedStrings}}" Margin="12,0,0,0" VerticalAlignment="Bottom"></TextBlock>
+                        <Button Content="{Binding Path=LocalizedResources.LuckPageClearButtonCaption, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" HorizontalContentAlignment="Right" Name="btnClear" Click="btnClear_Click" Padding="10,3,10,5" IsEnabled="False"></Button>
                     </Grid>
                     <TextBox Height="150" TextWrapping="Wrap" Name="textMessage" TextChanged="textMessage_TextChanged"></TextBox>
                     <Grid>
@@ -190,7 +190,7 @@
                 </StackPanel>
             </controls:PivotItem>
 
-            <controls:PivotItem Header="event list">
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.LuckPagePivotEventList, Source={StaticResource LocalizedStrings}}">
                 <Grid>
                     <ListBox Name="listEventList" Hold="listEventList_Hold" SelectionChanged="listEventList_SelectionChanged" DoubleTap="listEventList_DoubleTap">
                         <ListBox.ItemTemplate>
@@ -216,13 +216,13 @@
                 </Grid>
             </controls:PivotItem>
 
-            <controls:PivotItem Header="try your luck" Name="pivotItemTryLuck">
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.LuckPagePivotTryLuck, Source={StaticResource LocalizedStrings}}" Name="pivotItemTryLuck">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Hold the picture" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0,50,0,0" Name="textTryCaption" Height="60"></TextBlock>
+                    <TextBlock Text="{Binding Path=LocalizedResources.LuckPagePivotTryLuck, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0,50,0,0" Name="textTryCaption" Height="60"></TextBlock>
                     <Image x:Name="imgLeft" Width="150" Height="150" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
                     <Image x:Name="imgRight" Width="150" Height="150" Grid.Column="1" Hold="imgLeft_Hold" Source="/Images/Ability/Luck/emptyBox.png"></Image>
                 </Grid>
