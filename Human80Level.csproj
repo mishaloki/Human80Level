@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="Utils\LocalizedStrings.cs" />
     <Compile Include="Utils\LuckToImageUrlConverter.cs" />
+    <Compile Include="Utils\StorageManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
