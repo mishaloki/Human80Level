@@ -97,7 +97,7 @@ namespace Human80Level
             textLuckCounter.Text = luckNumb.ToString();
         }
 
-        private void imgLeft_Hold(object sender, GestureEventArgs e)
+        private void imgLeft_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Image image = sender as Image;
             this.TryLuck(image);
@@ -191,7 +191,7 @@ namespace Human80Level
             MessageBox.Show(NullOrEmptyMessageText, NullOrEmptyMessageTitle, MessageBoxButton.OK);
         }
 
-        private void listEventList_Hold(object sender, GestureEventArgs e)
+        private void listEventList_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
 
         }
@@ -206,9 +206,9 @@ namespace Human80Level
             
         }
 
-        
 
-        private void listEventList_DoubleTap(object sender, GestureEventArgs e)
+
+        private void listEventList_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Event message = (Event) listEventList.SelectedItem;
             this.RemoveEventMessage(message);
