@@ -39,7 +39,7 @@ namespace Human80Level
                     return;
                 }
 
-                this.NavigationService.Navigate(new Uri("/PageProfile.xaml",UriKind.Relative));
+                this.NavigationService.Navigate(new Uri("/PageProfile.xaml?new=true",UriKind.Relative));
             }
         }
 
@@ -70,21 +70,14 @@ namespace Human80Level
             textNickName.Text = profile.NickName;
             textProgress.Text = profile.CurrentLevel.ToString();
             if (!string.IsNullOrEmpty(profile.AvatarUri))
-            {
-                BitmapImage image = new BitmapImage(new Uri(profile.AvatarUri));
+            {                
+                imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
+            }           
+        }
 
-                using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
-                {
-                    using (IsolatedStorageFileStream fileStream = myIsolatedStorage.OpenFile(profile.AvatarUri, FileMode.Open, FileAccess.Read))
-                    {
-                        image.SetSource(fileStream);
-                    }
-                }
-
-                imgAvatar.Source = image;
-            }
-
-            
+        private void gridProfile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/PageProfile.xaml", UriKind.Relative));
         }
     }
 }
