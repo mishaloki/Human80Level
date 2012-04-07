@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -8,6 +10,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
@@ -52,6 +56,35 @@ namespace Human80Level
         private void btnHelp_Click(object sender, EventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/PageHelp.xaml", UriKind.Relative));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ShowProfileInfor();
+        }
+
+        private void ShowProfileInfor()
+        {
+            Profile.Profile profile = ProfileManager.getProfile();
+            textNickName.Text = profile.NickName;
+            textProgress.Text = profile.CurrentLevel.ToString();
+            if (!string.IsNullOrEmpty(profile.AvatarUri))
+            {
+                BitmapImage image = new BitmapImage(new Uri(profile.AvatarUri));
+
+                using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    using (IsolatedStorageFileStream fileStream = myIsolatedStorage.OpenFile(profile.AvatarUri, FileMode.Open, FileAccess.Read))
+                    {
+                        image.SetSource(fileStream);
+                    }
+                }
+
+                imgAvatar.Source = image;
+            }
+
+            
         }
     }
 }
