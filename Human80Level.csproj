@@ -62,7 +62,6 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ability\Luck\LuckEventMessage.cs" />
     <Compile Include="Ability\Luck\LuckEventManager.cs" />
     <Compile Include="Ability\Physique\PageAbilityPhysique.xaml.cs">
       <DependentUpon>PageAbilityPhysique.xaml</DependentUpon>

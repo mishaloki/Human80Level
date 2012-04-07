@@ -10,35 +10,41 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Human80Level.Database;
 
 namespace Human80Level.Ability.Luck
 {
     public static class LuckEventManager
     {
-        public static ObservableCollection<LuckEventMessage> getEventList()
+        public static ObservableCollection<Event> getEventList()
         {
-            ObservableCollection<LuckEventMessage> eventList = new ObservableCollection<LuckEventMessage>();
-            eventList.Add(new LuckEventMessage("message 1",DateTime.Now,true));
-            eventList.Add(new LuckEventMessage("message 2", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 3", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 4", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 5", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 6", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 7", DateTime.Now, true));
+            //ObservableCollection<Event> eventList = new ObservableCollection<Event>();
+            //eventList.Add(new Event("message 1",DateTime.Now,true));
+            //eventList.Add(new Event("message 2", DateTime.Now, true));
+            //eventList.Add(new Event("message 3", DateTime.Now, true));
+            //eventList.Add(new Event("message 4", DateTime.Now, true));
+            //eventList.Add(new Event("message 5", DateTime.Now, true));
+            //eventList.Add(new Event("message 6", DateTime.Now, true));
+            //eventList.Add(new Event("message 7", DateTime.Now, true));
+            //return eventList;
+            ObservableCollection<Event> eventList = DBHelper.GetEventList();
             return eventList;
         }
 
-        public static void AddEventMessage(LuckEventMessage eventMessage)
+        public static void AddEventMessage(Event eventMessage)
         {
-            MessageBox.Show("AddEventMessage");
+            //MessageBox.Show("AddEventMessage");
+            DBHelper.AddEvent(eventMessage);
         }
 
-        public static void RemoveEventMessage (LuckEventMessage eventMessage)
+
+        public static void RemoveEventMessage (Event eventMessage)
         {
-            MessageBox.Show("RemoveEventMessage");
+            //MessageBox.Show("RemoveEventMessage");
+            DBHelper.RemoveEvent(eventMessage);
         }
 
-        public static void UpdateEventMessage (LuckEventMessage eventMessage)
+        public static void UpdateEventMessage (Event eventMessage)
         {
             MessageBox.Show("UpdateEventMessage");
         }
