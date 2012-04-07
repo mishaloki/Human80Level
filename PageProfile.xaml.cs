@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -8,16 +10,133 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+using System.Windows.Media.Imaging;
+using Human80Level.Utils;
+using Microsoft.Phone;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
 
 namespace Human80Level
 {
     public partial class PageProfile : PhoneApplicationPage
     {
+        private string avatarUrl = string.Empty;
+
+        private const string isoFolder = "CapturedImagesCache";
+
+        PhotoChooserTask photoChooserTask;
+
+        CameraCaptureTask cameraTask;
+        
         public PageProfile()
         {
             InitializeComponent();
+        }
+
+        private void btnSaveProfile_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime birth = dateBirth.Value.Value;
+            int height = int.Parse(boxHeight.Text);
+            Profile.Profile profile = new Profile.Profile(textNickName.Text,avatarUrl,0,true,0,birth,height);
+            ProfileManager.UpdateProfile(profile); 
+        }
+
+        private void btnImageEmpty_Click(object sender, RoutedEventArgs e)
+        {
+            avatarUrl = string.Empty;
+        }
+
+        public void GetPicture(bool fromCamera)
+        {
+            if (fromCamera)
+            {
+                cameraTask = new CameraCaptureTask();
+                cameraTask.Completed += onTaskCompleted;
+                cameraTask.Show();
+            }
+            else
+            {
+                photoChooserTask = new PhotoChooserTask();
+                photoChooserTask.Completed += onTaskCompleted;
+                photoChooserTask.Show();             
+            }
+
+        }
+
+        public void onTaskCompleted(object sender, PhotoResult e)
+        {
+            if (e.Error != null)
+            {
+                
+                return;
+            }
+
+            switch (e.TaskResult)
+            {
+                case TaskResult.OK:
+                    try
+                    {
+                        string imagePathOrContent = string.Empty;
+                        WriteableBitmap image = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
+                        imagePathOrContent = this.SaveImageToLocalStorage(image, Path.GetFileName(e.OriginalFileName));
+                        avatarUrl = imagePathOrContent;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    break;
+
+                case TaskResult.Cancel:
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void btnImageAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            this.GetPicture(false);
+        }
+
+        private void btnImageCamera_Click(object sender, RoutedEventArgs e)
+        {
+            this.GetPicture(true);
+        }
+
+        private string SaveImageToLocalStorage(WriteableBitmap image, string imageFileName)
+        {
+
+            if (image == null)
+            {
+                throw new ArgumentNullException("imageBytes");
+            }
+            try
+            {
+
+
+                var isoFile = IsolatedStorageFile.GetUserStoreForApplication();
+
+                if (!isoFile.DirectoryExists(isoFolder))
+                {
+                    isoFile.CreateDirectory(isoFolder);
+                }
+
+                string filePath = System.IO.Path.Combine("/" + isoFolder + "/", imageFileName);
+
+                using (var stream = isoFile.CreateFile(filePath))
+                {                 
+                        image.SaveJpeg(stream, image.PixelWidth, image.PixelHeight, 0, 100);
+                }
+
+                return new Uri(filePath, UriKind.Relative).ToString();
+            }
+            catch (Exception e)
+            {
+                //TODO: log or do something else
+                throw;
+            }
         }
     }
 }

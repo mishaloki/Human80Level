@@ -35,20 +35,20 @@
                 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     
-                    <Button Content="Album"></Button>
-                    <Button Content="Camera"></Button>
-                    <Button Content="Empty"></Button>
+                    <Button Content="Album" Name="btnImageAlbum" Click="btnImageAlbum_Click"></Button>
+                    <Button Content="Camera" Name="btnImageCamera" Click="btnImageCamera_Click"></Button>
+                    <Button Content="Empty" Name="btnImageEmpty" Click="btnImageEmpty_Click"></Button>
                     
                 </StackPanel>
                 
                 <Image Width="150" Height="150" Margin="0,20"></Image>
                 <TextBlock x:Name="textNickname" Text="Nickname" Margin="12,20,0,0"></TextBlock>
-                <TextBox></TextBox>
+                <TextBox Name="textNickName"></TextBox>
                 <TextBlock x:Name="textDateOfBirth" Text="Date of birtth" Margin="12,20,0,0"></TextBlock>
-                <toolkit:DatePicker />
+                <toolkit:DatePicker Name="dateBirth" />
                 <TextBlock x:Name="textHeight" Text="Height (kg.)" Margin="12,20,0,0"></TextBlock>
-                <TextBox></TextBox>
-                <Button x:Name="btnSaveProfile" Content="Save profile" Margin="0,20,0,0"></Button>
+                <TextBox Name="boxHeight"></TextBox>
+                <Button x:Name="btnSaveProfile" Content="Save profile" Margin="0,20,0,0" Click="btnSaveProfile_Click"></Button>
             </StackPanel>
             </ScrollViewer>
         </Grid>
