@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Human80Level.Ability.Luck;
+using Human80Level.Database;
 using Human80Level.Resources;
 using Microsoft.Phone.Controls;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace Human80Level
                 
         private readonly string RemoveEventMessageTitle = AppResources.RemoveEventMessageTitle;
 
-        private ObservableCollection <LuckEventMessage> eventList;
+        private ObservableCollection <Event> eventList;
 
         private static readonly string LoggerMessageFormat = "Errot in {0}, message: {1}";
         
@@ -61,19 +62,22 @@ namespace Human80Level
         {
             try
             {
+                //DBHelper.DeleteDatabase();
+                DBHelper.CreateDatabase();
                 eventList = LuckEventManager.getEventList();
                 listEventList.ItemsSource = eventList;
-                LuckEventMessage message = (from luckEventMessage in eventList
+                Event message = (from luckEventMessage in eventList
                                             where
-                                                (luckEventMessage.Message == DefaultEventMessage) && (luckEventMessage.Date.ToShortDateString() == DateTime.Now.ToShortDateString())
+                                                (luckEventMessage.Message.Trim() == DefaultEventMessage) && (luckEventMessage.Date.ToShortDateString() == DateTime.Now.ToShortDateString())
                                             select luckEventMessage).FirstOrDefault();
                 if (message != null)
                 {
                     textTryCaption.Text = AlreadyUseCloverMessage;
                     pivotItemTryLuck.IsEnabled = false;
+                    
                 }
                 eventList.CollectionChanged += UpdateEventCounter;
-                this.UpdateEventCounter(eventList,null);
+                this.UpdateEventCounter(eventList, null);
             }
             catch (Exception error)
             {
@@ -83,7 +87,7 @@ namespace Human80Level
 
         private void UpdateEventCounter(object sender, NotifyCollectionChangedEventArgs args)
         {
-            ObservableCollection<LuckEventMessage> eventMessages = sender as ObservableCollection<LuckEventMessage>;
+            ObservableCollection<Event> eventMessages = sender as ObservableCollection<Event>;
             int luckNumb = (from luckEventMessage in eventMessages
                            where luckEventMessage.IsLuck == true
                            select luckEventMessage).Count();
@@ -117,7 +121,7 @@ namespace Human80Level
                 BitmapImage bitmapImage = new BitmapImage(new Uri(url, UriKind.Relative));                
                 image.Source = bitmapImage;
                 pivotItemTryLuck.IsEnabled = false;
-                LuckEventMessage message = new LuckEventMessage(DefaultEventMessage, DateTime.Now, isLuck);
+                Event message = new Event(DefaultEventMessage, DateTime.Now, isLuck);
                 LuckEventManager.AddEventMessage(message);
                 eventList.Add(message);
                 textTryCaption.Text = AlreadyUseCloverMessage;
@@ -163,7 +167,8 @@ namespace Human80Level
                     ShowValidationErrorMessage();
                     return;
                 }
-                LuckEventMessage message = new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck);
+                Event message = new Event(textMessage.Text, DateTime.Now, isLuck);
+                message.Id = 1;
                 LuckEventManager.AddEventMessage(message);
                 eventList.Add(message);
                 MessageBox.Show(SuccessAddMessage);
@@ -193,7 +198,7 @@ namespace Human80Level
 
         private void listEventList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LuckEventMessage message = listEventList.SelectedItem as LuckEventMessage;
+            Event message = listEventList.SelectedItem as Event;
             if (message != null)
             {
                 textMessage.Text = message.Message;
@@ -205,12 +210,12 @@ namespace Human80Level
 
         private void listEventList_DoubleTap(object sender, GestureEventArgs e)
         {
-            LuckEventMessage message = (LuckEventMessage) listEventList.SelectedItem;
+            Event message = (Event) listEventList.SelectedItem;
             this.RemoveEventMessage(message);
             
         }
 
-        private void RemoveEventMessage(LuckEventMessage message)
+        private void RemoveEventMessage(Event message)
         {
             if (MessageBox.Show(RemoveEventMessageText,RemoveEventMessageTitle,MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
