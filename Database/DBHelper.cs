@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -62,7 +63,7 @@ namespace Human80Level.Database
 
 
 
-        public static void AddEmployee(Event employee)
+        public static void AddEvent(Event employee)
         {
 
             using (var context = new ProfileStatisticsDataContext(ConnectionString))
@@ -81,21 +82,36 @@ namespace Human80Level.Database
 
         }
 
-
-
-        public static IList<Event> GetEmployees()
+        public static void RemoveEvent(Event employee)
         {
-
-            IList<Event> employees;
 
             using (var context = new ProfileStatisticsDataContext(ConnectionString))
             {
 
-                employees = (from emp in context.Events select emp).ToList();
+                if (context.DatabaseExists())
+                {
+                    context.Events.Attach(employee);
+                    context.Events.DeleteOnSubmit(employee);
+
+                    context.SubmitChanges();
+
+                }
 
             }
 
+        }
 
+        public static ObservableCollection<Event> GetEventList()
+        {
+
+            ObservableCollection<Event> employees;
+
+            using (var context = new ProfileStatisticsDataContext(ConnectionString))
+            {
+
+                employees = new ObservableCollection<Event>((from emp in context.Events select emp).ToList());
+
+            }
 
             return employees;
 

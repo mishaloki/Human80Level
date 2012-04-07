@@ -41,12 +41,15 @@ namespace Human80Level.Database
 			OnCreated();
 		}
 		
+
 		
 		public ProfileStatisticsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
+		
+
 		
 		public System.Data.Linq.Table<Event> Events
 		{
@@ -63,7 +66,7 @@ namespace Human80Level.Database
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Guid _Id;
+		private int _Id;
 		
 		private System.DateTime _Date;
 		
@@ -75,7 +78,7 @@ namespace Human80Level.Database
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdChanging(System.Guid value);
+    partial void OnIdChanging(int value);
     partial void OnIdChanged();
     partial void OnDateChanging(System.DateTime value);
     partial void OnDateChanged();
@@ -89,9 +92,16 @@ namespace Human80Level.Database
 		{
 			OnCreated();
 		}
+
+         public Event (string message, DateTime date, bool isLuck)
+        {
+            this.Message = message;
+            this.Date = date;
+            this.IsLuck = isLuck;
+        }
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
-		public System.Guid Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
 		{
 			get
 			{
