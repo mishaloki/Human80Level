@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -13,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Human80Level.Ability.Luck;
+using Human80Level.Database;
+using Human80Level.Resources;
+using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 using System.Linq;
 
@@ -20,25 +24,29 @@ namespace Human80Level
 {
     public partial class PageAbilityLuck : PhoneApplicationPage
     {
-        private const string CloverImageUrl = "/Images/Ability/Luck/clover.png";
+        //private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        
+        private readonly string CloverImageUrl = "/Images/Ability/Luck/clover.png";
 
-        private const string TrashImageUrl = "/Images/Ability/Luck/trash.png";
+        private readonly string TrashImageUrl = "/Images/Ability/Luck/trash.png";
 
-        private const string DefaultEventMessage = "Open clover";
+        private readonly string DefaultEventMessage = AppResources.DefaultEventMessage;
 
-        private const string NullOrEmptyMessageText = "Message can't be empty. Please enter some text";
+        private static readonly string NullOrEmptyMessageText = AppResources.NullOrEmptyMessageText;
+                
+        private static readonly string NullOrEmptyMessageTitle = AppResources.NullOrEmptyMessageTitle;
+                
+        private readonly string SuccessAddMessage = AppResources.SuccessAddMessage;
+                
+        private readonly string AlreadyUseCloverMessage = AppResources.AlreadyUseCloverMessage;
+                
+        private readonly string RemoveEventMessageText = AppResources.RemoveEventMessageText;
+                
+        private readonly string RemoveEventMessageTitle = AppResources.RemoveEventMessageTitle;
 
-        private const string NullOrEmptyMessageTitle = "Error";
+        private ObservableCollection <Event> eventList;
 
-        private const string SuccessAddMessage = "Event has been added";
-
-        private const string AlreadyUseCloverMessage = "You have already use clover today";
-
-        private const string RemoveEventMessageText = "Event will be deleted. Are you sure?";
-
-        private const string RemoveEventMessageTitle = "Confirm removing";
-
-        private ObservableCollection <LuckEventMessage> eventList;
+        private static readonly string LoggerMessageFormat = "Error in {0}, message: {1}";
         
         public PageAbilityLuck()
         {
@@ -48,57 +56,97 @@ namespace Human80Level
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            CheckTryLuckEvent();
+        }
+
+        private void CheckTryLuckEvent()
+        {
             try
             {
-                eventList = LuckEventManager.getEventList();
+                //DBHelper.DeleteDatabase();
+                DBHelper.CreateDatabase();
+                eventList = LuckEventManager.GetEventList();
                 listEventList.ItemsSource = eventList;
-                LuckEventMessage message = (from luckEventMessage in eventList
-                                where
-                                    (luckEventMessage.Message == DefaultEventMessage) && (luckEventMessage.Date.ToShortDateString() == DateTime.Now.ToShortDateString())
-                                select luckEventMessage).FirstOrDefault();
-                if (message!=null)
+                Event message = (from luckEventMessage in eventList
+                                            where
+                                                (luckEventMessage.Message.Trim() == DefaultEventMessage) && (luckEventMessage.Date.ToShortDateString() == DateTime.Now.ToShortDateString())
+                                            select luckEventMessage).FirstOrDefault();
+                if (message != null)
                 {
                     textTryCaption.Text = AlreadyUseCloverMessage;
                     pivotItemTryLuck.IsEnabled = false;
+                    
                 }
+                eventList.CollectionChanged += UpdateEventCounter;
+                this.UpdateEventCounter(eventList, null);
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
-
+                Logger.Error(string.Format(LoggerMessageFormat, "CheckTryLuckEvent", error.Message));
             }
-
-
         }
 
-        private void imgLeft_Hold(object sender, GestureEventArgs e)
+        private void UpdateEventCounter(object sender, NotifyCollectionChangedEventArgs args)
         {
-            string url = string.Empty;
-            bool isLuck = this.isLuck();
-            if (isLuck)
-            {
-                url = CloverImageUrl;
-            }
-            else
-            {
-                url = TrashImageUrl;
-            } 
-            
-            BitmapImage bitmapImage = new BitmapImage(new Uri(url,UriKind.Relative));
+            ObservableCollection<Event> eventMessages = sender as ObservableCollection<Event>;
+            int luckNumb = (from luckEventMessage in eventMessages
+                           where luckEventMessage.IsLuck == true
+                           select luckEventMessage).Count();
+            int failureNumb = eventMessages.Count - luckNumb;
+
+            textFailureCounter.Text = failureNumb.ToString();
+            textLuckCounter.Text = luckNumb.ToString();
+        }
+
+        private void imgLeft_Hold(object sender, System.Windows.Input.GestureEventArgs e)
+        {
             Image image = sender as Image;
-            image.Source = bitmapImage;
-            pivotItemTryLuck.IsEnabled = false;
-            LuckEventMessage message = new LuckEventMessage(DefaultEventMessage, DateTime.Now, isLuck);
-            LuckEventManager.AddEventMessage(message);
-            eventList.Add(message);
-            textTryCaption.Text = AlreadyUseCloverMessage;
+            this.TryLuck(image);
+        }
+
+        private void TryLuck(Image image)
+        {
+            try
+            {
+                string url = string.Empty;
+                bool isLuck = this.isLuck();
+                if (isLuck)
+                {
+                    url = CloverImageUrl;
+                }
+                else
+                {
+                    url = TrashImageUrl;
+                }
+
+                BitmapImage bitmapImage = new BitmapImage(new Uri(url, UriKind.Relative));                
+                image.Source = bitmapImage;
+                pivotItemTryLuck.IsEnabled = false;
+                Event message = new Event(DefaultEventMessage, DateTime.Now, isLuck);
+                LuckEventManager.AddEventMessage(message);
+                eventList.Add(message);
+                textTryCaption.Text = AlreadyUseCloverMessage;
+            }
+            catch (Exception error)
+            {
+                Logger.Error(string.Format(LoggerMessageFormat, "TryLuck", error.Message));
+            }
         }
 
         private bool isLuck ()
         {
-            Random random = new Random();
-            int value = random.Next(0, 2);           
-            return (value == 0) ? true : false;            
+            try
+            {
+                Random random = new Random();
+                int value = random.Next(0, 2);
+                return (value == 0) ? true : false;  
+            }
+            catch (Exception error)
+            {
+                Logger.Error(string.Format(LoggerMessageFormat, "isLuck", error.Message));
+                return false;
+            }
+          
         }
 
         private void btnLuck_Click(object sender, RoutedEventArgs e)
@@ -113,16 +161,25 @@ namespace Human80Level
 
         private void AddMessage(bool isLuck)
         {
-            if (!isMessageValid())
+            try
             {
-                ShowValidationErrorMessage();
-                return;
+                if (!isMessageValid())
+                {
+                    ShowValidationErrorMessage();
+                    return;
+                }
+                Event message = new Event(textMessage.Text, DateTime.Now, isLuck);
+                message.Id = 1;
+                LuckEventManager.AddEventMessage(message);
+                eventList.Add(message);
+                MessageBox.Show(SuccessAddMessage);
+                textMessage.Text = string.Empty;
             }
-            LuckEventMessage message = new LuckEventMessage(textMessage.Text, DateTime.Now, isLuck);
-            LuckEventManager.AddEventMessage(message);
-            eventList.Add(message);
-            MessageBox.Show(SuccessAddMessage);
-            textMessage.Text = string.Empty;
+            catch (Exception error)
+            {
+                Logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
+            }
+
         }
 
         private bool isMessageValid()
@@ -135,14 +192,14 @@ namespace Human80Level
             MessageBox.Show(NullOrEmptyMessageText, NullOrEmptyMessageTitle, MessageBoxButton.OK);
         }
 
-        private void listEventList_Hold(object sender, GestureEventArgs e)
+        private void listEventList_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
 
         }
 
         private void listEventList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LuckEventMessage message = listEventList.SelectedItem as LuckEventMessage;
+            Event message = listEventList.SelectedItem as Event;
             if (message != null)
             {
                 textMessage.Text = message.Message;
@@ -150,32 +207,58 @@ namespace Human80Level
             
         }
 
-        private void listEventList_DoubleTap(object sender, GestureEventArgs e)
+
+
+        private void listEventList_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            LuckEventMessage message = (LuckEventMessage) listEventList.SelectedItem;
+            Event message = (Event) listEventList.SelectedItem;
+            this.RemoveEventMessage(message);
+            
+        }
+
+        private void RemoveEventMessage(Event message)
+        {
             if (MessageBox.Show(RemoveEventMessageText,RemoveEventMessageTitle,MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
                 eventList.Remove(message);
                 LuckEventManager.RemoveEventMessage(message);
             }
-            
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            this.ClearMessageField();
+        }
+
+        private void ClearMessageField()
+        {
             textMessage.Text = string.Empty;
         }
 
+
         private void textMessage_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(textMessage.Text))
+            this.SetClearButtonState();   
+        }
+
+        private void SetClearButtonState()
+        {
+            try
             {
-                btnClear.IsEnabled = false;
+                if (string.IsNullOrEmpty(textMessage.Text))
+                {
+                    btnClear.IsEnabled = false;
+                }
+                else
+                {
+                    btnClear.IsEnabled = true;
+                }
             }
-            else
+            catch (Exception error)
             {
-                btnClear.IsEnabled = true;
+                Logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
             }
+            
         }
         
     }

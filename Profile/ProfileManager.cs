@@ -1,50 +1,95 @@
 ﻿using System;
 using System.IO.IsolatedStorage;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Human80Level.Profile;
+using Human80Level.Database;
 
 namespace Human80Level.Utils
 {
     public static class ProfileManager
     {
+        /// <summary>
+        /// Profile setting name
+        /// </summary>
         private const string ProfileSettingsName = "Profile";
+
+        private static Profile.Profile CurrentProfile;
         
-        public static Human80Level.Profile.Profile getProfile()
-        {       
-            string name = string.Empty;
-            string avatar = string.Empty;
-            double level = 0;
-            double delta = 0;
-            bool isProgress = true;
-
-            Profile.Profile profile = new Human80Level.Profile.Profile(name,avatar,level,isProgress,delta);
-            //TODO Implemented logic to check if profile already exist
-            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-            if (settings.Contains(ProfileSettingsName))
-            {
-                profile = settings[ProfileSettingsName] as Profile.Profile;
-            }
-
-            return profile;
+        /// <summary>
+        /// Gets profile from app settings
+        /// </summary>
+        /// <returns>profile if it exists or null in other case</returns>
+        public static Human80Level.Profile.Profile GetProfile()
+        {
+            return CurrentProfile;
         }
 
+
+        public static void ExtractProfileFromSettings()
+        {
+            try
+            {
+                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+                if (settings.Contains(ProfileSettingsName))
+                {
+                    CurrentProfile = settings[ProfileSettingsName] as Profile.Profile;
+                    Logger.Info("GetProfile", "Profile was got from settings");
+                }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("GetProfile", err.Message);
+            }
+        }
+
+        /// <summary>
+        /// Updates profile info in app settings
+        /// </summary>
+        /// <param name="profile"></param>
         public static void UpdateProfile (Profile.Profile profile)
         {
-            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-            if (settings.Contains(ProfileSettingsName))
+            try
             {
-                settings.Remove(ProfileSettingsName);
+                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+                if (settings.Contains(ProfileSettingsName))
+                {
+                    settings.Remove(ProfileSettingsName);
+                }
+                settings.Add(ProfileSettingsName, profile);
+                settings.Save();
+                CurrentProfile = profile;
+                Logger.Info("UpdateProfile", "Profile was updated");
             }
-            settings.Add(ProfileSettingsName, profile);
-            settings.Save();
+            catch (Exception err)
+            {
+                Logger.Error("UpdateProfile", err.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// Removes profile from app settings and removes database with statistics
+        /// </summary>
+        /// <returns></returns>
+        public static bool RemoveProfile()
+        {
+            try
+            {
+                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+                if (settings.Contains(ProfileSettingsName))
+                {
+                    settings.Remove(ProfileSettingsName);
+                    DBHelper.DeleteDatabase();
+                    CurrentProfile = null;
+                    Logger.Info("RemoveProfile", "Profile was deleted");
+                    return true;
+                }
+                Logger.Info("RemoveProfile", "Profile doesn't exist");
+                return false;
+            }
+            catch (Exception err)
+            {
+                Logger.Error("RemoveProfile", err.Message);
+                return false;
+            }
         }
     }
 }

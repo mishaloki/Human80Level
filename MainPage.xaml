@@ -20,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid x:Name="gridProfile">
+        <Grid x:Name="gridProfile" Tap="gridProfile_Tap">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -28,10 +28,10 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             
-            <Image Height="150" Width="150" x:Name="imgAvatar"></Image>
-            <TextBlock Text="Profile" Grid.Column="1" x:Name="textNickName" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <Image Height="150" Width="150" x:Name="imgAvatar" ></Image>
+            <TextBlock Text="" Grid.Column="1" x:Name="textNickName" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
             <Image Width="50" Height="50" x:Name="imgStatus" Grid.Column="2"></Image>
-            <TextBlock Text="Progress" x:Name="textProgress" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Text="" x:Name="textProgress" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <StackPanel x:Name="stackMenuButtons" Grid.Row="1" VerticalAlignment="Center">
             <Button x:Name="btnNewProfile" Width="auto" Height="auto" Content="New profile" Click="btnNewProfile_Click">
