@@ -243,6 +243,15 @@
   <data name="RemoveEventMessageTitle" xml:space="preserve">
     <value>Confirm removing</value>
   </data>
+  <data name="StatPagePivotCommonItem" xml:space="preserve">
+    <value>indicators</value>
+  </data>
+  <data name="StatPagePivotHistoryItem" xml:space="preserve">
+    <value>history</value>
+  </data>
+  <data name="StatPagePivotTitle" xml:space="preserve">
+    <value>statistics</value>
+  </data>
   <data name="SuccessAddMessage" xml:space="preserve">
     <value>Event has been added</value>
   </data>

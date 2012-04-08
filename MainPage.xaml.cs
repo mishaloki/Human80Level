@@ -159,7 +159,7 @@ namespace Human80Level
         {
             try
             {
-                this.NavigationService.Navigate(new Uri("/Statistics/Statistics.xaml", UriKind.Relative));
+                this.NavigationService.Navigate(new Uri("/Statistics/PageStatistics.xaml", UriKind.Relative));
             }
             catch (Exception err)
             {
