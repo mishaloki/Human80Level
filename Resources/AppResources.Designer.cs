@@ -439,6 +439,33 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показатели.
+        /// </summary>
+        public static string StatPagePivotCommonItem {
+            get {
+                return ResourceManager.GetString("StatPagePivotCommonItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на история.
+        /// </summary>
+        public static string StatPagePivotHistoryItem {
+            get {
+                return ResourceManager.GetString("StatPagePivotHistoryItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на статистика.
+        /// </summary>
+        public static string StatPagePivotTitle {
+            get {
+                return ResourceManager.GetString("StatPagePivotTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Событие добавлено.
         /// </summary>
         public static string SuccessAddMessage {
