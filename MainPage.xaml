@@ -34,15 +34,15 @@
             <TextBlock Text="" x:Name="textProgress" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <StackPanel x:Name="stackMenuButtons" Grid.Row="1" VerticalAlignment="Center">
-            <Button x:Name="btnNewProfile" Width="auto" Height="auto" Content="New profile" Click="btnNewProfile_Click">
+            <Button x:Name="btnNewProfile" Width="auto" Height="auto" Content="{Binding Path=LocalizedResources.MainPageNewProfileBtn, Source={StaticResource LocalizedStrings}}" Click="btnNewProfile_Click">
                 
             </Button>
-            
-            <Button x:Name="btnStartFlow" Width="auto" Height="auto" Content="Start flow" Click="btnStartFlow_Click">                
+
+            <Button x:Name="btnStartFlow" Width="auto" Height="auto" Content="{Binding Path=LocalizedResources.MainPageStartFlowBtn, Source={StaticResource LocalizedStrings}}" Click="btnStartFlow_Click">                
                 
             </Button>
-            
-            <Button x:Name="btnAbout" Width="auto" Height="auto" Content="About" Click="btnAbout_Click">
+
+            <Button x:Name="btnAbout" Width="auto" Height="auto" Content="{Binding Path=LocalizedResources.MainPageAboutBtn, Source={StaticResource LocalizedStrings}}" Click="btnAbout_Click">
                 
             </Button>
         </StackPanel>

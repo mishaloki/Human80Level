@@ -147,11 +147,92 @@
   <data name="LuckPageTryLuckLabel" xml:space="preserve">
     <value>Угадайте в каком квадрате спрятан клевер</value>
   </data>
+  <data name="MainPageAboutBtn" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="MainPageHelpBtn" xml:space="preserve">
+    <value>help</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileMessage" xml:space="preserve">
+    <value>All previous result will be removed. Are you sure?</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileTitle" xml:space="preserve">
+    <value>Confirm removing profile</value>
+  </data>
+  <data name="MainPageNewProfileBtn" xml:space="preserve">
+    <value>new profile</value>
+  </data>
+  <data name="MainPageStartFlowBtn" xml:space="preserve">
+    <value>start flow</value>
+  </data>
   <data name="NullOrEmptyMessageText" xml:space="preserve">
     <value>Message can't be empty. Please enter some text</value>
   </data>
   <data name="NullOrEmptyMessageTitle" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="ProfileMBgetErrorMessage" xml:space="preserve">
+    <value>Profile wasn't loaded</value>
+  </data>
+  <data name="ProfileMBgetErrorTitle" xml:space="preserve">
+    <value>Profile loading error</value>
+  </data>
+  <data name="ProfileMBheightIncorrectMessage" xml:space="preserve">
+    <value>Height must be integer </value>
+  </data>
+  <data name="ProfileMBheightIncorrectTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProfileMBnickIncorrectMessage" xml:space="preserve">
+    <value>Nickname cant' be empty</value>
+  </data>
+  <data name="ProfileMBnickIncorrectTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProfileMBsaveErrorMessage" xml:space="preserve">
+    <value>Profile wasn't saved</value>
+  </data>
+  <data name="ProfileMBsaveErrorTitle" xml:space="preserve">
+    <value>Save error</value>
+  </data>
+  <data name="ProfileMBsubzeroheighMessage" xml:space="preserve">
+    <value>Height can't be sub zero</value>
+  </data>
+  <data name="ProfileMBsubzeroheighTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProfileMBupdateMessage" xml:space="preserve">
+    <value>Profile wasn't updated</value>
+  </data>
+  <data name="ProfileMBupdateTitle" xml:space="preserve">
+    <value>Update error</value>
+  </data>
+  <data name="ProfilePageBtnAlbum" xml:space="preserve">
+    <value>album</value>
+  </data>
+  <data name="ProfilePageBtnCamera" xml:space="preserve">
+    <value>camera</value>
+  </data>
+  <data name="ProfilePageBtnEmpty" xml:space="preserve">
+    <value>empty</value>
+  </data>
+  <data name="ProfilePageBtnSave" xml:space="preserve">
+    <value>save profile</value>
+  </data>
+  <data name="ProfilePageTextBirth" xml:space="preserve">
+    <value>date of birth</value>
+  </data>
+  <data name="ProfilePageTextHeight" xml:space="preserve">
+    <value>height</value>
+  </data>
+  <data name="ProfilePageTextNickname" xml:space="preserve">
+    <value>nickname</value>
+  </data>
+  <data name="ProfilePageTextSelectAvatar" xml:space="preserve">
+    <value>select avatar</value>
+  </data>
+  <data name="ProfilePageTitle" xml:space="preserve">
+    <value>profile</value>
   </data>
   <data name="RemoveEventMessageText" xml:space="preserve">
     <value>Event will be deleted. Are you sure?</value>
