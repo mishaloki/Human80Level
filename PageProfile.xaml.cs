@@ -27,6 +27,16 @@ namespace Human80Level
         private readonly string MBheightIncorrectTitle = "";
 
         /// <summary>
+        /// Message box title for sub zero height
+        /// </summary>
+        private readonly string MBsubzeroheighTitle = "";
+
+        /// <summary>
+        /// Message box title for sub zero height
+        /// </summary>
+        private readonly string MBsubzeroheighMessage = "";
+
+        /// <summary>
         /// Message box message for incorrect nickname
         /// </summary>
         private readonly string MBnickIncorrectMessage = "";
@@ -112,6 +122,12 @@ namespace Human80Level
                     MessageBox.Show(MBheightIncorrectTitle, MBheightIncorrectMessage, MessageBoxButton.OK);
                     return;
                 }
+                if (height < 0)
+                {
+                    MessageBox.Show(MBsubzeroheighMessage,MBsubzeroheighTitle,MessageBoxButton.OK);
+                    return;
+                }
+
                 //todo Add datepicker icons
                 DateTime birth = dateBirth.Value.Value;
                 Profile.Profile profile = new Profile.Profile(textNickName.Text, avatarUrl, 0, true, 0, birth, height);
