@@ -111,7 +111,11 @@ namespace Human80Level
                 if (!string.IsNullOrEmpty(profile.AvatarUri))
                 {
                     imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
-                }  
+                }
+                else
+                {
+                    imgAvatar.Source = null;
+                }
                 SetStartFlowBtnState(true);
             }
             catch (Exception err)

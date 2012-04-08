@@ -202,10 +202,10 @@
     <value>Error</value>
   </data>
   <data name="ProfileMBupdateMessage" xml:space="preserve">
-    <value>Profile wasn't updated</value>
+    <value>Changes were saved</value>
   </data>
   <data name="ProfileMBupdateTitle" xml:space="preserve">
-    <value>Update error</value>
+    <value>Profile was sucsessfully updated</value>
   </data>
   <data name="ProfilePageBtnAlbum" xml:space="preserve">
     <value>album</value>

@@ -313,7 +313,7 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось обновить профиль.
+        ///   Ищет локализованную строку, похожую на Изменения были успешно сохранены.
         /// </summary>
         public static string ProfileMBupdateMessage {
             get {
@@ -322,7 +322,7 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка обновления.
+        ///   Ищет локализованную строку, похожую на Профиль обновлен.
         /// </summary>
         public static string ProfileMBupdateTitle {
             get {
