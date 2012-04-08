@@ -46,7 +46,7 @@
                 <TextBox Name="textNickName"></TextBox>
                 <TextBlock x:Name="textDateOfBirth" Text="Date of birtth" Margin="12,20,0,0"></TextBlock>
                 <toolkit:DatePicker Name="dateBirth" />
-                <TextBlock x:Name="textHeight" Text="Height (kg.)" Margin="12,20,0,0"></TextBlock>
+                <TextBlock x:Name="textHeight" Text="Height (cm.)" Margin="12,20,0,0"></TextBlock>
                 <TextBox Name="boxHeight"></TextBox>
                 <Button x:Name="btnSaveProfile" Content="Save profile" Margin="0,20,0,0" Click="btnSaveProfile_Click"></Button>
             </StackPanel>
