@@ -117,8 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbLisgBtnEndurance" xml:space="preserve">
+    <value>выносливость</value>
+  </data>
+  <data name="AbListBtnIntel" xml:space="preserve">
+    <value>интеллект</value>
+  </data>
+  <data name="AbListBtnLuck" xml:space="preserve">
+    <value>удача</value>
+  </data>
+  <data name="AbListBtnPhysique" xml:space="preserve">
+    <value>телосложение</value>
+  </data>
+  <data name="AbListBtnPower" xml:space="preserve">
+    <value>сила</value>
+  </data>
+  <data name="AbListPageTitle" xml:space="preserve">
+    <value>выберите показатель</value>
+  </data>
   <data name="AlreadyUseCloverMessage" xml:space="preserve">
     <value>Вы уже использовали свой шанс сегодня</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>HUMAN 80 LEVEL</value>
   </data>
   <data name="DefaultEventMessage" xml:space="preserve">
     <value>Открыть клевер</value>

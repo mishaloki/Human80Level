@@ -61,11 +61,74 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на выносливость.
+        /// </summary>
+        public static string AbLisgBtnEndurance {
+            get {
+                return ResourceManager.GetString("AbLisgBtnEndurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на интеллект.
+        /// </summary>
+        public static string AbListBtnIntel {
+            get {
+                return ResourceManager.GetString("AbListBtnIntel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на удача.
+        /// </summary>
+        public static string AbListBtnLuck {
+            get {
+                return ResourceManager.GetString("AbListBtnLuck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на телосложение.
+        /// </summary>
+        public static string AbListBtnPhysique {
+            get {
+                return ResourceManager.GetString("AbListBtnPhysique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сила.
+        /// </summary>
+        public static string AbListBtnPower {
+            get {
+                return ResourceManager.GetString("AbListBtnPower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на выберите показатель.
+        /// </summary>
+        public static string AbListPageTitle {
+            get {
+                return ResourceManager.GetString("AbListPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы уже использовали свой шанс сегодня.
         /// </summary>
         public static string AlreadyUseCloverMessage {
             get {
                 return ResourceManager.GetString("AlreadyUseCloverMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на HUMAN 80 LEVEL.
+        /// </summary>
+        public static string AppTitle {
+            get {
+                return ResourceManager.GetString("AppTitle", resourceCulture);
             }
         }
         
