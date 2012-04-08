@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone;
 using Microsoft.Phone.Controls;
@@ -24,62 +25,62 @@ namespace Human80Level
         /// <summary>
         /// Message box title for incorrect height
         /// </summary>
-        private readonly string MBheightIncorrectTitle = "";
+        private readonly string MBheightIncorrectTitle = AppResources.ProfileMBheightIncorrectTitle;
 
         /// <summary>
         /// Message box title for sub zero height
         /// </summary>
-        private readonly string MBsubzeroheighTitle = "";
+        private readonly string MBsubzeroheighTitle = AppResources.ProfileMBsubzeroheighTitle;
 
         /// <summary>
         /// Message box title for sub zero height
         /// </summary>
-        private readonly string MBsubzeroheighMessage = "";
+        private readonly string MBsubzeroheighMessage = AppResources.ProfileMBsubzeroheighMessage;
 
         /// <summary>
         /// Message box message for incorrect nickname
         /// </summary>
-        private readonly string MBnickIncorrectMessage = "";
+        private readonly string MBnickIncorrectMessage = AppResources.ProfileMBnickIncorrectMessage;
 
         /// <summary>
         /// Message box title for incorrect nickname
         /// </summary>
-        private readonly string MBnickIncorrectTitle = "";
+        private readonly string MBnickIncorrectTitle = AppResources.ProfileMBnickIncorrectTitle;
 
         /// <summary>
         /// Message box message for incorrect height
         /// </summary>
-        private readonly string MBheightIncorrectMessage = "";
+        private readonly string MBheightIncorrectMessage = AppResources.ProfileMBheightIncorrectTitle;
 
         /// <summary>
         /// Message box save image error title
         /// </summary>
-        private readonly string MBsaveErrorTitle = "";
+        private readonly string MBsaveErrorTitle = AppResources.ProfileMBsaveErrorTitle;
 
         /// <summary>
         /// Message box save image error message
         /// </summary>
-        private readonly string MBsaveErrorMessage = "";
+        private readonly string MBsaveErrorMessage = AppResources.ProfileMBsaveErrorMessage;
 
         /// <summary>
         /// Message box get image error title
         /// </summary>
-        private readonly string MBgetErrorTitle = "";
+        private readonly string MBgetErrorTitle = AppResources.ProfileMBgetErrorTitle;
 
         /// <summary>
         /// Message box get image error message
         /// </summary>
-        private readonly string MBgetErrorMessage = "";
+        private readonly string MBgetErrorMessage = AppResources.ProfileMBgetErrorMessage;
 
         /// <summary>
         /// Message box update  title
         /// </summary>
-        private readonly string MBupdateTitle = "";
+        private readonly string MBupdateTitle = AppResources.ProfileMBupdateTitle;
 
         /// <summary>
         /// Message box update message
         /// </summary>
-        private readonly string MBupdateMessage = "";
+        private readonly string MBupdateMessage = AppResources.ProfileMBupdateMessage;
 
         /// <summary>
         /// Task that opens phone camera app

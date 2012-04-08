@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Navigation;
+using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 
@@ -8,6 +9,10 @@ namespace Human80Level
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private readonly string MBnewProfileTitle = AppResources.MainPageMainPageMBnewProfileTitle;
+
+        private readonly string MBnewProfileMessage = AppResources.MainPageMainPageMBnewProfileMessage;
+        
         // Конструктор
         public MainPage()
         {
@@ -25,7 +30,7 @@ namespace Human80Level
                 {
                     //TODO replace all hardcode text with constants
                     bool createNew =
-                        (MessageBox.Show("All previous result will be removed. Are you sure?", "Confirm removing profile",
+                        (MessageBox.Show(MBnewProfileMessage, MBnewProfileTitle,
                                          MessageBoxButton.OKCancel) == MessageBoxResult.OK);
                     if (!createNew)
                     {
