@@ -205,6 +205,15 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на статистика.
+        /// </summary>
+        public static string MainPageStatisticsBtn {
+            get {
+                return ResourceManager.GetString("MainPageStatisticsBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сообщение не может быть пустым.
         /// </summary>
         public static string NullOrEmptyMessageText {

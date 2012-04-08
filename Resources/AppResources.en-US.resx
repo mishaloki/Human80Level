@@ -165,6 +165,9 @@
   <data name="MainPageStartFlowBtn" xml:space="preserve">
     <value>start flow</value>
   </data>
+  <data name="MainPageStatisticsBtn" xml:space="preserve">
+    <value>statistics</value>
+  </data>
   <data name="NullOrEmptyMessageText" xml:space="preserve">
     <value>Message can't be empty. Please enter some text</value>
   </data>

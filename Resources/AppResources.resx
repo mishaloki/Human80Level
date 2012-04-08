@@ -165,6 +165,9 @@
   <data name="MainPageStartFlowBtn" xml:space="preserve">
     <value>начать прокачку</value>
   </data>
+  <data name="MainPageStatisticsBtn" xml:space="preserve">
+    <value>статистика</value>
+  </data>
   <data name="NullOrEmptyMessageText" xml:space="preserve">
     <value>Сообщение не может быть пустым</value>
   </data>
