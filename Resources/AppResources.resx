@@ -202,10 +202,10 @@
     <value>Ошибка</value>
   </data>
   <data name="ProfileMBupdateMessage" xml:space="preserve">
-    <value>Не удалось обновить профиль</value>
+    <value>Изменения были успешно сохранены</value>
   </data>
   <data name="ProfileMBupdateTitle" xml:space="preserve">
-    <value>Ошибка обновления</value>
+    <value>Профиль обновлен</value>
   </data>
   <data name="ProfilePageBtnAlbum" xml:space="preserve">
     <value>галерея</value>
