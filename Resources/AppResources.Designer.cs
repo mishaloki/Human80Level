@@ -205,6 +205,15 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на статистика.
+        /// </summary>
+        public static string MainPageStatisticsBtn {
+            get {
+                return ResourceManager.GetString("MainPageStatisticsBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сообщение не может быть пустым.
         /// </summary>
         public static string NullOrEmptyMessageText {
@@ -313,7 +322,7 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось обновить профиль.
+        ///   Ищет локализованную строку, похожую на Изменения были успешно сохранены.
         /// </summary>
         public static string ProfileMBupdateMessage {
             get {
@@ -322,7 +331,7 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка обновления.
+        ///   Ищет локализованную строку, похожую на Профиль обновлен.
         /// </summary>
         public static string ProfileMBupdateTitle {
             get {
@@ -426,6 +435,33 @@ namespace Human80Level.Resources {
         public static string RemoveEventMessageTitle {
             get {
                 return ResourceManager.GetString("RemoveEventMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на показатели.
+        /// </summary>
+        public static string StatPagePivotCommonItem {
+            get {
+                return ResourceManager.GetString("StatPagePivotCommonItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на история.
+        /// </summary>
+        public static string StatPagePivotHistoryItem {
+            get {
+                return ResourceManager.GetString("StatPagePivotHistoryItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на статистика.
+        /// </summary>
+        public static string StatPagePivotTitle {
+            get {
+                return ResourceManager.GetString("StatPagePivotTitle", resourceCulture);
             }
         }
         

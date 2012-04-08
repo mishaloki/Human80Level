@@ -165,6 +165,9 @@
   <data name="MainPageStartFlowBtn" xml:space="preserve">
     <value>start flow</value>
   </data>
+  <data name="MainPageStatisticsBtn" xml:space="preserve">
+    <value>statistics</value>
+  </data>
   <data name="NullOrEmptyMessageText" xml:space="preserve">
     <value>Message can't be empty. Please enter some text</value>
   </data>
@@ -202,10 +205,10 @@
     <value>Error</value>
   </data>
   <data name="ProfileMBupdateMessage" xml:space="preserve">
-    <value>Profile wasn't updated</value>
+    <value>Changes were saved</value>
   </data>
   <data name="ProfileMBupdateTitle" xml:space="preserve">
-    <value>Update error</value>
+    <value>Profile was sucsessfully updated</value>
   </data>
   <data name="ProfilePageBtnAlbum" xml:space="preserve">
     <value>album</value>
@@ -239,6 +242,15 @@
   </data>
   <data name="RemoveEventMessageTitle" xml:space="preserve">
     <value>Confirm removing</value>
+  </data>
+  <data name="StatPagePivotCommonItem" xml:space="preserve">
+    <value>indicators</value>
+  </data>
+  <data name="StatPagePivotHistoryItem" xml:space="preserve">
+    <value>history</value>
+  </data>
+  <data name="StatPagePivotTitle" xml:space="preserve">
+    <value>statistics</value>
   </data>
   <data name="SuccessAddMessage" xml:space="preserve">
     <value>Event has been added</value>

@@ -77,8 +77,9 @@ namespace Human80Level.Utils
                 if (settings.Contains(ProfileSettingsName))
                 {
                     settings.Remove(ProfileSettingsName);
+                    settings.Save();
                     DBHelper.DeleteDatabase();
-                    CurrentProfile = null;
+                    CurrentProfile = null;                    
                     Logger.Info("RemoveProfile", "Profile was deleted");
                     return true;
                 }

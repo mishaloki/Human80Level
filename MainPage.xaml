@@ -42,9 +42,15 @@
                 
             </Button>
 
+            <Button x:Name="btnStatistics" Width="auto" Height="auto" Content="{Binding Path=LocalizedResources.MainPageStatisticsBtn, Source={StaticResource LocalizedStrings}}" Click="btnStatistics_Click">
+
+            </Button>
+
             <Button x:Name="btnAbout" Width="auto" Height="auto" Content="{Binding Path=LocalizedResources.MainPageAboutBtn, Source={StaticResource LocalizedStrings}}" Click="btnAbout_Click">
                 
             </Button>
+
+            
         </StackPanel>
         
     </Grid>

@@ -111,7 +111,11 @@ namespace Human80Level
                 if (!string.IsNullOrEmpty(profile.AvatarUri))
                 {
                     imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
-                }  
+                }
+                else
+                {
+                    imgAvatar.Source = null;
+                }
                 SetStartFlowBtnState(true);
             }
             catch (Exception err)
@@ -142,10 +146,24 @@ namespace Human80Level
             if (isProfileExist)
             {
                 btnStartFlow.IsEnabled = true;
+                btnStatistics.IsEnabled = true;
             }
             else
             {
                 btnStartFlow.IsEnabled = false;
+                btnStatistics.IsEnabled = false;
+            }
+        }
+
+        private void btnStatistics_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.NavigationService.Navigate(new Uri("/Statistics/PageStatistics.xaml", UriKind.Relative));
+            }
+            catch (Exception err)
+            {
+                Logger.Error("btnStatistics_Click", err.Message);
             }
         }
     }

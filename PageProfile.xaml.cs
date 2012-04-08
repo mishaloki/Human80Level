@@ -50,7 +50,7 @@ namespace Human80Level
         /// <summary>
         /// Message box message for incorrect height
         /// </summary>
-        private readonly string MBheightIncorrectMessage = AppResources.ProfileMBheightIncorrectTitle;
+        private readonly string MBheightIncorrectMessage = AppResources.ProfileMBheightIncorrectMessage;
 
         /// <summary>
         /// Message box save image error title
@@ -114,13 +114,13 @@ namespace Human80Level
             {
                 if (string.IsNullOrEmpty(textNickName.Text))
                 {
-                    MessageBox.Show(MBnickIncorrectTitle, MBnickIncorrectMessage, MessageBoxButton.OK);
+                    MessageBox.Show(MBnickIncorrectMessage, MBnickIncorrectTitle, MessageBoxButton.OK);
                     return;
                 }
                 int height;
                 if (!int.TryParse(boxHeight.Text,out height))
                 {
-                    MessageBox.Show(MBheightIncorrectTitle, MBheightIncorrectMessage, MessageBoxButton.OK);
+                    MessageBox.Show(MBheightIncorrectMessage, MBheightIncorrectTitle, MessageBoxButton.OK);
                     return;
                 }
                 if (height < 0)

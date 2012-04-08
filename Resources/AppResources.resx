@@ -165,6 +165,9 @@
   <data name="MainPageStartFlowBtn" xml:space="preserve">
     <value>начать прокачку</value>
   </data>
+  <data name="MainPageStatisticsBtn" xml:space="preserve">
+    <value>статистика</value>
+  </data>
   <data name="NullOrEmptyMessageText" xml:space="preserve">
     <value>Сообщение не может быть пустым</value>
   </data>
@@ -202,10 +205,10 @@
     <value>Ошибка</value>
   </data>
   <data name="ProfileMBupdateMessage" xml:space="preserve">
-    <value>Не удалось обновить профиль</value>
+    <value>Изменения были успешно сохранены</value>
   </data>
   <data name="ProfileMBupdateTitle" xml:space="preserve">
-    <value>Ошибка обновления</value>
+    <value>Профиль обновлен</value>
   </data>
   <data name="ProfilePageBtnAlbum" xml:space="preserve">
     <value>галерея</value>
@@ -239,6 +242,15 @@
   </data>
   <data name="RemoveEventMessageTitle" xml:space="preserve">
     <value>Подтвердите удаление</value>
+  </data>
+  <data name="StatPagePivotCommonItem" xml:space="preserve">
+    <value>показатели</value>
+  </data>
+  <data name="StatPagePivotHistoryItem" xml:space="preserve">
+    <value>история</value>
+  </data>
+  <data name="StatPagePivotTitle" xml:space="preserve">
+    <value>статистика</value>
   </data>
   <data name="SuccessAddMessage" xml:space="preserve">
     <value>Событие добавлено</value>
