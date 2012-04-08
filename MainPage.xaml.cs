@@ -67,6 +67,10 @@ namespace Human80Level
         private void ShowProfileInfor()
         {
             Profile.Profile profile = ProfileManager.getProfile();
+            if (profile == null)
+            {
+                return; ;
+            }
             textNickName.Text = profile.NickName;
             textProgress.Text = profile.CurrentLevel.ToString();
             if (!string.IsNullOrEmpty(profile.AvatarUri))

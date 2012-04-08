@@ -126,6 +126,10 @@ namespace Human80Level
         private void ShowProfile()
         {
             Profile.Profile profile = ProfileManager.getProfile();
+            if (profile == null)
+            {
+                return;
+            }
             textNickName.Text = profile.NickName;
             boxHeight.Text = profile.Heigth.ToString();
             imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
