@@ -57,9 +57,19 @@ namespace Human80Level
         private readonly string MBgetErrorTitle = "";
 
         /// <summary>
-        /// Message box get image error messasge
+        /// Message box get image error message
         /// </summary>
         private readonly string MBgetErrorMessage = "";
+
+        /// <summary>
+        /// Message box update  title
+        /// </summary>
+        private readonly string MBupdateTitle = "";
+
+        /// <summary>
+        /// Message box update message
+        /// </summary>
+        private readonly string MBupdateMessage = "";
 
         /// <summary>
         /// Task that opens phone camera app
@@ -106,6 +116,7 @@ namespace Human80Level
                 DateTime birth = dateBirth.Value.Value;
                 Profile.Profile profile = new Profile.Profile(textNickName.Text, avatarUrl, 0, true, 0, birth, height);
                 ProfileManager.UpdateProfile(profile);
+                MessageBox.Show(MBupdateMessage,MBupdateTitle,MessageBoxButton.OK);
             }
             catch (Exception err)
             {
@@ -244,7 +255,7 @@ namespace Human80Level
             {               
                 if (this.NavigationContext.QueryString.ContainsKey("new"))
                 {
-
+                    ProfileManager.RemoveProfile();
                 }
                 else
                 {
@@ -264,15 +275,18 @@ namespace Human80Level
         {
             try
             {
-                Profile.Profile profile = ProfileManager.getProfile();
+                Profile.Profile profile = ProfileManager.GetProfile();
                 if (profile == null)
                 {
                     return;
                 }
                 textNickName.Text = profile.NickName;
                 boxHeight.Text = profile.Heigth.ToString();
-                imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
                 dateBirth.Value = profile.Birth;
+                if (!string.IsNullOrEmpty(profile.AvatarUri))
+                {
+                    imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
+                }                              
             }
             catch (Exception e)
             {
