@@ -21,7 +21,29 @@
                 </ImageBrush>
             </controls:Pivot.Background>
             <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotCommonItem, Source={StaticResource LocalizedStrings}}">
-                
+                <ListBox Name="listIndicators" Grid.Row="1">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="460" >
+                                <TextBlock Name="abTitle" Text="{Binding Title}"></TextBlock>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Name="imgBegin" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding BeginIconUri}"></Image>
+                                    <Image Name="imgEnd" Height="100" Width="100" Grid.Column="1" HorizontalAlignment="Right" Source="{Binding EndIconUri}"></Image>
+                                </Grid>
+                                <ProgressBar Name="abProgress" Value="50" Maximum="100"></ProgressBar>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Name="abLevetlTitle"></TextBlock>
+                                    <TextBlock Name="abLevelValue" Text="{Binding CurrentLevel}"></TextBlock>
+                                </StackPanel>                              
+                                <TextBlock Name="abLevelDescript" Text="{Binding Description}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </controls:PivotItem>
 
             <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotHistoryItem, Source={StaticResource LocalizedStrings}}">
