@@ -36,66 +36,98 @@ namespace Human80Level
 
         private void btnSaveProfile_Click(object sender, RoutedEventArgs e)
         {
-            DateTime birth = dateBirth.Value.Value;
-            int height = int.Parse(boxHeight.Text);
-            Profile.Profile profile = new Profile.Profile(textNickName.Text,avatarUrl,0,true,0,birth,height);
-            ProfileManager.UpdateProfile(profile); 
+            try
+            {
+                DateTime birth = dateBirth.Value.Value;
+                int height = int.Parse(boxHeight.Text);
+                Profile.Profile profile = new Profile.Profile(textNickName.Text, avatarUrl, 0, true, 0, birth, height);
+                ProfileManager.UpdateProfile(profile);
+            }
+            catch (Exception err)
+            {
+                Logger.Error("ShowProfile", err.Message);
+            }
+ 
         }
 
         private void btnImageEmpty_Click(object sender, RoutedEventArgs e)
         {
-            avatarUrl = string.Empty;
-            imgAvatar.Source = null;
+            try
+            {
+                avatarUrl = string.Empty;
+                imgAvatar.Source = null;
+            }
+            catch (Exception err)
+            {
+                Logger.Error("ShowProfile", err.Message);
+            }
+
         }
 
         public void GetPicture(bool fromCamera)
         {
-            if (fromCamera)
+            try
             {
-                cameraTask = new CameraCaptureTask();
-                cameraTask.Completed += onTaskCompleted;
-                cameraTask.Show();
+                if (fromCamera)
+                {
+                    cameraTask = new CameraCaptureTask();
+                    cameraTask.Completed += onTaskCompleted;
+                    cameraTask.Show();
+                }
+                else
+                {
+                    photoChooserTask = new PhotoChooserTask();
+                    photoChooserTask.Completed += onTaskCompleted;
+                    photoChooserTask.Show();
+                }
             }
-            else
+            catch (Exception err)
             {
-                photoChooserTask = new PhotoChooserTask();
-                photoChooserTask.Completed += onTaskCompleted;
-                photoChooserTask.Show();             
+                Logger.Error("ShowProfile", err.Message);
             }
+
 
         }
 
         public void onTaskCompleted(object sender, PhotoResult e)
         {
-            if (e.Error != null)
+            try
             {
-                
-                return;
-            }
+                if (e.Error != null)
+                {
 
-            switch (e.TaskResult)
+                    return;
+                }
+
+                switch (e.TaskResult)
+                {
+                    case TaskResult.OK:
+                        try
+                        {
+                            string imagePathOrContent = string.Empty;
+                            WriteableBitmap image = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
+                            imagePathOrContent = StorageManager.SaveImageToStorage(image);
+                            avatarUrl = imagePathOrContent;
+                            imgAvatar.Source = StorageManager.GetImageFromStorage(avatarUrl);
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                        break;
+
+                    case TaskResult.Cancel:
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            catch (Exception err)
             {
-                case TaskResult.OK:
-                    try
-                    {
-                        string imagePathOrContent = string.Empty;
-                        WriteableBitmap image = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
-                        imagePathOrContent = StorageManager.SaveImageToStorage(image);
-                        avatarUrl = imagePathOrContent;
-                        imgAvatar.Source = StorageManager.GetImageFromStorage(avatarUrl);
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                    break;
-
-                case TaskResult.Cancel:
-                    break;
-
-                default:
-                    break;
+                Logger.Error("ShowProfile", err.Message);
             }
+            
         }
 
         private void btnImageAlbum_Click(object sender, RoutedEventArgs e)
@@ -110,30 +142,46 @@ namespace Human80Level
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
+            try
+            {
+                base.OnNavigatedTo(e);
 
-            if (this.NavigationContext.QueryString.ContainsKey("new"))
-            {
-                
+                if (this.NavigationContext.QueryString.ContainsKey("new"))
+                {
+
+                }
+                else
+                {
+                    ShowProfile();
+                }
             }
-            else
+            catch (Exception err)
             {
-                ShowProfile();
+                Logger.Error("ShowProfile", err.Message);
             }
+
             
         }
 
         private void ShowProfile()
         {
-            Profile.Profile profile = ProfileManager.getProfile();
-            if (profile == null)
+            try
             {
-                return;
+                Profile.Profile profile = ProfileManager.getProfile();
+                if (profile == null)
+                {
+                    return;
+                }
+                textNickName.Text = profile.NickName;
+                boxHeight.Text = profile.Heigth.ToString();
+                imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
+                dateBirth.Value = profile.Birth;
             }
-            textNickName.Text = profile.NickName;
-            boxHeight.Text = profile.Heigth.ToString();
-            imgAvatar.Source = StorageManager.GetImageFromStorage(profile.AvatarUri);
-            dateBirth.Value = profile.Birth;
+            catch (Exception e)
+            {
+                Logger.Error("ShowProfile", e.Message);
+            }
+
         }
     }
 }

@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Human80Level.Ability.Luck;
 using Human80Level.Database;
 using Human80Level.Resources;
+using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 using System.Linq;
 
@@ -23,7 +24,7 @@ namespace Human80Level
 {
     public partial class PageAbilityLuck : PhoneApplicationPage
     {
-        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        //private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         
         private readonly string CloverImageUrl = "/Images/Ability/Luck/clover.png";
 
@@ -45,7 +46,7 @@ namespace Human80Level
 
         private ObservableCollection <Event> eventList;
 
-        private static readonly string LoggerMessageFormat = "Errot in {0}, message: {1}";
+        private static readonly string LoggerMessageFormat = "Error in {0}, message: {1}";
         
         public PageAbilityLuck()
         {
@@ -64,7 +65,7 @@ namespace Human80Level
             {
                 //DBHelper.DeleteDatabase();
                 DBHelper.CreateDatabase();
-                eventList = LuckEventManager.getEventList();
+                eventList = LuckEventManager.GetEventList();
                 listEventList.ItemsSource = eventList;
                 Event message = (from luckEventMessage in eventList
                                             where
@@ -81,7 +82,7 @@ namespace Human80Level
             }
             catch (Exception error)
             {
-                logger.Error(string.Format(LoggerMessageFormat, "CheckTryLuckEvent", error.Message));
+                Logger.Error(string.Format(LoggerMessageFormat, "CheckTryLuckEvent", error.Message));
             }
         }
 
@@ -128,7 +129,7 @@ namespace Human80Level
             }
             catch (Exception error)
             {
-                logger.Error(string.Format(LoggerMessageFormat, "TryLuck", error.Message));
+                Logger.Error(string.Format(LoggerMessageFormat, "TryLuck", error.Message));
             }
         }
 
@@ -142,7 +143,7 @@ namespace Human80Level
             }
             catch (Exception error)
             {
-                logger.Error(string.Format(LoggerMessageFormat, "isLuck", error.Message));
+                Logger.Error(string.Format(LoggerMessageFormat, "isLuck", error.Message));
                 return false;
             }
           
@@ -176,7 +177,7 @@ namespace Human80Level
             }
             catch (Exception error)
             {
-                logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
+                Logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
             }
 
         }
@@ -255,7 +256,7 @@ namespace Human80Level
             }
             catch (Exception error)
             {
-                logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
+                Logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
             }
             
         }

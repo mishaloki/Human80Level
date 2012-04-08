@@ -11,42 +11,65 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Human80Level.Database;
+using Human80Level.Utils;
 
 namespace Human80Level.Ability.Luck
 {
     public static class LuckEventManager
     {
-        public static ObservableCollection<Event> getEventList()
+        public static ObservableCollection<Event> GetEventList()
         {
-            //ObservableCollection<Event> eventList = new ObservableCollection<Event>();
-            //eventList.Add(new Event("message 1",DateTime.Now,true));
-            //eventList.Add(new Event("message 2", DateTime.Now, true));
-            //eventList.Add(new Event("message 3", DateTime.Now, true));
-            //eventList.Add(new Event("message 4", DateTime.Now, true));
-            //eventList.Add(new Event("message 5", DateTime.Now, true));
-            //eventList.Add(new Event("message 6", DateTime.Now, true));
-            //eventList.Add(new Event("message 7", DateTime.Now, true));
-            //return eventList;
-            ObservableCollection<Event> eventList = DBHelper.GetEventList();
-            return eventList;
+            try
+            {
+                ObservableCollection<Event> eventList = DBHelper.GetEventList();
+                return eventList;
+            }
+            catch (Exception e)
+            {
+                Logger.Error("GetEventList", e.Message);
+                return null;
+            }
+            
         }
 
         public static void AddEventMessage(Event eventMessage)
         {
-            //MessageBox.Show("AddEventMessage");
-            DBHelper.AddEvent(eventMessage);
+            try
+            {
+                DBHelper.AddEvent(eventMessage);
+            }
+            catch (Exception e)
+            {
+                Logger.Error("AddEventMessage", e.Message);
+            }
+            
         }
 
 
         public static void RemoveEventMessage (Event eventMessage)
         {
-            //MessageBox.Show("RemoveEventMessage");
-            DBHelper.RemoveEvent(eventMessage);
+            try
+            {
+                DBHelper.RemoveEvent(eventMessage);
+            }
+            catch (Exception e)
+            {
+                Logger.Error("RemoveEventMessage", e.Message);
+            }
+            
         }
 
         public static void UpdateEventMessage (Event eventMessage)
         {
-            MessageBox.Show("UpdateEventMessage");
+            try
+            {
+                MessageBox.Show("UpdateEventMessage");
+            }
+            catch (Exception e)
+            {
+                Logger.Error("UpdateEventMessage", e.Message);
+            }
+            
         }
     }
 }
