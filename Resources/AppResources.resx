@@ -147,11 +147,92 @@
   <data name="LuckPageTryLuckLabel" xml:space="preserve">
     <value>Угадайте в каком квадрате спрятан клевер</value>
   </data>
+  <data name="MainPageAboutBtn" xml:space="preserve">
+    <value>о программе</value>
+  </data>
+  <data name="MainPageHelpBtn" xml:space="preserve">
+    <value>помощь</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileMessage" xml:space="preserve">
+    <value>Ваш текущий профиль будет удален всесте с накопленной статистикой. Продолжить?</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileTitle" xml:space="preserve">
+    <value>Подтвердите удаление профиля</value>
+  </data>
+  <data name="MainPageNewProfileBtn" xml:space="preserve">
+    <value>новый профиль</value>
+  </data>
+  <data name="MainPageStartFlowBtn" xml:space="preserve">
+    <value>начать прокачку</value>
+  </data>
   <data name="NullOrEmptyMessageText" xml:space="preserve">
     <value>Сообщение не может быть пустым</value>
   </data>
   <data name="NullOrEmptyMessageTitle" xml:space="preserve">
     <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBgetErrorMessage" xml:space="preserve">
+    <value>Не удалолсь загрузить профиль</value>
+  </data>
+  <data name="ProfileMBgetErrorTitle" xml:space="preserve">
+    <value>Ошибка загрузки профиля</value>
+  </data>
+  <data name="ProfileMBheightIncorrectMessage" xml:space="preserve">
+    <value>Вес должен быть целым числом</value>
+  </data>
+  <data name="ProfileMBheightIncorrectTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBnickIncorrectMessage" xml:space="preserve">
+    <value>Имя не может быть пустым</value>
+  </data>
+  <data name="ProfileMBnickIncorrectTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBsaveErrorMessage" xml:space="preserve">
+    <value>Не удалось сохранить профиль.</value>
+  </data>
+  <data name="ProfileMBsaveErrorTitle" xml:space="preserve">
+    <value>Ошибка сохранения</value>
+  </data>
+  <data name="ProfileMBsubzeroheighMessage" xml:space="preserve">
+    <value>Вес не может быть меньше нуля</value>
+  </data>
+  <data name="ProfileMBsubzeroheighTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBupdateMessage" xml:space="preserve">
+    <value>Не удалось обновить профиль</value>
+  </data>
+  <data name="ProfileMBupdateTitle" xml:space="preserve">
+    <value>Ошибка обновления</value>
+  </data>
+  <data name="ProfilePageBtnAlbum" xml:space="preserve">
+    <value>галерея</value>
+  </data>
+  <data name="ProfilePageBtnCamera" xml:space="preserve">
+    <value>камера</value>
+  </data>
+  <data name="ProfilePageBtnEmpty" xml:space="preserve">
+    <value>пустой</value>
+  </data>
+  <data name="ProfilePageBtnSave" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="ProfilePageTextBirth" xml:space="preserve">
+    <value>дата рождения</value>
+  </data>
+  <data name="ProfilePageTextHeight" xml:space="preserve">
+    <value>рост</value>
+  </data>
+  <data name="ProfilePageTextNickname" xml:space="preserve">
+    <value>имя</value>
+  </data>
+  <data name="ProfilePageTextSelectAvatar" xml:space="preserve">
+    <value>выбери аватар</value>
+  </data>
+  <data name="ProfilePageTitle" xml:space="preserve">
+    <value>Профиль</value>
   </data>
   <data name="RemoveEventMessageText" xml:space="preserve">
     <value>Событие будет удалено. Продолжить?</value>
