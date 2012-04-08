@@ -24,8 +24,9 @@ namespace Human80Level.Utils
             double level = 0;
             double delta = 0;
             bool isProgress = true;
-
-            Profile.Profile profile = new Human80Level.Profile.Profile(name,avatar,level,isProgress,delta);
+            DateTime birth = DateTime.Now;
+            double height = 190;
+            Profile.Profile profile = null;// new Human80Level.Profile.Profile(name, avatar, level, isProgress, delta, birth, height);
             //TODO Implemented logic to check if profile already exist
             IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
             if (settings.Contains(ProfileSettingsName))
