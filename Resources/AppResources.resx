@@ -135,8 +135,44 @@
   <data name="AbListPageTitle" xml:space="preserve">
     <value>выберите показатель</value>
   </data>
+  <data name="ALevelLabel" xml:space="preserve">
+    <value>Текущий уровень</value>
+  </data>
   <data name="AlreadyUseCloverMessage" xml:space="preserve">
     <value>Вы уже использовали свой шанс сегодня</value>
+  </data>
+  <data name="ALuckD" xml:space="preserve">
+    <value>показывает насколько часто обстоятельства складываются в вашу пользу</value>
+  </data>
+  <data name="ALuckL1" xml:space="preserve">
+    <value>Вы полный неудачник. Даже в списке самых неудачных людей планеты вы на втором месте</value>
+  </data>
+  <data name="ALuckL2" xml:space="preserve">
+    <value>Учача стоит к вам спиной. </value>
+  </data>
+  <data name="ALuckL3" xml:space="preserve">
+    <value>Никогда не знаешь чего ждать от судьбы. Ваши шансы 50/50</value>
+  </data>
+  <data name="ALuckL4" xml:space="preserve">
+    <value>Удача на вашей стороне. Рекомендуем вам почаще покупать лотерейные билеты</value>
+  </data>
+  <data name="ALuckL5" xml:space="preserve">
+    <value>Вашему вензению нет предела. Вы можете играть в русскую рулетку с 6 патронами в барабане.</value>
+  </data>
+  <data name="APower1" xml:space="preserve">
+    <value>Вы настолько слабы что даже дети могут вас избить</value>
+  </data>
+  <data name="APower2" xml:space="preserve">
+    <value>Вас уже не сносит ветром</value>
+  </data>
+  <data name="APower3" xml:space="preserve">
+    <value>Вы пволне можете постоять за себя</value>
+  </data>
+  <data name="APower4" xml:space="preserve">
+    <value>В поединке с терминатором вы вероятно победите</value>
+  </data>
+  <data name="APower5" xml:space="preserve">
+    <value>Вы Час Норрис</value>
   </data>
   <data name="AppTitle" xml:space="preserve">
     <value>HUMAN 80 LEVEL</value>
