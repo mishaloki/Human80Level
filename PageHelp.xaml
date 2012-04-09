@@ -16,18 +16,21 @@
 
     <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="help">
+        <controls:Pivot Title="{Binding Path=LocalizedResources.StatPagePivotTitle, Source={StaticResource LocalizedStrings}}">
+            <controls:Pivot.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Statistics/statistics.png" Opacity="0.5" x:Name="pivotBgBrush">
 
-            <!--Первый элемент Panorama-->
-            <controls:PanoramaItem Header="common rules">
-                <Grid/>
-            </controls:PanoramaItem>
+                </ImageBrush>
+            </controls:Pivot.Background>
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotCommonItem, Source={StaticResource LocalizedStrings}}">
+                
+            </controls:PivotItem>
 
-            <!--Второй элемент Panorama-->
-            <controls:PanoramaItem Header="main menu">
-                <Grid/>
-            </controls:PanoramaItem>
-        </controls:Panorama>
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotHistoryItem, Source={StaticResource LocalizedStrings}}">
+
+            </controls:PivotItem>
+
+        </controls:Pivot>
     </Grid>
 
     <!--Приложения на базе панорамы не должны содержать ApplicationBar-->
