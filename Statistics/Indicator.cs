@@ -23,7 +23,7 @@ namespace Human80Level.Statistics
 
         public string[] Levels { get; set; }
 
-        public int CurrentLevel { get; set; }
+        public string CurrentLevel { get; set; }
 
         public int CurrentValue { get; set; }
 
@@ -34,7 +34,7 @@ namespace Human80Level.Statistics
             this.BeginIconUri = beginIconUri;
             this.EndIconUri = endIconUri;
             this.Levels = levels;
-            this.CurrentLevel = currentLevel;
+            this.CurrentLevel = this.Levels[currentLevel];
             this.CurrentValue = currentValue;
         }
     }
