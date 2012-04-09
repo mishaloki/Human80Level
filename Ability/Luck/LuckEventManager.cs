@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -68,6 +69,77 @@ namespace Human80Level.Ability.Luck
             catch (Exception e)
             {
                 Logger.Error("UpdateEventMessage", e.Message);
+            }
+            
+        }
+
+        public static int GetValue()
+        {
+            int dif = GetDifference();
+            if (dif < 0)
+            {
+                dif = 0;
+            }
+            else
+            {
+                if (dif > 100)
+                {
+                    dif = 100;
+                }
+            }
+            return dif;
+        }
+
+        public static int GetLevel()
+        {
+            int dif = GetDifference();
+            int level = 0;
+            if (dif < 10)
+            {
+                level = 0;
+            }
+            else
+            {
+                if (dif < 20)
+                {
+                    level = 1;
+                }
+                else
+                {
+                    if (dif < 35)
+                    {
+                        level = 2;
+                    }
+                    else
+                    {
+                        if (dif < 50)
+                        {
+                            level = 3;
+                        }
+                        else
+                        {
+                            level = 4;
+                        }
+                    }
+                }
+            }
+
+            return level;
+        }
+
+        private static int GetDifference()
+        {
+            try
+            {
+                ObservableCollection<Event> events = GetEventList();
+                int luckEventNumb = (from @event in events where @event.IsLuck select @event).Count();
+                int dif = luckEventNumb - (events.Count - luckEventNumb);
+                return dif;
+            }
+            catch (Exception err)
+            {
+                Logger.Error("GetDifference", err.Message);
+                return 0;
             }
             
         }

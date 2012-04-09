@@ -115,11 +115,119 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Текущий уровень.
+        /// </summary>
+        public static string ALevelLabel {
+            get {
+                return ResourceManager.GetString("ALevelLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы уже использовали свой шанс сегодня.
         /// </summary>
         public static string AlreadyUseCloverMessage {
             get {
                 return ResourceManager.GetString("AlreadyUseCloverMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает насколько часто обстоятельства складываются в вашу пользу.
+        /// </summary>
+        public static string ALuckD {
+            get {
+                return ResourceManager.GetString("ALuckD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы полный неудачник. Даже в списке самых неудачных людей планеты вы на втором месте.
+        /// </summary>
+        public static string ALuckL1 {
+            get {
+                return ResourceManager.GetString("ALuckL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Учача стоит к вам спиной. .
+        /// </summary>
+        public static string ALuckL2 {
+            get {
+                return ResourceManager.GetString("ALuckL2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Никогда не знаешь чего ждать от судьбы. Ваши шансы 50/50.
+        /// </summary>
+        public static string ALuckL3 {
+            get {
+                return ResourceManager.GetString("ALuckL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Удача на вашей стороне. Рекомендуем вам почаще покупать лотерейные билеты.
+        /// </summary>
+        public static string ALuckL4 {
+            get {
+                return ResourceManager.GetString("ALuckL4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вашему вензению нет предела. Вы можете играть в русскую рулетку с 6 патронами в барабане..
+        /// </summary>
+        public static string ALuckL5 {
+            get {
+                return ResourceManager.GetString("ALuckL5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы настолько слабы что даже дети могут вас избить.
+        /// </summary>
+        public static string APower1 {
+            get {
+                return ResourceManager.GetString("APower1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вас уже не сносит ветром.
+        /// </summary>
+        public static string APower2 {
+            get {
+                return ResourceManager.GetString("APower2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы пволне можете постоять за себя.
+        /// </summary>
+        public static string APower3 {
+            get {
+                return ResourceManager.GetString("APower3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на В поединке с терминатором вы вероятно победите.
+        /// </summary>
+        public static string APower4 {
+            get {
+                return ResourceManager.GetString("APower4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы Час Норрис.
+        /// </summary>
+        public static string APower5 {
+            get {
+                return ResourceManager.GetString("APower5", resourceCulture);
             }
         }
         
