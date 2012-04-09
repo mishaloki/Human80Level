@@ -312,4 +312,13 @@
   <data name="SuccessAddMessage" xml:space="preserve">
     <value>Событие добавлено</value>
   </data>
+  <data name="HelpCommon" xml:space="preserve">
+    <value>общие сведения</value>
+  </data>
+  <data name="HelpMainMenu" xml:space="preserve">
+    <value>гланое меню</value>
+  </data>
+  <data name="HelpPivotTitle" xml:space="preserve">
+    <value>помощь</value>
+  </data>
 </root>

@@ -250,6 +250,33 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на общие сведения.
+        /// </summary>
+        public static string HelpCommon {
+            get {
+                return ResourceManager.GetString("HelpCommon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на гланое меню.
+        /// </summary>
+        public static string HelpMainMenu {
+            get {
+                return ResourceManager.GetString("HelpMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на помощь.
+        /// </summary>
+        public static string HelpPivotTitle {
+            get {
+                return ResourceManager.GetString("HelpPivotTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на очистить.
         /// </summary>
         public static string LuckPageClearButtonCaption {
