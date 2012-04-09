@@ -31,10 +31,16 @@
             </controls:PivotItem>
 
             <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListBtnLuck, Source={StaticResource LocalizedStrings}}">
-                <StackPanel>
-                    <TextBlock Text="add event page"></TextBlock>
-                    <TextBlock Text="add event page"></TextBlock>
-                </StackPanel>
+                <ScrollViewer>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleAdd, Source={StaticResource LocalizedStrings}}" Margin="0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMadd, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleList, Source={StaticResource LocalizedStrings}}" Margin="0,30,0,0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMlist, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleTry, Source={StaticResource LocalizedStrings}}" Margin="0,30,0,0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMtry, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
             </controls:PivotItem>
 
         </controls:Pivot>

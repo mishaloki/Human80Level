@@ -259,6 +259,60 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на на этой страцице вы можете ввести любое событие вашей жизни произошедшее в текущий день. Данное событие может быть либо удачным для вас, либо наоборот неудачным. В записимости от этого после ввода события нажмити одну из друз кнопок - с клевером или перечеркнутым клевером. После этого событие будет добавлено в список событий. Вы можете ввести любое количество событий, но все они будут сохранены со временм ввода..
+        /// </summary>
+        public static string HelpLuckMadd {
+            get {
+                return ResourceManager.GetString("HelpLuckMadd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на здесь отображается список всех введеннх вами событий. Вверху показано колиство удачных и неудачных событий. Вы можете удалить любое событие нажав два раза на него. Так же если вы выберите событие из списка и затем перейдете на страницу добавления события, то текст события будет автоматически скопирован в поле ввода. Таким образом вы можете сэкономить время для ввода повторяющихся событий..
+        /// </summary>
+        public static string HelpLuckMlist {
+            get {
+                return ResourceManager.GetString("HelpLuckMlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на один раз в день вы можете испытывать удачу откурывая один из друх закрытых квадратов. Если вы откроете изображение клевера, то событие будет добавлено как удачное, в противном случае как неудачное. Чтобы открыть квадрат нажмите на него и удреживайти в течении 1-2 секунд..
+        /// </summary>
+        public static string HelpLuckMtry {
+            get {
+                return ResourceManager.GetString("HelpLuckMtry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Добавить событие&quot;.
+        /// </summary>
+        public static string HelpLuckTitleAdd {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Список событий&quot;.
+        /// </summary>
+        public static string HelpLuckTitleList {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Испытай удачу&quot;.
+        /// </summary>
+        public static string HelpLuckTitleTry {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleTry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на гланое меню.
         /// </summary>
         public static string HelpMainMenu {
