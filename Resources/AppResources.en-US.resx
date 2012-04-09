@@ -312,4 +312,13 @@
   <data name="SuccessAddMessage" xml:space="preserve">
     <value>Event has been added</value>
   </data>
+  <data name="HelpCommon" xml:space="preserve">
+    <value>common rules</value>
+  </data>
+  <data name="HelpMainMenu" xml:space="preserve">
+    <value>menu</value>
+  </data>
+  <data name="HelpPivotTitle" xml:space="preserve">
+    <value>help</value>
+  </data>
 </root>
