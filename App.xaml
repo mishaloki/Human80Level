@@ -3,10 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" xmlns:Utils="clr-namespace:Human80Level.Utils">
 
     <!--Ресурсы приложения-->
     <Application.Resources>
+        <Utils:LocalizedStrings xmlns:local="clr-namespace:Human80Level.Resources" x:Key="LocalizedStrings" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

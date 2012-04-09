@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbLisgBtnEndurance" xml:space="preserve">
+    <value>endurance</value>
+  </data>
+  <data name="AbListBtnIntel" xml:space="preserve">
+    <value>intelligance</value>
+  </data>
+  <data name="AbListBtnLuck" xml:space="preserve">
+    <value>luck</value>
+  </data>
+  <data name="AbListBtnPhysique" xml:space="preserve">
+    <value>physique</value>
+  </data>
+  <data name="AbListBtnPower" xml:space="preserve">
+    <value>power</value>
+  </data>
+  <data name="AbListPageTitle" xml:space="preserve">
+    <value>abilities</value>
+  </data>
+  <data name="ALevelLabel" xml:space="preserve">
+    <value>Current level</value>
+  </data>
+  <data name="AlreadyUseCloverMessage" xml:space="preserve">
+    <value>You have already use clover today</value>
+  </data>
+  <data name="ALuckD" xml:space="preserve">
+    <value>показывает насколько часто обстоятельства складываются в вашу пользу</value>
+  </data>
+  <data name="ALuckL1" xml:space="preserve">
+    <value>you are a loser.</value>
+  </data>
+  <data name="ALuckL2" xml:space="preserve">
+    <value>Учача стоит к вам спиной. </value>
+  </data>
+  <data name="ALuckL3" xml:space="preserve">
+    <value>Никогда не знаешь чего ждать от судьбы. Ваши шансы 50/50</value>
+  </data>
+  <data name="ALuckL4" xml:space="preserve">
+    <value>Удача на вашей стороне. Рекомендуем вам почаще покупать лотерейные билеты</value>
+  </data>
+  <data name="ALuckL5" xml:space="preserve">
+    <value>Вашему вензению нет предела. Вы можете играть в русскую рулетку с 6 патронами в барабане.</value>
+  </data>
+  <data name="APower1" xml:space="preserve">
+    <value>Вы настолько слабы что даже дети могут вас избить</value>
+  </data>
+  <data name="APower2" xml:space="preserve">
+    <value>Вас уже не сносит ветром</value>
+  </data>
+  <data name="APower3" xml:space="preserve">
+    <value>You can defend yourself</value>
+  </data>
+  <data name="APower4" xml:space="preserve">
+    <value>В поединке с терминатором вы вероятно победите</value>
+  </data>
+  <data name="APower5" xml:space="preserve">
+    <value>You are Chuck Norris</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>HUMAN 80 LEVEL</value>
+  </data>
+  <data name="DefaultEventMessage" xml:space="preserve">
+    <value>Open clover</value>
+  </data>
+  <data name="LuckPageClearButtonCaption" xml:space="preserve">
+    <value>clear</value>
+  </data>
+  <data name="LuckPageMessageBoxCaption" xml:space="preserve">
+    <value>Enter the message</value>
+  </data>
+  <data name="LuckPagePivotAddEvent" xml:space="preserve">
+    <value>Add event</value>
+  </data>
+  <data name="LuckPagePivotEventList" xml:space="preserve">
+    <value>Event list</value>
+  </data>
+  <data name="LuckPagePivotTitle" xml:space="preserve">
+    <value>Luck</value>
+  </data>
+  <data name="LuckPagePivotTryLuck" xml:space="preserve">
+    <value>Try your luck</value>
+  </data>
+  <data name="LuckPageTryLuckAlreadyUsed" xml:space="preserve">
+    <value>You have already use clover today</value>
+  </data>
+  <data name="LuckPageTryLuckLabel" xml:space="preserve">
+    <value>Угадайте в каком квадрате спрятан клевер</value>
+  </data>
+  <data name="MainPageAboutBtn" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="MainPageHelpBtn" xml:space="preserve">
+    <value>help</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileMessage" xml:space="preserve">
+    <value>All previous result will be removed. Are you sure?</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileTitle" xml:space="preserve">
+    <value>Confirm removing profile</value>
+  </data>
+  <data name="MainPageNewProfileBtn" xml:space="preserve">
+    <value>new profile</value>
+  </data>
+  <data name="MainPageStartFlowBtn" xml:space="preserve">
+    <value>start flow</value>
+  </data>
+  <data name="MainPageStatisticsBtn" xml:space="preserve">
+    <value>statistics</value>
+  </data>
+  <data name="NullOrEmptyMessageText" xml:space="preserve">
+    <value>Message can't be empty. Please enter some text</value>
+  </data>
+  <data name="NullOrEmptyMessageTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProfileMBgetErrorMessage" xml:space="preserve">
+    <value>Profile wasn't loaded</value>
+  </data>
+  <data name="ProfileMBgetErrorTitle" xml:space="preserve">
+    <value>Profile loading error</value>
+  </data>
+  <data name="ProfileMBheightIncorrectMessage" xml:space="preserve">
+    <value>Height must be integer </value>
+  </data>
+  <data name="ProfileMBheightIncorrectTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProfileMBnickIncorrectMessage" xml:space="preserve">
+    <value>Nickname cant' be empty</value>
+  </data>
+  <data name="ProfileMBnickIncorrectTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProfileMBsaveErrorMessage" xml:space="preserve">
+    <value>Profile wasn't saved</value>
+  </data>
+  <data name="ProfileMBsaveErrorTitle" xml:space="preserve">
+    <value>Save error</value>
+  </data>
+  <data name="ProfileMBsubzeroheighMessage" xml:space="preserve">
+    <value>Height can't be sub zero</value>
+  </data>
+  <data name="ProfileMBsubzeroheighTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProfileMBupdateMessage" xml:space="preserve">
+    <value>Changes were saved</value>
+  </data>
+  <data name="ProfileMBupdateTitle" xml:space="preserve">
+    <value>Profile was sucsessfully updated</value>
+  </data>
+  <data name="ProfilePageBtnAlbum" xml:space="preserve">
+    <value>album</value>
+  </data>
+  <data name="ProfilePageBtnCamera" xml:space="preserve">
+    <value>camera</value>
+  </data>
+  <data name="ProfilePageBtnEmpty" xml:space="preserve">
+    <value>empty</value>
+  </data>
+  <data name="ProfilePageBtnSave" xml:space="preserve">
+    <value>save profile</value>
+  </data>
+  <data name="ProfilePageTextBirth" xml:space="preserve">
+    <value>date of birth</value>
+  </data>
+  <data name="ProfilePageTextHeight" xml:space="preserve">
+    <value>height</value>
+  </data>
+  <data name="ProfilePageTextNickname" xml:space="preserve">
+    <value>nickname</value>
+  </data>
+  <data name="ProfilePageTextSelectAvatar" xml:space="preserve">
+    <value>select avatar</value>
+  </data>
+  <data name="ProfilePageTitle" xml:space="preserve">
+    <value>profile</value>
+  </data>
+  <data name="RemoveEventMessageText" xml:space="preserve">
+    <value>Event will be deleted. Are you sure?</value>
+  </data>
+  <data name="RemoveEventMessageTitle" xml:space="preserve">
+    <value>Confirm removing</value>
+  </data>
+  <data name="StatPagePivotCommonItem" xml:space="preserve">
+    <value>indicators</value>
+  </data>
+  <data name="StatPagePivotHistoryItem" xml:space="preserve">
+    <value>history</value>
+  </data>
+  <data name="StatPagePivotTitle" xml:space="preserve">
+    <value>statistics</value>
+  </data>
+  <data name="SuccessAddMessage" xml:space="preserve">
+    <value>Event has been added</value>
+  </data>
+</root>
