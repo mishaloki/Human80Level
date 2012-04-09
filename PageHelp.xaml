@@ -16,18 +16,25 @@
 
     <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
-        <controls:Pivot Title="{Binding Path=LocalizedResources.StatPagePivotTitle, Source={StaticResource LocalizedStrings}}">
+        <controls:Pivot Title="{Binding Path=LocalizedResources.HelpPivotTitle, Source={StaticResource LocalizedStrings}}">
             <controls:Pivot.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Statistics/statistics.png" Opacity="0.5" x:Name="pivotBgBrush">
 
                 </ImageBrush>
             </controls:Pivot.Background>
-            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotCommonItem, Source={StaticResource LocalizedStrings}}">
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpCommon, Source={StaticResource LocalizedStrings}}">
                 
             </controls:PivotItem>
 
-            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotHistoryItem, Source={StaticResource LocalizedStrings}}">
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpMainMenu, Source={StaticResource LocalizedStrings}}">
 
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListBtnLuck, Source={StaticResource LocalizedStrings}}">
+                <StackPanel>
+                    <TextBlock Text="add event page"></TextBlock>
+                    <TextBlock Text="add event page"></TextBlock>
+                </StackPanel>
             </controls:PivotItem>
 
         </controls:Pivot>
