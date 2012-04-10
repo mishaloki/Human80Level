@@ -90,7 +90,7 @@
     <Compile Include="PageHelp.xaml.cs">
       <DependentUpon>PageHelp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageProfile.xaml.cs">
+    <Compile Include="Profile\PageProfile.xaml.cs">
       <DependentUpon>PageProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Profile\Profile.cs" />
@@ -146,7 +146,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageProfile.xaml">
+    <Page Include="Profile\PageProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
