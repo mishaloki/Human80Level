@@ -28,7 +28,6 @@ namespace Human80Level
             {
                 if (ProfileManager.GetProfile() != null)
                 {
-                    //TODO replace all hardcode text with constants
                     bool createNew =
                         (MessageBox.Show(MBnewProfileMessage, MBnewProfileTitle,
                                          MessageBoxButton.OKCancel) == MessageBoxResult.OK);
@@ -37,7 +36,7 @@ namespace Human80Level
                         return;
                     }                    
                 }
-                this.NavigationService.Navigate(new Uri("/PageProfile.xaml?new=true", UriKind.Relative));
+                this.NavigationService.Navigate(new Uri("/Profile/PageProfile.xaml?new=true", UriKind.Relative));
             }
             catch (Exception err)
             {
@@ -131,7 +130,7 @@ namespace Human80Level
             {
                 if (ProfileManager.GetProfile()!=null)
                 {
-                    this.NavigationService.Navigate(new Uri("/PageProfile.xaml", UriKind.Relative));
+                    this.NavigationService.Navigate(new Uri("/Profile/PageProfile.xaml", UriKind.Relative));
                 }               
             }
             catch (Exception err)
