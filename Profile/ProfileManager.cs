@@ -11,6 +11,9 @@ namespace Human80Level.Utils
         /// </summary>
         private const string ProfileSettingsName = "Profile";
 
+        /// <summary>
+        /// Stores current profile
+        /// </summary>
         private static Profile.Profile CurrentProfile;
         
         /// <summary>
@@ -22,7 +25,9 @@ namespace Human80Level.Utils
             return CurrentProfile;
         }
 
-
+        /// <summary>
+        /// Extracts profile form app settings
+        /// </summary>
         public static void ExtractProfileFromSettings()
         {
             try
@@ -36,7 +41,7 @@ namespace Human80Level.Utils
             }
             catch (Exception err)
             {
-                Logger.Error("GetProfile", err.Message);
+                Logger.Error("ExtractProfileFromSettings", err.Message);
             }
         }
 

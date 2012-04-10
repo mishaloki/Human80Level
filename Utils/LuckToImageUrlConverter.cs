@@ -1,15 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 
 namespace Human80Level.Utils
 {
@@ -19,13 +10,30 @@ namespace Human80Level.Utils
 
         private const string TrashImageUrl = "/Images/Ability/Luck/trash.png";
         
+        /// <summary>
+        /// Converts bool value of isLuck field to Image Url
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((bool)value)
+            try
             {
-                return CloverImageUrl;
+                if ((bool)value)
+                {
+                    return CloverImageUrl;
+                }
+                return TrashImageUrl;
             }
-            return TrashImageUrl;
+            catch (Exception err)
+            {
+                Logger.Error("Convert", err.Message);
+                return null;
+            }
+
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

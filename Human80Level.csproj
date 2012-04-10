@@ -115,6 +115,7 @@
     <Compile Include="Utils\LocalizedStrings.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\LuckToImageUrlConverter.cs" />
+    <Compile Include="Utils\Navigator.cs" />
     <Compile Include="Utils\StorageManager.cs" />
   </ItemGroup>
   <ItemGroup>
