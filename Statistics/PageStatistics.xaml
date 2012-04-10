@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Human80Level.Statistics.PageStatistics"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot">
+
+        <controls:Pivot Title="{Binding Path=LocalizedResources.StatPagePivotTitle, Source={StaticResource LocalizedStrings}}">
+            <controls:Pivot.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Statistics/statistics.png" Opacity="0.5" x:Name="pivotBgBrush">
+
+                </ImageBrush>
+            </controls:Pivot.Background>
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotCommonItem, Source={StaticResource LocalizedStrings}}">
+                <ListBox Name="listIndicators" Grid.Row="1">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="460" Margin="0,20">
+                                <TextBlock Name="abTitle" Text="{Binding Title}"></TextBlock>
+                                <TextBlock Name="abLevelDescript" TextWrapping="Wrap" Text="{Binding Description}"></TextBlock>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Name="imgBegin" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding BeginIconUri}"></Image>
+                                    <Image Name="imgEnd" Height="100" Width="100" Grid.Column="1" HorizontalAlignment="Right" Source="{Binding EndIconUri}"></Image>
+                                </Grid>
+                                <ProgressBar Name="abProgress" Value="{Binding CurrentValue}" Maximum="50"></ProgressBar>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Name="abLevetlTitle" Text="{Binding Path=LocalizedResources.ALevelLabel, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                                    <TextBlock Name="abLevelValue" Text="{Binding CurrentLevel}" TextWrapping="Wrap"></TextBlock>
+                                </StackPanel>                              
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotHistoryItem, Source={StaticResource LocalizedStrings}}">
+                
+            </controls:PivotItem>
+
+        </controls:Pivot>
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

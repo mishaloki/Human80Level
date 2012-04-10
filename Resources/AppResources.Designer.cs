@@ -61,6 +61,96 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на выносливость.
+        /// </summary>
+        public static string AbLisgBtnEndurance {
+            get {
+                return ResourceManager.GetString("AbLisgBtnEndurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на интеллект.
+        /// </summary>
+        public static string AbListBtnIntel {
+            get {
+                return ResourceManager.GetString("AbListBtnIntel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на удача.
+        /// </summary>
+        public static string AbListBtnLuck {
+            get {
+                return ResourceManager.GetString("AbListBtnLuck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на телосложение.
+        /// </summary>
+        public static string AbListBtnPhysique {
+            get {
+                return ResourceManager.GetString("AbListBtnPhysique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сила.
+        /// </summary>
+        public static string AbListBtnPower {
+            get {
+                return ResourceManager.GetString("AbListBtnPower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на выберите показатель.
+        /// </summary>
+        public static string AbListPageTitle {
+            get {
+                return ResourceManager.GetString("AbListPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Автор.
+        /// </summary>
+        public static string AboutAuthor {
+            get {
+                return ResourceManager.GetString("AboutAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на о программе.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Версия.
+        /// </summary>
+        public static string AboutVersion {
+            get {
+                return ResourceManager.GetString("AboutVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Текущий уровень.
+        /// </summary>
+        public static string ALevelLabel {
+            get {
+                return ResourceManager.GetString("ALevelLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы уже использовали свой шанс сегодня.
         /// </summary>
         public static string AlreadyUseCloverMessage {
@@ -70,11 +160,200 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает насколько часто обстоятельства складываются в вашу пользу.
+        /// </summary>
+        public static string ALuckD {
+            get {
+                return ResourceManager.GetString("ALuckD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы полный неудачник. Даже в списке самых неудачных людей планеты вы на втором месте.
+        /// </summary>
+        public static string ALuckL1 {
+            get {
+                return ResourceManager.GetString("ALuckL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Учача стоит к вам спиной. .
+        /// </summary>
+        public static string ALuckL2 {
+            get {
+                return ResourceManager.GetString("ALuckL2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Никогда не знаешь чего ждать от судьбы. Ваши шансы 50/50.
+        /// </summary>
+        public static string ALuckL3 {
+            get {
+                return ResourceManager.GetString("ALuckL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Удача на вашей стороне. Рекомендуем вам почаще покупать лотерейные билеты.
+        /// </summary>
+        public static string ALuckL4 {
+            get {
+                return ResourceManager.GetString("ALuckL4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вашему вензению нет предела. Вы можете играть в русскую рулетку с 6 патронами в барабане..
+        /// </summary>
+        public static string ALuckL5 {
+            get {
+                return ResourceManager.GetString("ALuckL5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы настолько слабы что даже дети могут вас избить.
+        /// </summary>
+        public static string APower1 {
+            get {
+                return ResourceManager.GetString("APower1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вас уже не сносит ветром.
+        /// </summary>
+        public static string APower2 {
+            get {
+                return ResourceManager.GetString("APower2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы пволне можете постоять за себя.
+        /// </summary>
+        public static string APower3 {
+            get {
+                return ResourceManager.GetString("APower3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на В поединке с терминатором вы вероятно победите.
+        /// </summary>
+        public static string APower4 {
+            get {
+                return ResourceManager.GetString("APower4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы Час Норрис.
+        /// </summary>
+        public static string APower5 {
+            get {
+                return ResourceManager.GetString("APower5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на HUMAN 80 LEVEL.
+        /// </summary>
+        public static string AppTitle {
+            get {
+                return ResourceManager.GetString("AppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Открыть клевер.
         /// </summary>
         public static string DefaultEventMessage {
             get {
                 return ResourceManager.GetString("DefaultEventMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на общие сведения.
+        /// </summary>
+        public static string HelpCommon {
+            get {
+                return ResourceManager.GetString("HelpCommon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на на этой страцице вы можете ввести любое событие вашей жизни произошедшее в текущий день. Данное событие может быть либо удачным для вас, либо наоборот неудачным. В записимости от этого после ввода события нажмити одну из друз кнопок - с клевером или перечеркнутым клевером. После этого событие будет добавлено в список событий. Вы можете ввести любое количество событий, но все они будут сохранены со временм ввода..
+        /// </summary>
+        public static string HelpLuckMadd {
+            get {
+                return ResourceManager.GetString("HelpLuckMadd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на здесь отображается список всех введеннх вами событий. Вверху показано колиство удачных и неудачных событий. Вы можете удалить любое событие нажав два раза на него. Так же если вы выберите событие из списка и затем перейдете на страницу добавления события, то текст события будет автоматически скопирован в поле ввода. Таким образом вы можете сэкономить время для ввода повторяющихся событий..
+        /// </summary>
+        public static string HelpLuckMlist {
+            get {
+                return ResourceManager.GetString("HelpLuckMlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на один раз в день вы можете испытывать удачу откурывая один из друх закрытых квадратов. Если вы откроете изображение клевера, то событие будет добавлено как удачное, в противном случае как неудачное. Чтобы открыть квадрат нажмите на него и удреживайти в течении 1-2 секунд..
+        /// </summary>
+        public static string HelpLuckMtry {
+            get {
+                return ResourceManager.GetString("HelpLuckMtry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Добавить событие&quot;.
+        /// </summary>
+        public static string HelpLuckTitleAdd {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Список событий&quot;.
+        /// </summary>
+        public static string HelpLuckTitleList {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Испытай удачу&quot;.
+        /// </summary>
+        public static string HelpLuckTitleTry {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleTry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на гланое меню.
+        /// </summary>
+        public static string HelpMainMenu {
+            get {
+                return ResourceManager.GetString("HelpMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на помощь.
+        /// </summary>
+        public static string HelpPivotTitle {
+            get {
+                return ResourceManager.GetString("HelpPivotTitle", resourceCulture);
             }
         }
         
@@ -201,6 +480,15 @@ namespace Human80Level.Resources {
         public static string MainPageStartFlowBtn {
             get {
                 return ResourceManager.GetString("MainPageStartFlowBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на статистика.
+        /// </summary>
+        public static string MainPageStatisticsBtn {
+            get {
+                return ResourceManager.GetString("MainPageStatisticsBtn", resourceCulture);
             }
         }
         
@@ -426,6 +714,33 @@ namespace Human80Level.Resources {
         public static string RemoveEventMessageTitle {
             get {
                 return ResourceManager.GetString("RemoveEventMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на показатели.
+        /// </summary>
+        public static string StatPagePivotCommonItem {
+            get {
+                return ResourceManager.GetString("StatPagePivotCommonItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на история.
+        /// </summary>
+        public static string StatPagePivotHistoryItem {
+            get {
+                return ResourceManager.GetString("StatPagePivotHistoryItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на статистика.
+        /// </summary>
+        public static string StatPagePivotTitle {
+            get {
+                return ResourceManager.GetString("StatPagePivotTitle", resourceCulture);
             }
         }
         
