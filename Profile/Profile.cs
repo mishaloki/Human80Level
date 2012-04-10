@@ -37,6 +37,16 @@ namespace Human80Level.Profile
         [DataMember(Name = "Heigth")]
         public double Heigth { get; set; }
 
+        /// <summary>
+        /// Profile constructor
+        /// </summary>
+        /// <param name="nick"></param>
+        /// <param name="avatar"></param>
+        /// <param name="level"></param>
+        /// <param name="isProgres"></param>
+        /// <param name="delta"></param>
+        /// <param name="birth"></param>
+        /// <param name="height"></param>
         public Profile (string nick, string avatar, double level, bool isProgres, double delta, DateTime birth, double height)
         {
             this.NickName = nick;

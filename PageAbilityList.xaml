@@ -22,17 +22,17 @@
 
         <!--TitlePanel содержит имя приложения и заголовок страницы-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="HUMAN 80 LEVEL" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="ability list" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LocalizedResources.AppTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.AbListPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel – поместите здесь дополнительное содержимое-->
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <Button x:Name="btnPower" Content="Power"></Button>
-            <Button x:Name="btnEndurance" Content="Endurance"></Button>
-            <Button x:Name="btnIntelligence" Content="Intelligence"></Button>
-            <Button x:Name="btnPhysique" Content="Physique" Click="btnPhysique_Click"></Button>
-            <Button x:Name="btnLuck" Content="Luck" Click="btnLuck_Click"></Button>
+            <Button x:Name="btnPower" Content="{Binding Path=LocalizedResources.AbListBtnPower, Source={StaticResource LocalizedStrings}}"></Button>
+            <Button x:Name="btnEndurance" Content="{Binding Path=LocalizedResources.AbLisgBtnEndurance, Source={StaticResource LocalizedStrings}}"></Button>
+            <Button x:Name="btnIntelligence" Content="{Binding Path=LocalizedResources.AbListBtnIntel, Source={StaticResource LocalizedStrings}}"></Button>
+            <Button x:Name="btnPhysique" Content="{Binding Path=LocalizedResources.AbListBtnPhysique, Source={StaticResource LocalizedStrings}}" Click="btnPhysique_Click"></Button>
+            <Button x:Name="btnLuck" Content="{Binding Path=LocalizedResources.AbListBtnLuck, Source={StaticResource LocalizedStrings}}" Click="btnLuck_Click"></Button>
         </StackPanel>
     </Grid>
  

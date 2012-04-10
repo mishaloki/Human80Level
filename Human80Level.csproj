@@ -106,6 +106,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.en-US.resx</DependentUpon>
     </Compile>
+    <Compile Include="Statistics\Indicator.cs" />
+    <Compile Include="Statistics\IndicatorManager.cs" />
+    <Compile Include="Statistics\PageStatistics.xaml.cs">
+      <DependentUpon>PageStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistic.cs" />
     <Compile Include="Utils\LocalizedStrings.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\LuckToImageUrlConverter.cs" />
@@ -144,10 +150,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Statistics\PageStatistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
+    <Content Include="Images\Ability\Luck\loser.png" />
+    <Content Include="Images\Ability\Luck\lucky.png" />
+    <Content Include="Images\Statistics\statistics.png" />
     <Content Include="Utils\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

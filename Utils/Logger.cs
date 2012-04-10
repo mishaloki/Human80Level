@@ -14,7 +14,7 @@ namespace Human80Level.Utils
 {
     public static  class Logger
     {
-        private static readonly string LoggerMessageFormat = "Error in {0}, message: {1}";
+        private static readonly string LoggerMessageFormat = "method: {0}, message: {1}";
         
         public static void Debug(string message)
         {
