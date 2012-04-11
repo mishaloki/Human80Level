@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbLisgBtnEndurance" xml:space="preserve">
+    <value>выносливость</value>
+  </data>
+  <data name="AbListBtnIntel" xml:space="preserve">
+    <value>интеллект</value>
+  </data>
+  <data name="AbListBtnLuck" xml:space="preserve">
+    <value>удача</value>
+  </data>
+  <data name="AbListBtnPhysique" xml:space="preserve">
+    <value>телосложение</value>
+  </data>
+  <data name="AbListBtnPower" xml:space="preserve">
+    <value>сила</value>
+  </data>
+  <data name="AbListPageTitle" xml:space="preserve">
+    <value>выберите показатель</value>
+  </data>
+  <data name="ALevelLabel" xml:space="preserve">
+    <value>Текущий уровень</value>
+  </data>
+  <data name="AlreadyUseCloverMessage" xml:space="preserve">
+    <value>Вы уже использовали свой шанс сегодня</value>
+  </data>
+  <data name="ALuckD" xml:space="preserve">
+    <value>показывает насколько часто обстоятельства складываются в вашу пользу</value>
+  </data>
+  <data name="ALuckL1" xml:space="preserve">
+    <value>Вы полный неудачник. Даже в списке самых неудачных людей планеты вы на втором месте</value>
+  </data>
+  <data name="ALuckL2" xml:space="preserve">
+    <value>Учача стоит к вам спиной. </value>
+  </data>
+  <data name="ALuckL3" xml:space="preserve">
+    <value>Никогда не знаешь чего ждать от судьбы. Ваши шансы 50/50</value>
+  </data>
+  <data name="ALuckL4" xml:space="preserve">
+    <value>Удача на вашей стороне. Рекомендуем вам почаще покупать лотерейные билеты</value>
+  </data>
+  <data name="ALuckL5" xml:space="preserve">
+    <value>Вашему вензению нет предела. Вы можете играть в русскую рулетку с 6 патронами в барабане.</value>
+  </data>
+  <data name="APower1" xml:space="preserve">
+    <value>Вы настолько слабы что даже дети могут вас избить</value>
+  </data>
+  <data name="APower2" xml:space="preserve">
+    <value>Вас уже не сносит ветром</value>
+  </data>
+  <data name="APower3" xml:space="preserve">
+    <value>Вы пволне можете постоять за себя</value>
+  </data>
+  <data name="APower4" xml:space="preserve">
+    <value>В поединке с терминатором вы вероятно победите</value>
+  </data>
+  <data name="APower5" xml:space="preserve">
+    <value>Вы Час Норрис</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>HUMAN 80 LEVEL</value>
+  </data>
+  <data name="DefaultEventMessage" xml:space="preserve">
+    <value>Открыть клевер</value>
+  </data>
+  <data name="LuckPageClearButtonCaption" xml:space="preserve">
+    <value>очистить</value>
+  </data>
+  <data name="LuckPageMessageBoxCaption" xml:space="preserve">
+    <value>Введите событие</value>
+  </data>
+  <data name="LuckPagePivotAddEvent" xml:space="preserve">
+    <value>Добавить событие</value>
+  </data>
+  <data name="LuckPagePivotEventList" xml:space="preserve">
+    <value>Список событий</value>
+  </data>
+  <data name="LuckPagePivotTitle" xml:space="preserve">
+    <value>Удача</value>
+  </data>
+  <data name="LuckPagePivotTryLuck" xml:space="preserve">
+    <value>Испытай удачу</value>
+  </data>
+  <data name="LuckPageTryLuckAlreadyUsed" xml:space="preserve">
+    <value>Ты уже использовал свой шанс сегодня</value>
+  </data>
+  <data name="LuckPageTryLuckLabel" xml:space="preserve">
+    <value>Угадайте в каком квадрате спрятан клевер</value>
+  </data>
+  <data name="MainPageAboutBtn" xml:space="preserve">
+    <value>о программе</value>
+  </data>
+  <data name="MainPageHelpBtn" xml:space="preserve">
+    <value>помощь</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileMessage" xml:space="preserve">
+    <value>Ваш текущий профиль будет удален всесте с накопленной статистикой. Продолжить?</value>
+  </data>
+  <data name="MainPageMainPageMBnewProfileTitle" xml:space="preserve">
+    <value>Подтвердите удаление профиля</value>
+  </data>
+  <data name="MainPageNewProfileBtn" xml:space="preserve">
+    <value>новый профиль</value>
+  </data>
+  <data name="MainPageStartFlowBtn" xml:space="preserve">
+    <value>начать прокачку</value>
+  </data>
+  <data name="MainPageStatisticsBtn" xml:space="preserve">
+    <value>статистика</value>
+  </data>
+  <data name="NullOrEmptyMessageText" xml:space="preserve">
+    <value>Сообщение не может быть пустым</value>
+  </data>
+  <data name="NullOrEmptyMessageTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBgetErrorMessage" xml:space="preserve">
+    <value>Не удалолсь загрузить профиль</value>
+  </data>
+  <data name="ProfileMBgetErrorTitle" xml:space="preserve">
+    <value>Ошибка загрузки профиля</value>
+  </data>
+  <data name="ProfileMBheightIncorrectMessage" xml:space="preserve">
+    <value>Вес должен быть целым числом</value>
+  </data>
+  <data name="ProfileMBheightIncorrectTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBnickIncorrectMessage" xml:space="preserve">
+    <value>Имя не может быть пустым</value>
+  </data>
+  <data name="ProfileMBnickIncorrectTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBsaveErrorMessage" xml:space="preserve">
+    <value>Не удалось сохранить профиль.</value>
+  </data>
+  <data name="ProfileMBsaveErrorTitle" xml:space="preserve">
+    <value>Ошибка сохранения</value>
+  </data>
+  <data name="ProfileMBsubzeroheighMessage" xml:space="preserve">
+    <value>Вес не может быть меньше нуля</value>
+  </data>
+  <data name="ProfileMBsubzeroheighTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ProfileMBupdateMessage" xml:space="preserve">
+    <value>Изменения были успешно сохранены</value>
+  </data>
+  <data name="ProfileMBupdateTitle" xml:space="preserve">
+    <value>Профиль обновлен</value>
+  </data>
+  <data name="ProfilePageBtnAlbum" xml:space="preserve">
+    <value>галерея</value>
+  </data>
+  <data name="ProfilePageBtnCamera" xml:space="preserve">
+    <value>камера</value>
+  </data>
+  <data name="ProfilePageBtnEmpty" xml:space="preserve">
+    <value>пустой</value>
+  </data>
+  <data name="ProfilePageBtnSave" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="ProfilePageTextBirth" xml:space="preserve">
+    <value>дата рождения</value>
+  </data>
+  <data name="ProfilePageTextHeight" xml:space="preserve">
+    <value>рост</value>
+  </data>
+  <data name="ProfilePageTextNickname" xml:space="preserve">
+    <value>имя</value>
+  </data>
+  <data name="ProfilePageTextSelectAvatar" xml:space="preserve">
+    <value>выбери аватар</value>
+  </data>
+  <data name="ProfilePageTitle" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="RemoveEventMessageText" xml:space="preserve">
+    <value>Событие будет удалено. Продолжить?</value>
+  </data>
+  <data name="RemoveEventMessageTitle" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="StatPagePivotCommonItem" xml:space="preserve">
+    <value>показатели</value>
+  </data>
+  <data name="StatPagePivotHistoryItem" xml:space="preserve">
+    <value>история</value>
+  </data>
+  <data name="StatPagePivotTitle" xml:space="preserve">
+    <value>статистика</value>
+  </data>
+  <data name="SuccessAddMessage" xml:space="preserve">
+    <value>Событие добавлено</value>
+  </data>
+  <data name="HelpCommon" xml:space="preserve">
+    <value>общие сведения</value>
+  </data>
+  <data name="HelpMainMenu" xml:space="preserve">
+    <value>гланое меню</value>
+  </data>
+  <data name="HelpPivotTitle" xml:space="preserve">
+    <value>помощь</value>
+  </data>
+  <data name="AboutAuthor" xml:space="preserve">
+    <value>Автор</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>о программе</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Версия</value>
+  </data>
+  <data name="HelpLuckMadd" xml:space="preserve">
+    <value>на этой страцице вы можете ввести любое событие вашей жизни произошедшее в текущий день. Данное событие может быть либо удачным для вас, либо наоборот неудачным. В записимости от этого после ввода события нажмити одну из друз кнопок - с клевером или перечеркнутым клевером. После этого событие будет добавлено в список событий. Вы можете ввести любое количество событий, но все они будут сохранены со временм ввода.</value>
+  </data>
+  <data name="HelpLuckMlist" xml:space="preserve">
+    <value>здесь отображается список всех введеннх вами событий. Вверху показано колиство удачных и неудачных событий. Вы можете удалить любое событие нажав два раза на него. Так же если вы выберите событие из списка и затем перейдете на страницу добавления события, то текст события будет автоматически скопирован в поле ввода. Таким образом вы можете сэкономить время для ввода повторяющихся событий.</value>
+  </data>
+  <data name="HelpLuckMtry" xml:space="preserve">
+    <value>один раз в день вы можете испытывать удачу откурывая один из друх закрытых квадратов. Если вы откроете изображение клевера, то событие будет добавлено как удачное, в противном случае как неудачное. Чтобы открыть квадрат нажмите на него и удреживайти в течении 1-2 секунд.</value>
+  </data>
+  <data name="HelpLuckTitleAdd" xml:space="preserve">
+    <value>страница "Добавить событие"</value>
+  </data>
+  <data name="HelpLuckTitleList" xml:space="preserve">
+    <value>страница "Список событий"</value>
+  </data>
+  <data name="HelpLuckTitleTry" xml:space="preserve">
+    <value>страница "Испытай удачу"</value>
+  </data>
+  <data name="PhyPageCurrentLabel" xml:space="preserve">
+    <value>текущий</value>
+  </data>
+  <data name="PhyPageEnterLabel" xml:space="preserve">
+    <value>введите ваш вес</value>
+  </data>
+  <data name="PhyPageIdealFormula" xml:space="preserve">
+    <value>Идеал = 50 + 0.75*(рост - 150)+(возраст - 20)/5</value>
+  </data>
+  <data name="PhyPageIdealLabel" xml:space="preserve">
+    <value>идеал</value>
+  </data>
+  <data name="PhyPageIdealValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhyPageSaveBtn" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="PhyPageTitle" xml:space="preserve">
+    <value>телосложение</value>
+  </data>
+</root>

@@ -1,46 +1,138 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Net;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+using Human80Level.Database;
+using Human80Level.Utils;
 
 namespace Human80Level.Ability.Luck
 {
     public static class LuckEventManager
     {
-        public static ObservableCollection<LuckEventMessage> getEventList()
+        public static ObservableCollection<Event> GetEventList()
         {
-            ObservableCollection<LuckEventMessage> eventList = new ObservableCollection<LuckEventMessage>();
-            eventList.Add(new LuckEventMessage("message 1",DateTime.Now,true));
-            eventList.Add(new LuckEventMessage("message 2", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 3", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 4", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 5", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 6", DateTime.Now, true));
-            eventList.Add(new LuckEventMessage("message 7", DateTime.Now, true));
-            return eventList;
+            try
+            {
+                ObservableCollection<Event> eventList = DBHelper.GetEventList();
+                return eventList;
+            }
+            catch (Exception e)
+            {
+                Logger.Error("GetEventList", e.Message);
+                return null;
+            }
+            
         }
 
-        public static void AddEventMessage(LuckEventMessage eventMessage)
+        public static void AddEventMessage(Event eventMessage)
         {
-            MessageBox.Show("AddEventMessage");
+            try
+            {
+                DBHelper.AddEvent(eventMessage);
+            }
+            catch (Exception e)
+            {
+                Logger.Error("AddEventMessage", e.Message);
+            }
+            
         }
 
-        public static void RemoveEventMessage (LuckEventMessage eventMessage)
+
+        public static void RemoveEventMessage (Event eventMessage)
         {
-            MessageBox.Show("RemoveEventMessage");
+            try
+            {
+                DBHelper.RemoveEvent(eventMessage);
+            }
+            catch (Exception e)
+            {
+                Logger.Error("RemoveEventMessage", e.Message);
+            }
+            
         }
 
-        public static void UpdateEventMessage (LuckEventMessage eventMessage)
+        public static void UpdateEventMessage (Event eventMessage)
         {
-            MessageBox.Show("UpdateEventMessage");
+            try
+            {
+                MessageBox.Show("UpdateEventMessage");
+            }
+            catch (Exception e)
+            {
+                Logger.Error("UpdateEventMessage", e.Message);
+            }
+            
+        }
+
+        public static int GetValue()
+        {
+            int dif = GetDifference();
+            if (dif < 0)
+            {
+                dif = 0;
+            }
+            else
+            {
+                if (dif > 100)
+                {
+                    dif = 100;
+                }
+            }
+            return dif;
+        }
+
+        public static int GetLevel()
+        {
+            int dif = GetDifference();
+            int level = 0;
+            if (dif < 10)
+            {
+                level = 0;
+            }
+            else
+            {
+                if (dif < 20)
+                {
+                    level = 1;
+                }
+                else
+                {
+                    if (dif < 35)
+                    {
+                        level = 2;
+                    }
+                    else
+                    {
+                        if (dif < 50)
+                        {
+                            level = 3;
+                        }
+                        else
+                        {
+                            level = 4;
+                        }
+                    }
+                }
+            }
+
+            return level;
+        }
+
+        private static int GetDifference()
+        {
+            try
+            {
+                ObservableCollection<Event> events = GetEventList();
+                int luckEventNumb = (from @event in events where @event.IsLuck select @event).Count();
+                int dif = luckEventNumb - (events.Count - luckEventNumb);
+                return dif;
+            }
+            catch (Exception err)
+            {
+                Logger.Error("GetDifference", err.Message);
+                return 0;
+            }
+            
         }
     }
 }

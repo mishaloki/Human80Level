@@ -13,23 +13,21 @@
     mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
 
-    <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--TitlePanel содержит имя приложения и заголовок страницы-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="HUMAN 80 LEVEL" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="about" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LocalizedResources.AppTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.AboutTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Margin="12,0,0,0">
             <TextBlock Text="Human 80 level"></TextBlock>
-            <TextBlock Text="version: 0.1"></TextBlock>
-            <TextBlock Text="Author: mishaloki"></TextBlock>
+            <TextBlock Text="{Binding Path=LocalizedResources.AboutVersion, Source={StaticResource LocalizedStrings}}"></TextBlock>
+            <TextBlock Text="{Binding Path=LocalizedResources.AboutAuthor, Source={StaticResource LocalizedStrings}}"></TextBlock>
         </StackPanel>
         
     </Grid>
