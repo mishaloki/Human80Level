@@ -348,4 +348,25 @@
   <data name="HelpLuckTitleTry" xml:space="preserve">
     <value>страница "Испытай удачу"</value>
   </data>
+  <data name="PhyPageCurrentLabel" xml:space="preserve">
+    <value>текущий</value>
+  </data>
+  <data name="PhyPageEnterLabel" xml:space="preserve">
+    <value>введите ваш вес</value>
+  </data>
+  <data name="PhyPageIdealFormula" xml:space="preserve">
+    <value>Идеал = 50 + 0.75*(рост - 150)+(возраст - 20)/5</value>
+  </data>
+  <data name="PhyPageIdealLabel" xml:space="preserve">
+    <value>идеал</value>
+  </data>
+  <data name="PhyPageIdealValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhyPageSaveBtn" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="PhyPageTitle" xml:space="preserve">
+    <value>телосложение</value>
+  </data>
 </root>
