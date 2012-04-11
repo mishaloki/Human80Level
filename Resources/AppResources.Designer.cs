@@ -511,6 +511,69 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на текущий.
+        /// </summary>
+        public static string PhyPageCurrentLabel {
+            get {
+                return ResourceManager.GetString("PhyPageCurrentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на введите ваш вес.
+        /// </summary>
+        public static string PhyPageEnterLabel {
+            get {
+                return ResourceManager.GetString("PhyPageEnterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Идеал = 50 + 0.75*(рост - 150)+(возраст - 20)/5.
+        /// </summary>
+        public static string PhyPageIdealFormula {
+            get {
+                return ResourceManager.GetString("PhyPageIdealFormula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на идеал.
+        /// </summary>
+        public static string PhyPageIdealLabel {
+            get {
+                return ResourceManager.GetString("PhyPageIdealLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        public static string PhyPageIdealValue {
+            get {
+                return ResourceManager.GetString("PhyPageIdealValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сохранить.
+        /// </summary>
+        public static string PhyPageSaveBtn {
+            get {
+                return ResourceManager.GetString("PhyPageSaveBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на телосложение.
+        /// </summary>
+        public static string PhyPageTitle {
+            get {
+                return ResourceManager.GetString("PhyPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не удалолсь загрузить профиль.
         /// </summary>
         public static string ProfileMBgetErrorMessage {

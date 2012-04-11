@@ -13,20 +13,18 @@
     mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
 
-    <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
+
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--TitlePanel содержит имя приложения и заголовок страницы-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="HUMAN 80 LEVEL" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="physique ability" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LocalizedResources.AppTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.PhyPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <!--ContentPanel – поместите здесь дополнительное содержимое-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -38,21 +36,26 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Enter your current weight" Margin="12,0,0,0"></TextBlock>
-            <TextBox Grid.Row="1"></TextBox>
-            <Button x:Name="btnSave" Content="Save" Grid.Row="2" Click="btnSave_Click"></Button>
-            <TextBlock Text="Ideal = 50 + 0.75*(height - 150)+(age - 20)/5" Grid.Row="3" Margin="12,0,0,0" FontSize="22"></TextBlock>
+            <TextBlock Text="{Binding Path=LocalizedResources.PhyPageEnterLabel, Source={StaticResource LocalizedStrings}}" Margin="12,0,0,0"></TextBlock>
+            <TextBox Grid.Row="1" Name="boxWeight"></TextBox>
+            <Button x:Name="btnSave" Content="{Binding Path=LocalizedResources.PhyPageSaveBtn, Source={StaticResource LocalizedStrings}}" Grid.Row="2" Click="btnSave_Click"></Button>
+            <TextBlock Text="{Binding Path=LocalizedResources.PhyPageIdealFormula, Source={StaticResource LocalizedStrings}}" Grid.Row="3" Margin="12,0,0,0" FontSize="22"></TextBlock>
             
             <TextBlock Text="0" Grid.Row="7" VerticalAlignment="Center" Margin="0,0,0,40"></TextBlock>
             <TextBlock x:Name="textRightSideMarker" Text="ideal*2" Grid.Row="7" VerticalAlignment="Center" Margin="0,0,0,40" HorizontalAlignment="Right"></TextBlock>
 
 
-            <TextBlock Text="Ideal" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,90" Name="textIdealMarker"></TextBlock>
-            <Image Grid.Row="7" Width="20" Height="20" Margin="0,0,0,30" Name="imgIdealMarker"></Image>
-            <Rectangle Grid.Row="7" Height="5" Fill="#FF1717E0" RadiusX="4" RadiusY="4"></Rectangle>
+            <TextBlock Text="{Binding Path=LocalizedResources.PhyPageIdealLabel, Source={StaticResource LocalizedStrings}}" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,90" Name="textIdealMarker"></TextBlock>
+            <Image Grid.Row="7" Width="20" Height="20" Margin="0,0,0,30" Name="imgIdealMarker" Source="/Images/Ability/Physique/triangle.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="180" />
+                </Image.RenderTransform>
 
-            <Image Grid.Row="7" Width="20" Height="20" Margin="0,30,0,0" Name="imgCurrentMarker"></Image>
-            <TextBlock Text="Current" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,90,0,0" Name="textCurrentMarker"></TextBlock>
+            </Image>
+            <Rectangle Grid.Row="7" Height="5" Fill="#FF1717E0" RadiusX="4" RadiusY="4" Name="rectBar" Width="440"></Rectangle>
+
+            <Image Grid.Row="7" Width="20" Height="20" Margin="0,30,0,0" Name="imgCurrentMarker" Source="/Images/Ability/Physique/triangle.png" OpacityMask="#FFBE2424"></Image>
+            <TextBlock Text="{Binding Path=LocalizedResources.PhyPageCurrentLabel, Source={StaticResource LocalizedStrings}}" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,90,0,0" Name="textCurrentMarker"></TextBlock>
 
         </Grid>
     </Grid>
