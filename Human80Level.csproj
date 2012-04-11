@@ -70,6 +70,7 @@
     <Compile Include="Ability\Physique\PageAbilityPhysique.xaml.cs">
       <DependentUpon>PageAbilityPhysique.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ability\Physique\PhysiqueManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -161,7 +162,11 @@
     <None Include="Properties\WMAppManifest.xml" />
     <Content Include="Images\Ability\Luck\loser.png" />
     <Content Include="Images\Ability\Luck\lucky.png" />
+    <Content Include="Images\Ability\Physique\fat.png" />
+    <Content Include="Images\Ability\Physique\slim.png" />
     <Content Include="Images\Ability\Physique\triangle.png" />
+    <Content Include="Images\Ability\Power\chuck.png" />
+    <Content Include="Images\Ability\Power\weak.png" />
     <Content Include="Images\Statistics\statistics.png" />
     <Content Include="Utils\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -202,7 +207,6 @@
   <ItemGroup>
     <Folder Include="Images\Ability\Endurance\" />
     <Folder Include="Images\Ability\Intelligence\" />
-    <Folder Include="Images\Ability\Power\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

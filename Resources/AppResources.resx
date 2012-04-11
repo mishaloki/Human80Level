@@ -369,4 +369,22 @@
   <data name="PhyPageTitle" xml:space="preserve">
     <value>телосложение</value>
   </data>
+  <data name="APhyD" xml:space="preserve">
+    <value>показывает в какой форме вы находитесь</value>
+  </data>
+  <data name="APhyL1" xml:space="preserve">
+    <value>вы жирдяй</value>
+  </data>
+  <data name="APhyL2" xml:space="preserve">
+    <value>ваше телосложение отсавляет желать лучшего</value>
+  </data>
+  <data name="APhyL3" xml:space="preserve">
+    <value>вам есть к чему стремиться</value>
+  </data>
+  <data name="APhyL4" xml:space="preserve">
+    <value>вам не стыдно выходить на пляж</value>
+  </data>
+  <data name="APhyL5" xml:space="preserve">
+    <value>вы аполлон</value>
+  </data>
 </root>

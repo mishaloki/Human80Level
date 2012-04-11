@@ -15,9 +15,9 @@ namespace Human80Level.Statistics
 
         public string CurrentLevel { get; set; }
 
-        public int CurrentValue { get; set; }
+        public double CurrentValue { get; set; }
 
-        public Indicator(string title, string description, string beginIconUri, string endIconUri, string [] levels,int currentLevel, int currentValue)
+        public Indicator(string title, string description, string beginIconUri, string endIconUri, string [] levels,int currentLevel, double currentValue)
         {
             this.Title = title;
             this.Description = description;
