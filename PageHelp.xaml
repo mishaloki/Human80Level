@@ -14,13 +14,10 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
-    <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
         <controls:Pivot Title="{Binding Path=LocalizedResources.HelpPivotTitle, Source={StaticResource LocalizedStrings}}">
             <controls:Pivot.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Statistics/statistics.png" Opacity="0.5" x:Name="pivotBgBrush">
-
-                </ImageBrush>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Statistics/statistics.png" Opacity="0.5" x:Name="pivotBgBrush"/>
             </controls:Pivot.Background>
             <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpCommon, Source={StaticResource LocalizedStrings}}">
                 
@@ -45,7 +42,4 @@
 
         </controls:Pivot>
     </Grid>
-
-    <!--Приложения на базе панорамы не должны содержать ApplicationBar-->
-
 </phone:PhoneApplicationPage>

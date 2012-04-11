@@ -12,86 +12,103 @@ namespace Human80Level
         private readonly string MBnewProfileTitle = AppResources.MainPageMainPageMBnewProfileTitle;
 
         private readonly string MBnewProfileMessage = AppResources.MainPageMainPageMBnewProfileMessage;
+
+        private const string AboutUri = "/PageAbout.xaml";
+
+        private const string StatUri = "/Statistics/PageStatistics.xaml";
+
+        private const string HelpUri = "/PageHelp.xaml";
+
+        private const string StartUri = "/PageAbilityList.xaml";
+
+        private const string ProfileUri = "/Profile/PageProfile.xaml";
         
-        // Конструктор
+        /// <summary>
+        /// Main page constructor
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
             ProfileManager.ExtractProfileFromSettings();
+            Logger.Info("MainPage constructor","page was initialize, profile extracted");
         }
 
-
-
+        /// <summary>
+        /// New profile button handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNewProfile_Click(object sender, RoutedEventArgs e)
+        {
+            this.CreateNewProfile();            
+        }
+
+        /// <summary>
+        /// Navigates to profile page with parameter to create new profile
+        /// </summary>
+        private void CreateNewProfile()
         {
             try
             {
                 if (ProfileManager.GetProfile() != null)
                 {
-                    //TODO replace all hardcode text with constants
                     bool createNew =
                         (MessageBox.Show(MBnewProfileMessage, MBnewProfileTitle,
                                          MessageBoxButton.OKCancel) == MessageBoxResult.OK);
                     if (!createNew)
                     {
                         return;
-                    }                    
+                    }
                 }
-                this.NavigationService.Navigate(new Uri("/PageProfile.xaml?new=true", UriKind.Relative));
+                Navigator.NavigateTo(this, ProfileUri + "?new=true");
             }
             catch (Exception err)
             {
-                Logger.Error("btnNewProfile_Click", err.Message);
+                Logger.Error("CreateNewProfile", err.Message);
             }
-            
         }
 
+        /// <summary>
+        /// Navigates to Ability list page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnStartFlow_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                this.NavigationService.Navigate(new Uri("/PageAbilityList.xaml", UriKind.Relative));
-            }
-            catch (Exception err)
-            {
-                Logger.Error("btnStartFlow_Click", err.Message);
-            }
-            
+            Navigator.NavigateTo(this, StartUri);           
         }
 
+        /// <summary>
+        /// Navigates to About page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                this.NavigationService.Navigate(new Uri("/PageAbout.xaml", UriKind.Relative));
-            }
-            catch (Exception err)
-            {
-                Logger.Error("btnAbout_Click", err.Message);
-            }
-            
+            Navigator.NavigateTo(this, AboutUri);          
         }
 
+        /// <summary>
+        /// Navigates to Help page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.NavigationService.Navigate(new Uri("/PageHelp.xaml", UriKind.Relative));
-            }
-            catch (Exception err)
-            {
-                Logger.Error("btnHelp_Click", err.Message);
-            }
+            Navigator.NavigateTo(this, HelpUri);
 
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            ShowProfileInfor();
+            ShowProfileInfo();
         }
 
-        private void ShowProfileInfor()
+        /// <summary>
+        /// Displays info about current profile
+        /// </summary>
+        private void ShowProfileInfo()
         {
             try
             {
@@ -103,7 +120,7 @@ namespace Human80Level
                     textProgress.Text = string.Empty;
                     imgStatus.Source = null;
                     SetStartFlowBtnState(false);
-                    Logger.Info("gridProfile_Tap", "Profile == null");
+                    Logger.Info("ShowProfileInfor", "Profile == null");
                     return;
                 }
                 textNickName.Text = profile.NickName;
@@ -120,51 +137,73 @@ namespace Human80Level
             }
             catch (Exception err)
             {
-                Logger.Error("gridProfile_Tap", err.Message);
+                Logger.Error("ShowProfileInfor", err.Message);
             }
                      
         }
 
+        /// <summary>
+        /// Profile bar Tap event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridProfile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            this.OpenProfile();
+        }
+
+        /// <summary>
+        /// Navigates to profile page if profile is exist
+        /// </summary>
+        private void OpenProfile()
+        {
             try
             {
-                if (ProfileManager.GetProfile()!=null)
+                if (ProfileManager.GetProfile() != null)
                 {
-                    this.NavigationService.Navigate(new Uri("/PageProfile.xaml", UriKind.Relative));
-                }               
+                    Navigator.NavigateTo(this, ProfileUri);
+                }
             }
             catch (Exception err)
             {
-                Logger.Error("gridProfile_Tap", err.Message);
+                Logger.Error("OpenProfile", err.Message);
             }
-            
         }
 
+        /// <summary>
+        /// Sets disable state for statistic and start flow buttons
+        /// </summary>
+        /// <param name="isProfileExist"></param>
         private void SetStartFlowBtnState(bool isProfileExist)
         {
-            if (isProfileExist)
-            {
-                btnStartFlow.IsEnabled = true;
-                btnStatistics.IsEnabled = true;
-            }
-            else
-            {
-                btnStartFlow.IsEnabled = false;
-                btnStatistics.IsEnabled = false;
-            }
-        }
-
-        private void btnStatistics_Click(object sender, RoutedEventArgs e)
-        {
             try
             {
-                this.NavigationService.Navigate(new Uri("/Statistics/PageStatistics.xaml", UriKind.Relative));
+                if (isProfileExist)
+                {
+                    btnStartFlow.IsEnabled = true;
+                    btnStatistics.IsEnabled = true;
+                }
+                else
+                {
+                    btnStartFlow.IsEnabled = false;
+                    btnStatistics.IsEnabled = false;
+                }
             }
             catch (Exception err)
             {
-                Logger.Error("btnStatistics_Click", err.Message);
+                Logger.Error("SetStartFlowBtnState",err.Message);
             }
+
+        }
+
+        /// <summary>
+        /// Navigates to statistic page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnStatistics_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.NavigateTo(this, StatUri);
         }
     }
 }

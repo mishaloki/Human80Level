@@ -1,19 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Human80Level.Ability.Luck;
-using Human80Level.Database;
 using Human80Level.Resources;
+using Human80Level.Utils;
 
 namespace Human80Level.Statistics
 {
@@ -37,11 +26,18 @@ namespace Human80Level.Statistics
 
         private static string[] luckLevels = new string[5] { AppResources.ALuckL1, AppResources.ALuckL2, AppResources.ALuckL3, AppResources.ALuckL4, AppResources.ALuckL5 };
 
+        /// <summary>
+        /// Gets list of all indicators
+        /// </summary>
+        /// <returns></returns>
         public static List<Indicator> GetIndicators()
         {
             return indicators;
         }
 
+        /// <summary>
+        /// Creates indicators for all abilities
+        /// </summary>
         public static void CreateIndicators()
         {
             indicators = new List<Indicator>();
@@ -57,28 +53,54 @@ namespace Human80Level.Statistics
             indicators.Add(luck);
         }
 
+        /// <summary>
+        /// Gets current indicator level
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
         private static int GetCurrentLevel(string title)
         {
-            int level = 0;
-            switch (title)
+            try
             {
-                case "luck":
-                    level = LuckEventManager.GetLevel();
-                    break;
+                int level = 0;
+                switch (title)
+                {
+                    case "luck":
+                        level = LuckEventManager.GetLevel();
+                        break;
+                }
+                return level;
             }
-            return level;
+            catch (Exception err)
+            {
+                Logger.Error("GetCurrentLevel", err.Message);
+                return 0;
+            }
         }
 
+        /// <summary>
+        /// Gets current indicator value
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
         private static int GetCurrentValue(string title)
         {
-            int value = 0;
-            switch (title)
+            try
             {
-                case "luck":
-                    value =LuckEventManager.GetValue();
-                    break;
+                int value = 0;
+                switch (title)
+                {
+                    case "luck":
+                        value = LuckEventManager.GetValue();
+                        break;
+                }
+                return value;
             }
-            return value;
+            catch (Exception err)
+            {
+                Logger.Error("GetCurrentValue",err.Message); 
+                return 0;
+            }
         }       
     }
 }

@@ -11,6 +11,9 @@ namespace Human80Level.Utils
         /// </summary>
         private const string ProfileSettingsName = "Profile";
 
+        /// <summary>
+        /// Stores current profile
+        /// </summary>
         private static Profile.Profile CurrentProfile;
         
         /// <summary>
@@ -22,7 +25,9 @@ namespace Human80Level.Utils
             return CurrentProfile;
         }
 
-
+        /// <summary>
+        /// Extracts profile form app settings
+        /// </summary>
         public static void ExtractProfileFromSettings()
         {
             try
@@ -36,7 +41,7 @@ namespace Human80Level.Utils
             }
             catch (Exception err)
             {
-                Logger.Error("GetProfile", err.Message);
+                Logger.Error("ExtractProfileFromSettings", err.Message);
             }
         }
 
@@ -56,6 +61,7 @@ namespace Human80Level.Utils
                 settings.Add(ProfileSettingsName, profile);
                 settings.Save();
                 CurrentProfile = profile;
+                DBHelper.CreateDatabase();
                 Logger.Info("UpdateProfile", "Profile was updated");
             }
             catch (Exception err)
@@ -78,7 +84,7 @@ namespace Human80Level.Utils
                 {
                     settings.Remove(ProfileSettingsName);
                     settings.Save();
-                    DBHelper.DeleteDatabase();
+                    DBHelper.DeleteDatabase();                    
                     CurrentProfile = null;                    
                     Logger.Info("RemoveProfile", "Profile was deleted");
                     return true;

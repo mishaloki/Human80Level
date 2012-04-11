@@ -1,58 +1,60 @@
 ﻿using System;
 using System.IO;
 using System.IO.IsolatedStorage;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Human80Level.Utils
 {
     public static class StorageManager
     {
-        private const string isoFolder = "CapturedImagesCache";
+        private const string ImageFolder = "Images";
 
         private const string ImageName = "avatar.jpeg";
         
+        /// <summary>
+        /// Gets image from Isolated storage
+        /// </summary>
+        /// <param name="imageUri"></param>
+        /// <returns></returns>
         public static BitmapImage GetImageFromStorage(string imageUri)
         {
-            BitmapImage image = new BitmapImage();
-
-            using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
+            try
             {
-                using (IsolatedStorageFileStream fileStream = myIsolatedStorage.OpenFile(imageUri, FileMode.Open, FileAccess.Read))
+                BitmapImage image = new BitmapImage();
+
+                using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
                 {
-                    image.SetSource(fileStream);
-                    return image;
+                    using (IsolatedStorageFileStream fileStream = myIsolatedStorage.OpenFile(imageUri, FileMode.Open, FileAccess.Read))
+                    {
+                        image.SetSource(fileStream);
+                        return image;
+                    }
                 }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("GetImageFromStorage", err.Message);
+                return null;
             }
         }
 
+        /// <summary>
+        /// Saves image to Isolated Storage
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
         public static string SaveImageToStorage(WriteableBitmap image)
         {
-
-            if (image == null)
-            {
-                throw new ArgumentNullException("imageBytes");
-            }
             try
             {
-
-
                 var isoFile = IsolatedStorageFile.GetUserStoreForApplication();
 
-                if (!isoFile.DirectoryExists(isoFolder))
+                if (!isoFile.DirectoryExists(ImageFolder))
                 {
-                    isoFile.CreateDirectory(isoFolder);
+                    isoFile.CreateDirectory(ImageFolder);
                 }
 
-                string filePath = System.IO.Path.Combine("/" + isoFolder + "/", ImageName);
+                string filePath = System.IO.Path.Combine("/" + ImageFolder + "/", ImageName);
 
                 using (var stream = isoFile.CreateFile(filePath))
                 {
@@ -61,10 +63,10 @@ namespace Human80Level.Utils
 
                 return new Uri(filePath, UriKind.Relative).ToString();
             }
-            catch (Exception e)
+            catch (Exception err)
             {
-                //TODO: log or do something else
-                throw;
+                Logger.Error("SaveImageToStorage", err.Message);
+                return null;
             }
         }
     }
