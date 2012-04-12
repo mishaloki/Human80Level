@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Human80Level.Ability.Luck;
+using Human80Level.Ability.Physique;
 using Human80Level.Resources;
 using Human80Level.Utils;
 
@@ -10,9 +11,9 @@ namespace Human80Level.Statistics
     {       
         private static List<Indicator> indicators;
 
-        private static string powerBeginIconUri = "/Images/Ability/Luck/loser.png";
+        private static string powerBeginIconUri = "/Images/Ability/Power/weak.png";
 
-        private static string powerEndIconUri = "";
+        private static string powerEndIconUri = "/Images/Ability/Power/chuck.png";
 
         private static string powerDescript = "";
 
@@ -25,6 +26,17 @@ namespace Human80Level.Statistics
         private static string luckDescript = AppResources.ALuckD;
 
         private static string[] luckLevels = new string[5] { AppResources.ALuckL1, AppResources.ALuckL2, AppResources.ALuckL3, AppResources.ALuckL4, AppResources.ALuckL5 };
+
+
+        private static string phyBeginIconUri = "/Images/Ability/Physique/fat.png";
+
+        private static string phyEndIconUri = "/Images/Ability/Physique/slim.png";
+
+        private static string phyDescript = AppResources.APhyD;
+
+        private static string[] phyLevels = new string[5] { AppResources.APhyL1, AppResources.APhyL2, AppResources.APhyL3, AppResources.APhyL4, AppResources.APhyL5 };
+
+
 
         /// <summary>
         /// Gets list of all indicators
@@ -49,7 +61,11 @@ namespace Human80Level.Statistics
             title = AppResources.AbListBtnLuck;
             Indicator luck = new Indicator(title, luckDescript, luckBeginIconUri, luckEndIconUri, luckLevels, GetCurrentLevel("luck"), GetCurrentValue("luck"));
 
+            title = AppResources.AbListBtnPhysique;
+            Indicator physique = new Indicator(title, phyDescript, phyBeginIconUri, phyEndIconUri, phyLevels, GetCurrentLevel("physique"), GetCurrentValue("physique"));
+
             indicators.Add(power);
+            indicators.Add(physique);
             indicators.Add(luck);
         }
 
@@ -68,6 +84,9 @@ namespace Human80Level.Statistics
                     case "luck":
                         level = LuckEventManager.GetLevel();
                         break;
+                    case "physique":
+                        level = PhysiqueManager.GetLevel();
+                        break;
                 }
                 return level;
             }
@@ -83,15 +102,18 @@ namespace Human80Level.Statistics
         /// </summary>
         /// <param name="title"></param>
         /// <returns></returns>
-        private static int GetCurrentValue(string title)
+        private static double GetCurrentValue(string title)
         {
             try
             {
-                int value = 0;
+                double value = 0;
                 switch (title)
                 {
                     case "luck":
                         value = LuckEventManager.GetValue();
+                        break;
+                    case "physique":
+                        value = PhysiqueManager.GetValue();
                         break;
                 }
                 return value;

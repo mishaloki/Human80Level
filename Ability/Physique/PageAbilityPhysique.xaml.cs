@@ -34,10 +34,11 @@ namespace Human80Level.Ability.Physique
                 double weight = 0;
                 double ideal = 0;
                 Profile.Profile profile = ProfileManager.GetProfile();
-                int age = DateTime.Now.Year - profile.Birth.Year;
                 if (double.TryParse(textWeigth, out weight))
                 {
-                    ideal = 50 + 0.75*(profile.Heigth - 150) + (age - 20)/5;
+                    ideal = PhysiqueManager.GetIdealWeight(weight); 
+                    profile.Weight = weight;
+                    ProfileManager.UpdateProfile(profile);
                     this.UpdateFigure(ideal,weight);
                 }
                 else

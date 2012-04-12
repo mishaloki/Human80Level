@@ -27,6 +27,9 @@ namespace Human80Level.Profile
         [DataMember(Name = "Heigth")]
         public double Heigth { get; set; }
 
+        [DataMember(Name = "Weight")]
+        public double Weight { get; set; }
+
         /// <summary>
         /// Profile constructor
         /// </summary>

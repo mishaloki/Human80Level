@@ -214,6 +214,60 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает в какой форме вы находитесь.
+        /// </summary>
+        public static string APhyD {
+            get {
+                return ResourceManager.GetString("APhyD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вы жирдяй.
+        /// </summary>
+        public static string APhyL1 {
+            get {
+                return ResourceManager.GetString("APhyL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ваше телосложение отсавляет желать лучшего.
+        /// </summary>
+        public static string APhyL2 {
+            get {
+                return ResourceManager.GetString("APhyL2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вам есть к чему стремиться.
+        /// </summary>
+        public static string APhyL3 {
+            get {
+                return ResourceManager.GetString("APhyL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вам не стыдно выходить на пляж.
+        /// </summary>
+        public static string APhyL4 {
+            get {
+                return ResourceManager.GetString("APhyL4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вы аполлон.
+        /// </summary>
+        public static string APhyL5 {
+            get {
+                return ResourceManager.GetString("APhyL5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы настолько слабы что даже дети могут вас избить.
         /// </summary>
         public static string APower1 {
