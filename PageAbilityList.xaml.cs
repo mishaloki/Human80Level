@@ -45,5 +45,6 @@ namespace Human80Level
         {
             Navigator.NavigateTo(this,PhysiqueUri);
         }
+
     }
 }

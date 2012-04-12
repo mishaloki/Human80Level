@@ -25,9 +25,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <Button x:Name="btnPower" Content="{Binding Path=LocalizedResources.AbListBtnPower, Source={StaticResource LocalizedStrings}}"></Button>
-            <Button x:Name="btnEndurance" Content="{Binding Path=LocalizedResources.AbLisgBtnEndurance, Source={StaticResource LocalizedStrings}}"></Button>
-            <Button x:Name="btnIntelligence" Content="{Binding Path=LocalizedResources.AbListBtnIntel, Source={StaticResource LocalizedStrings}}"></Button>
+            <Button x:Name="btnPower" Content="{Binding Path=LocalizedResources.AbListBtnPower, Source={StaticResource LocalizedStrings}}" Click="btnPower_Click"></Button>
+            <Button x:Name="btnEndurance" Content="{Binding Path=LocalizedResources.AbLisgBtnEndurance, Source={StaticResource LocalizedStrings}}" Click="btnEndurance_Click"></Button>
+            <Button x:Name="btnIntelligence" Content="{Binding Path=LocalizedResources.AbListBtnIntel, Source={StaticResource LocalizedStrings}}" Click="btnIntelligence_Click"></Button>
             <Button x:Name="btnPhysique" Content="{Binding Path=LocalizedResources.AbListBtnPhysique, Source={StaticResource LocalizedStrings}}" Click="btnPhysique_Click"></Button>
             <Button x:Name="btnLuck" Content="{Binding Path=LocalizedResources.AbListBtnLuck, Source={StaticResource LocalizedStrings}}" Click="btnLuck_Click"></Button>
         </StackPanel>

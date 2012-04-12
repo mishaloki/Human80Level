@@ -66,6 +66,10 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ability\Intelligence\IntelligenceManager.cs" />
+    <Compile Include="Ability\Intelligence\PageAbilityIntelligence.xaml.cs">
+      <DependentUpon>PageAbilityIntelligence.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ability\Luck\LuckEventManager.cs" />
     <Compile Include="Ability\Physique\PageAbilityPhysique.xaml.cs">
       <DependentUpon>PageAbilityPhysique.xaml</DependentUpon>
@@ -124,6 +128,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Ability\Intelligence\PageAbilityIntelligence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ability\Physique\PageAbilityPhysique.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
