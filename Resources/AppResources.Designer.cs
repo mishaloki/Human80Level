@@ -412,6 +412,87 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ответить.
+        /// </summary>
+        public static string IntelPageBtnAnswer {
+            get {
+                return ResourceManager.GetString("IntelPageBtnAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ правильный. ваш уровень повысился.
+        /// </summary>
+        public static string IntelPageMBCorrect {
+            get {
+                return ResourceManager.GetString("IntelPageMBCorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ неверный. повробуйте завтра.
+        /// </summary>
+        public static string IntelPageMBWrong {
+            get {
+                return ResourceManager.GetString("IntelPageMBWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на введите ответ.
+        /// </summary>
+        public static string IntelPageTextAnswer {
+            get {
+                return ResourceManager.GetString("IntelPageTextAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на категория.
+        /// </summary>
+        public static string IntelPageTextCategory {
+            get {
+                return ResourceManager.GetString("IntelPageTextCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вопрос.
+        /// </summary>
+        public static string IntelPageTextQLabel {
+            get {
+                return ResourceManager.GetString("IntelPageTextQLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вопрос.
+        /// </summary>
+        public static string IntelPageTextQuestion {
+            get {
+                return ResourceManager.GetString("IntelPageTextQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на интеллект.
+        /// </summary>
+        public static string IntelPageTitle {
+            get {
+                return ResourceManager.GetString("IntelPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на найти в интернете.
+        /// </summary>
+        public static string IntePageLinkLabel {
+            get {
+                return ResourceManager.GetString("IntePageLinkLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на очистить.
         /// </summary>
         public static string LuckPageClearButtonCaption {

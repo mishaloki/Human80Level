@@ -387,4 +387,31 @@
   <data name="APhyL5" xml:space="preserve">
     <value>вы аполлон</value>
   </data>
+  <data name="IntelPageBtnAnswer" xml:space="preserve">
+    <value>answer</value>
+  </data>
+  <data name="IntelPageMBCorrect" xml:space="preserve">
+    <value>answer is correct. Your level increased</value>
+  </data>
+  <data name="IntelPageMBWrong" xml:space="preserve">
+    <value>answer is incorret. Try tomorrow</value>
+  </data>
+  <data name="IntelPageTextAnswer" xml:space="preserve">
+    <value>type the answer</value>
+  </data>
+  <data name="IntelPageTextCategory" xml:space="preserve">
+    <value>category</value>
+  </data>
+  <data name="IntelPageTextQLabel" xml:space="preserve">
+    <value>question</value>
+  </data>
+  <data name="IntelPageTextQuestion" xml:space="preserve">
+    <value>question</value>
+  </data>
+  <data name="IntelPageTitle" xml:space="preserve">
+    <value>intelligence</value>
+  </data>
+  <data name="IntePageLinkLabel" xml:space="preserve">
+    <value>find in internet</value>
+  </data>
 </root>
