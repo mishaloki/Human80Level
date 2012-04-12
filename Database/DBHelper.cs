@@ -93,5 +93,46 @@ namespace Human80Level.Database
                 return null;
             }
         }
+
+        public static void UpdateQuestion(Question question)
+        {
+            try
+            {
+                using (var context = new ProfileStatisticsDataContext(ConnectionString))
+                {
+                    if (context.DatabaseExists())
+                    {
+                        context.Questions.InsertOnSubmit(question);
+                        context.SubmitChanges();
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("UpdateQuestion", err.Message);
+            }
+
+        }
+
+        public static Question GetQuestionById(int id)
+        {
+            try
+            {
+                using (var context = new ProfileStatisticsDataContext(ConnectionString))
+                {
+                    var questions = from question1 in context.Questions select question1;
+  
+                    Question question = (from q in questions where (q.Id == id) && (q.IsAnswered != true) select q).First();
+                    return question;
+                }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("GetQuestionById", err.Message);
+                return null;
+            }
+
+        }
+
     }
 }

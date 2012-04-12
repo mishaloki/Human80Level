@@ -430,6 +430,24 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ правильный.
+        /// </summary>
+        public static string IntelPageMBTitleCorrect {
+            get {
+                return ResourceManager.GetString("IntelPageMBTitleCorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ неправильный.
+        /// </summary>
+        public static string IntelPageMBTitleIncorrect {
+            get {
+                return ResourceManager.GetString("IntelPageMBTitleIncorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на ответ неверный. повробуйте завтра.
         /// </summary>
         public static string IntelPageMBWrong {

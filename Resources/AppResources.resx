@@ -414,4 +414,10 @@
   <data name="IntePageLinkLabel" xml:space="preserve">
     <value>найти в интернете</value>
   </data>
+  <data name="IntelPageMBTitleCorrect" xml:space="preserve">
+    <value>ответ правильный</value>
+  </data>
+  <data name="IntelPageMBTitleIncorrect" xml:space="preserve">
+    <value>ответ неправильный</value>
+  </data>
 </root>

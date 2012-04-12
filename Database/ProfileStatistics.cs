@@ -33,6 +33,9 @@ namespace Human80Level.Database
     partial void InsertEvent(Event instance);
     partial void UpdateEvent(Event instance);
     partial void DeleteEvent(Event instance);
+    partial void InsertQuestion(Question instance);
+    partial void UpdateQuestion(Question instance);
+    partial void DeleteQuestion(Question instance);
     #endregion
 		
 		public ProfileStatisticsDataContext(string connection) : 
@@ -41,21 +44,27 @@ namespace Human80Level.Database
 			OnCreated();
 		}
 		
-
 		
 		public ProfileStatisticsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
-		
-
+	
 		
 		public System.Data.Linq.Table<Event> Events
 		{
 			get
 			{
 				return this.GetTable<Event>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Question> Questions
+		{
+			get
+			{
+				return this.GetTable<Question>();
 			}
 		}
 	}
@@ -68,11 +77,11 @@ namespace Human80Level.Database
 		
 		private int _Id;
 		
-		private System.DateTime _Date;
-		
 		private string _Message;
 		
 		private bool _IsLuck;
+		
+		private DateTime _Date;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -80,12 +89,12 @@ namespace Human80Level.Database
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnDateChanging(System.DateTime value);
-    partial void OnDateChanged();
     partial void OnMessageChanging(string value);
     partial void OnMessageChanged();
     partial void OnIsLuckChanging(bool value);
     partial void OnIsLuckChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
     #endregion
 		
 		public Event()
@@ -93,7 +102,7 @@ namespace Human80Level.Database
 			OnCreated();
 		}
 
-         public Event (string message, DateTime date, bool isLuck)
+        public Event(string message, DateTime date, bool isLuck)
         {
             this.Message = message;
             this.Date = date;
@@ -116,26 +125,6 @@ namespace Human80Level.Database
 					this._Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
 				}
 			}
 		}
@@ -176,6 +165,242 @@ namespace Human80Level.Database
 					this._IsLuck = value;
 					this.SendPropertyChanged("IsLuck");
 					this.OnIsLuckChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute()]
+	public partial class Question : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _QuestionRus;
+		
+		private string _QuestionEng;
+		
+		private string _AnswerRus;
+		
+		private string _AnswerEng;
+		
+		private bool _IsAnswered;
+		
+		private string _Link;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnQuestionRusChanging(string value);
+    partial void OnQuestionRusChanged();
+    partial void OnQuestionEngChanging(string value);
+    partial void OnQuestionEngChanged();
+    partial void OnAnswerRusChanging(string value);
+    partial void OnAnswerRusChanged();
+    partial void OnAnswerEngChanging(string value);
+    partial void OnAnswerEngChanged();
+    partial void OnIsAnsweredChanging(bool value);
+    partial void OnIsAnsweredChanged();
+    partial void OnLinkChanging(string value);
+    partial void OnLinkChanged();
+    #endregion
+
+        public Question()
+        {
+            OnCreated();
+        }
+        
+        public Question(string question, string answer, string link)
+        {
+            this.IsAnswered = false;
+            this.QuestionRus = question;
+            this.QuestionEng = question;
+            this.AnswerRus = answer;
+            this.AnswerEng = answer;
+            this.Link = link;
+        }
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuestionRus", DbType="NVarChar(1000) NOT NULL", CanBeNull=false)]
+		public string QuestionRus
+		{
+			get
+			{
+				return this._QuestionRus;
+			}
+			set
+			{
+				if ((this._QuestionRus != value))
+				{
+					this.OnQuestionRusChanging(value);
+					this.SendPropertyChanging();
+					this._QuestionRus = value;
+					this.SendPropertyChanged("QuestionRus");
+					this.OnQuestionRusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuestionEng", DbType="NVarChar(1000) NOT NULL", CanBeNull=false)]
+		public string QuestionEng
+		{
+			get
+			{
+				return this._QuestionEng;
+			}
+			set
+			{
+				if ((this._QuestionEng != value))
+				{
+					this.OnQuestionEngChanging(value);
+					this.SendPropertyChanging();
+					this._QuestionEng = value;
+					this.SendPropertyChanged("QuestionEng");
+					this.OnQuestionEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnswerRus", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string AnswerRus
+		{
+			get
+			{
+				return this._AnswerRus;
+			}
+			set
+			{
+				if ((this._AnswerRus != value))
+				{
+					this.OnAnswerRusChanging(value);
+					this.SendPropertyChanging();
+					this._AnswerRus = value;
+					this.SendPropertyChanged("AnswerRus");
+					this.OnAnswerRusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnswerEng", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string AnswerEng
+		{
+			get
+			{
+				return this._AnswerEng;
+			}
+			set
+			{
+				if ((this._AnswerEng != value))
+				{
+					this.OnAnswerEngChanging(value);
+					this.SendPropertyChanging();
+					this._AnswerEng = value;
+					this.SendPropertyChanged("AnswerEng");
+					this.OnAnswerEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsAnswered", DbType="Bit NOT NULL")]
+		public bool IsAnswered
+		{
+			get
+			{
+				return this._IsAnswered;
+			}
+			set
+			{
+				if ((this._IsAnswered != value))
+				{
+					this.OnIsAnsweredChanging(value);
+					this.SendPropertyChanging();
+					this._IsAnswered = value;
+					this.SendPropertyChanged("IsAnswered");
+					this.OnIsAnsweredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Link
+		{
+			get
+			{
+				return this._Link;
+			}
+			set
+			{
+				if ((this._Link != value))
+				{
+					this.OnLinkChanging(value);
+					this.SendPropertyChanging();
+					this._Link = value;
+					this.SendPropertyChanged("Link");
+					this.OnLinkChanged();
 				}
 			}
 		}
