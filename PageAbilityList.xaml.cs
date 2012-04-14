@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 
 namespace Human80Level
 {
     public partial class PageAbilityList : PhoneApplicationPage
     {
+        private const string LuckUri = "/Ability/Luck/PageAbilityLuck.xaml";
+
+        private const string PowerUri = "/Ability/Power/PageAbilityPower.xaml";
+
+        private const string EnduranceUri = "/Ability/Endurance/PageAbilityEndurance.xaml";
+
+        private const string IntelUri = "/Ability/Intelligence/PageAbilityIntelligence.xaml";
+
+        private const string PhysiqueUri = "/Ability/Physique/PageAbilityPhysique.xaml";
+
         public PageAbilityList()
         {
             InitializeComponent();
@@ -22,27 +23,28 @@ namespace Human80Level
 
         private void btnLuck_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/Luck/PageAbilityLuck.xaml", UriKind.Relative));
+            Navigator.NavigateTo(this, LuckUri);
         }
 
         private void btnPower_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/Power/PageAbilityPower.xaml", UriKind.Relative));
+            Navigator.NavigateTo(this, PowerUri);
         }
 
         private void btnEndurance_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/Endurance/PageAbilityEndurance.xaml", UriKind.Relative));
+            Navigator.NavigateTo(this, EnduranceUri);
         }
 
         private void btnIntelligence_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/Intelligence/PageAbilityIntelligence.xaml", UriKind.Relative));
+            Navigator.NavigateTo(this, IntelUri);
         }
 
         private void btnPhysique_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Ability/Physique/PageAbilityPhysique.xaml", UriKind.Relative));
+            Navigator.NavigateTo(this,PhysiqueUri);
         }
+
     }
 }

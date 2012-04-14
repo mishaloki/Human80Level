@@ -66,10 +66,20 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ability\Endurance\EnduranceManager.cs" />
+    <Compile Include="Ability\Endurance\GpsData.cs" />
+    <Compile Include="Ability\Endurance\PageAbilityEndurance.xaml.cs">
+      <DependentUpon>PageAbilityEndurance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ability\Intelligence\IntelligenceManager.cs" />
+    <Compile Include="Ability\Intelligence\PageAbilityIntelligence.xaml.cs">
+      <DependentUpon>PageAbilityIntelligence.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ability\Luck\LuckEventManager.cs" />
     <Compile Include="Ability\Physique\PageAbilityPhysique.xaml.cs">
       <DependentUpon>PageAbilityPhysique.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ability\Physique\PhysiqueManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -90,7 +100,7 @@
     <Compile Include="PageHelp.xaml.cs">
       <DependentUpon>PageHelp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageProfile.xaml.cs">
+    <Compile Include="Profile\PageProfile.xaml.cs">
       <DependentUpon>PageProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Profile\Profile.cs" />
@@ -112,9 +122,11 @@
       <DependentUpon>PageStatistics.xaml</DependentUpon>
     </Compile>
     <Compile Include="Statistics\Statistic.cs" />
+    <Compile Include="Utils\CultureManager.cs" />
     <Compile Include="Utils\LocalizedStrings.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\LuckToImageUrlConverter.cs" />
+    <Compile Include="Utils\Navigator.cs" />
     <Compile Include="Utils\StorageManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +134,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Ability\Endurance\PageAbilityEndurance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ability\Intelligence\PageAbilityIntelligence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ability\Physique\PageAbilityPhysique.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,7 +166,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageProfile.xaml">
+    <Page Include="Profile\PageProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,8 +178,15 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
+    <Content Include="Images\Ability\Intelligence\fool.png" />
+    <Content Include="Images\Ability\Intelligence\genius.png" />
     <Content Include="Images\Ability\Luck\loser.png" />
     <Content Include="Images\Ability\Luck\lucky.png" />
+    <Content Include="Images\Ability\Physique\fat.png" />
+    <Content Include="Images\Ability\Physique\slim.png" />
+    <Content Include="Images\Ability\Physique\triangle.png" />
+    <Content Include="Images\Ability\Power\chuck.png" />
+    <Content Include="Images\Ability\Power\weak.png" />
     <Content Include="Images\Statistics\statistics.png" />
     <Content Include="Utils\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -199,9 +226,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Ability\Endurance\" />
-    <Folder Include="Images\Ability\Intelligence\" />
-    <Folder Include="Images\Ability\Physique\" />
-    <Folder Include="Images\Ability\Power\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

@@ -35,7 +35,7 @@
                                     <Image Name="imgBegin" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding BeginIconUri}"></Image>
                                     <Image Name="imgEnd" Height="100" Width="100" Grid.Column="1" HorizontalAlignment="Right" Source="{Binding EndIconUri}"></Image>
                                 </Grid>
-                                <ProgressBar Name="abProgress" Value="{Binding CurrentValue}" Maximum="50"></ProgressBar>
+                                <ProgressBar Name="abProgress" Value="{Binding CurrentValue}" Maximum="100"></ProgressBar>
                                 <StackPanel Orientation="Vertical">
                                     <TextBlock Name="abLevetlTitle" Text="{Binding Path=LocalizedResources.ALevelLabel, Source={StaticResource LocalizedStrings}}"></TextBlock>
                                     <TextBlock Name="abLevelValue" Text="{Binding CurrentLevel}" TextWrapping="Wrap"></TextBlock>

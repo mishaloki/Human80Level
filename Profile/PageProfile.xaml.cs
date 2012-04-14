@@ -215,9 +215,10 @@ namespace Human80Level
                             avatarUrl = imagePathOrContent;
                             imgAvatar.Source = StorageManager.GetImageFromStorage(avatarUrl);
                         }
-                        catch (Exception ex)
+                        catch (Exception err)
                         {
                             MessageBox.Show(MBsaveErrorTitle,MBsaveErrorMessage,MessageBoxButton.OK);
+                            Logger.Error("onTaskCompleted", err.Message);
                         }
                         break;
 

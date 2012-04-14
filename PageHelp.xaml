@@ -14,22 +14,32 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
-    <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="help">
+        <controls:Pivot Title="{Binding Path=LocalizedResources.HelpPivotTitle, Source={StaticResource LocalizedStrings}}">
+            <controls:Pivot.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Statistics/statistics.png" Opacity="0.5" x:Name="pivotBgBrush"/>
+            </controls:Pivot.Background>
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpCommon, Source={StaticResource LocalizedStrings}}">
+                
+            </controls:PivotItem>
 
-            <!--Первый элемент Panorama-->
-            <controls:PanoramaItem Header="common rules">
-                <Grid/>
-            </controls:PanoramaItem>
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpMainMenu, Source={StaticResource LocalizedStrings}}">
 
-            <!--Второй элемент Panorama-->
-            <controls:PanoramaItem Header="main menu">
-                <Grid/>
-            </controls:PanoramaItem>
-        </controls:Panorama>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListBtnLuck, Source={StaticResource LocalizedStrings}}">
+                <ScrollViewer>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleAdd, Source={StaticResource LocalizedStrings}}" Margin="0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMadd, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleList, Source={StaticResource LocalizedStrings}}" Margin="0,30,0,0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMlist, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleTry, Source={StaticResource LocalizedStrings}}" Margin="0,30,0,0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMtry, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PivotItem>
+
+        </controls:Pivot>
     </Grid>
-
-    <!--Приложения на базе панорамы не должны содержать ApplicationBar-->
-
 </phone:PhoneApplicationPage>

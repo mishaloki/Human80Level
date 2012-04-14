@@ -312,4 +312,175 @@
   <data name="SuccessAddMessage" xml:space="preserve">
     <value>Event has been added</value>
   </data>
+  <data name="HelpCommon" xml:space="preserve">
+    <value>common rules</value>
+  </data>
+  <data name="HelpMainMenu" xml:space="preserve">
+    <value>menu</value>
+  </data>
+  <data name="HelpPivotTitle" xml:space="preserve">
+    <value>help</value>
+  </data>
+  <data name="AboutAuthor" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="HelpLuckMadd" xml:space="preserve">
+    <value>на этой страцице вы можете ввести любое событие вашей жизни произошедшее в текущий день. Данное событие может быть либо удачным для вас, либо наоборот неудачным. В записимости от этого после ввода события нажмити одну из друз кнопок - с клевером или перечеркнутым клевером. После этого событие будет добавлено в список событий. Вы можете ввести любое количество событий, но все они будут сохранены со временм ввода.</value>
+  </data>
+  <data name="HelpLuckMlist" xml:space="preserve">
+    <value>здесь отображается список всех введеннх вами событий. Вверху показано колиство удачных и неудачных событий. Вы можете удалить любое событие нажав два раза на него. Так же если вы выберите событие из списка и затем перейдете на страницу добавления события, то текст события будет автоматически скопирован в поле ввода. Таким образом вы можете сэкономить время для ввода повторяющихся событий.</value>
+  </data>
+  <data name="HelpLuckMtry" xml:space="preserve">
+    <value>один раз в день вы можете испытывать удачу откурывая один из друх закрытых квадратов. Если вы откроете изображение клевера, то событие будет добавлено как удачное, в противном случае как неудачное. Чтобы открыть квадрат нажмите на него и удреживайти в течении 1-2 секунд.</value>
+  </data>
+  <data name="HelpLuckTitleAdd" xml:space="preserve">
+    <value>страница "Добавить событие"</value>
+  </data>
+  <data name="HelpLuckTitleList" xml:space="preserve">
+    <value>страница "Список событий"</value>
+  </data>
+  <data name="HelpLuckTitleTry" xml:space="preserve">
+    <value>страница "Испытай удачу"</value>
+  </data>
+  <data name="PhyPageCurrentLabel" xml:space="preserve">
+    <value>текущий</value>
+  </data>
+  <data name="PhyPageEnterLabel" xml:space="preserve">
+    <value>введите ваш вес</value>
+  </data>
+  <data name="PhyPageIdealFormula" xml:space="preserve">
+    <value>Ideal = 50 + 0.75*(height - 150)+(age - 20)/5</value>
+  </data>
+  <data name="PhyPageIdealLabel" xml:space="preserve">
+    <value>идеал</value>
+  </data>
+  <data name="PhyPageIdealValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhyPageSaveBtn" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="PhyPageTitle" xml:space="preserve">
+    <value>телосложение</value>
+  </data>
+  <data name="APhyD" xml:space="preserve">
+    <value>показывает в какой форме вы находитесь</value>
+  </data>
+  <data name="APhyL1" xml:space="preserve">
+    <value>вы жирдяй</value>
+  </data>
+  <data name="APhyL2" xml:space="preserve">
+    <value>ваше телосложение отсавляет желать лучшего</value>
+  </data>
+  <data name="APhyL3" xml:space="preserve">
+    <value>вам есть к чему стремиться</value>
+  </data>
+  <data name="APhyL4" xml:space="preserve">
+    <value>вам не стыдно выходить на пляж</value>
+  </data>
+  <data name="APhyL5" xml:space="preserve">
+    <value>вы аполлон</value>
+  </data>
+  <data name="IntelPageBtnAnswer" xml:space="preserve">
+    <value>answer</value>
+  </data>
+  <data name="IntelPageMBCorrect" xml:space="preserve">
+    <value>answer is correct. Your level increased</value>
+  </data>
+  <data name="IntelPageMBWrong" xml:space="preserve">
+    <value>answer is incorret. Try tomorrow</value>
+  </data>
+  <data name="IntelPageTextAnswer" xml:space="preserve">
+    <value>type the answer</value>
+  </data>
+  <data name="IntelPageTextCategory" xml:space="preserve">
+    <value>category</value>
+  </data>
+  <data name="IntelPageTextQLabel" xml:space="preserve">
+    <value>question</value>
+  </data>
+  <data name="IntelPageTextQuestion" xml:space="preserve">
+    <value>question</value>
+  </data>
+  <data name="IntelPageTitle" xml:space="preserve">
+    <value>intelligence</value>
+  </data>
+  <data name="IntePageLinkLabel" xml:space="preserve">
+    <value>find in internet</value>
+  </data>
+  <data name="IntelPageMBTitleCorrect" xml:space="preserve">
+    <value>ответ правильный</value>
+  </data>
+  <data name="IntelPageMBTitleIncorrect" xml:space="preserve">
+    <value>ответ неправильный</value>
+  </data>
+  <data name="AIntelD" xml:space="preserve">
+    <value>показывает насколько вы умны</value>
+  </data>
+  <data name="AIntelL1" xml:space="preserve">
+    <value>умственно отсталые обыгрывают вас в шахматы</value>
+  </data>
+  <data name="AIntelL2" xml:space="preserve">
+    <value>вы явно не были отличником в школе</value>
+  </data>
+  <data name="AIntelL3" xml:space="preserve">
+    <value>а вы не дурак</value>
+  </data>
+  <data name="AIntelL4" xml:space="preserve">
+    <value>вам пора на передачу Кто хочет стать миллионером</value>
+  </data>
+  <data name="AIntelL5" xml:space="preserve">
+    <value>Вы Анатолий Вассерман</value>
+  </data>
+  <data name="IntelPageTextAlreadyAnsweredToday" xml:space="preserve">
+    <value>Вы уже отвечали сегодня. Попробуйте завтра</value>
+  </data>
+  <data name="EndurPageBtnStart" xml:space="preserve">
+    <value>начать</value>
+  </data>
+  <data name="EndurPageBtnStop" xml:space="preserve">
+    <value>стоп</value>
+  </data>
+  <data name="EndurPageMBGpsFailMessage" xml:space="preserve">
+    <value>в данный момент навигатор не работает</value>
+  </data>
+  <data name="EndurPageMBGpsFailTitle" xml:space="preserve">
+    <value>навигатор не доступен</value>
+  </data>
+  <data name="EndurPageMBGpsReadyMessage" xml:space="preserve">
+    <value>навигатор готов к использованию</value>
+  </data>
+  <data name="EndurPageMBGpsReadyTitle" xml:space="preserve">
+    <value>сигнал получен</value>
+  </data>
+  <data name="EndurPageTextAvgSpeed" xml:space="preserve">
+    <value>средняя скорость</value>
+  </data>
+  <data name="EndurPageTextCurrentAvgSpeed" xml:space="preserve">
+    <value>текущая скорость</value>
+  </data>
+  <data name="EndurPageTextCurrentDistance" xml:space="preserve">
+    <value>пройдено</value>
+  </data>
+  <data name="EndurPageTextCurrentTime" xml:space="preserve">
+    <value>прошло</value>
+  </data>
+  <data name="EndurPageTextTotalDistance" xml:space="preserve">
+    <value>общее расстояние</value>
+  </data>
+  <data name="EndurPageTextTotalTime" xml:space="preserve">
+    <value>всего времени</value>
+  </data>
+  <data name="EndurPageTitle" xml:space="preserve">
+    <value>выносливость</value>
+  </data>
+  <data name="EndurPageWaitingMessasge" xml:space="preserve">
+    <value>ожидание подключения GPS</value>
+  </data>
 </root>

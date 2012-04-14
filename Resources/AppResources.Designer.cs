@@ -115,6 +115,87 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Автор.
+        /// </summary>
+        public static string AboutAuthor {
+            get {
+                return ResourceManager.GetString("AboutAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на о программе.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Версия.
+        /// </summary>
+        public static string AboutVersion {
+            get {
+                return ResourceManager.GetString("AboutVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает насколько вы умны.
+        /// </summary>
+        public static string AIntelD {
+            get {
+                return ResourceManager.GetString("AIntelD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на умственно отсталые обыгрывают вас в шахматы.
+        /// </summary>
+        public static string AIntelL1 {
+            get {
+                return ResourceManager.GetString("AIntelL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вы явно не были отличником в школе.
+        /// </summary>
+        public static string AIntelL2 {
+            get {
+                return ResourceManager.GetString("AIntelL2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на а вы не дурак.
+        /// </summary>
+        public static string AIntelL3 {
+            get {
+                return ResourceManager.GetString("AIntelL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вам пора на передачу Кто хочет стать миллионером.
+        /// </summary>
+        public static string AIntelL4 {
+            get {
+                return ResourceManager.GetString("AIntelL4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы Анатолий Вассерман.
+        /// </summary>
+        public static string AIntelL5 {
+            get {
+                return ResourceManager.GetString("AIntelL5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Текущий уровень.
         /// </summary>
         public static string ALevelLabel {
@@ -187,6 +268,60 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает в какой форме вы находитесь.
+        /// </summary>
+        public static string APhyD {
+            get {
+                return ResourceManager.GetString("APhyD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вы жирдяй.
+        /// </summary>
+        public static string APhyL1 {
+            get {
+                return ResourceManager.GetString("APhyL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ваше телосложение отсавляет желать лучшего.
+        /// </summary>
+        public static string APhyL2 {
+            get {
+                return ResourceManager.GetString("APhyL2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вам есть к чему стремиться.
+        /// </summary>
+        public static string APhyL3 {
+            get {
+                return ResourceManager.GetString("APhyL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вам не стыдно выходить на пляж.
+        /// </summary>
+        public static string APhyL4 {
+            get {
+                return ResourceManager.GetString("APhyL4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вы аполлон.
+        /// </summary>
+        public static string APhyL5 {
+            get {
+                return ResourceManager.GetString("APhyL5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы настолько слабы что даже дети могут вас избить.
         /// </summary>
         public static string APower1 {
@@ -246,6 +381,321 @@ namespace Human80Level.Resources {
         public static string DefaultEventMessage {
             get {
                 return ResourceManager.GetString("DefaultEventMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на начать.
+        /// </summary>
+        public static string EndurPageBtnStart {
+            get {
+                return ResourceManager.GetString("EndurPageBtnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на стоп.
+        /// </summary>
+        public static string EndurPageBtnStop {
+            get {
+                return ResourceManager.GetString("EndurPageBtnStop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на в данный момент навигатор не работает.
+        /// </summary>
+        public static string EndurPageMBGpsFailMessage {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsFailMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на навигатор не доступен.
+        /// </summary>
+        public static string EndurPageMBGpsFailTitle {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsFailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на навигатор готов к использованию.
+        /// </summary>
+        public static string EndurPageMBGpsReadyMessage {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsReadyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сигнал получен.
+        /// </summary>
+        public static string EndurPageMBGpsReadyTitle {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsReadyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на средняя скорость.
+        /// </summary>
+        public static string EndurPageTextAvgSpeed {
+            get {
+                return ResourceManager.GetString("EndurPageTextAvgSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на текущая скорость.
+        /// </summary>
+        public static string EndurPageTextCurrentAvgSpeed {
+            get {
+                return ResourceManager.GetString("EndurPageTextCurrentAvgSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на пройдено.
+        /// </summary>
+        public static string EndurPageTextCurrentDistance {
+            get {
+                return ResourceManager.GetString("EndurPageTextCurrentDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на прошло.
+        /// </summary>
+        public static string EndurPageTextCurrentTime {
+            get {
+                return ResourceManager.GetString("EndurPageTextCurrentTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на общее расстояние.
+        /// </summary>
+        public static string EndurPageTextTotalDistance {
+            get {
+                return ResourceManager.GetString("EndurPageTextTotalDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на всего времени.
+        /// </summary>
+        public static string EndurPageTextTotalTime {
+            get {
+                return ResourceManager.GetString("EndurPageTextTotalTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на выносливость.
+        /// </summary>
+        public static string EndurPageTitle {
+            get {
+                return ResourceManager.GetString("EndurPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ожидание подключения GPS.
+        /// </summary>
+        public static string EndurPageWaitingMessasge {
+            get {
+                return ResourceManager.GetString("EndurPageWaitingMessasge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на общие сведения.
+        /// </summary>
+        public static string HelpCommon {
+            get {
+                return ResourceManager.GetString("HelpCommon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на на этой страцице вы можете ввести любое событие вашей жизни произошедшее в текущий день. Данное событие может быть либо удачным для вас, либо наоборот неудачным. В записимости от этого после ввода события нажмити одну из друз кнопок - с клевером или перечеркнутым клевером. После этого событие будет добавлено в список событий. Вы можете ввести любое количество событий, но все они будут сохранены со временм ввода..
+        /// </summary>
+        public static string HelpLuckMadd {
+            get {
+                return ResourceManager.GetString("HelpLuckMadd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на здесь отображается список всех введеннх вами событий. Вверху показано колиство удачных и неудачных событий. Вы можете удалить любое событие нажав два раза на него. Так же если вы выберите событие из списка и затем перейдете на страницу добавления события, то текст события будет автоматически скопирован в поле ввода. Таким образом вы можете сэкономить время для ввода повторяющихся событий..
+        /// </summary>
+        public static string HelpLuckMlist {
+            get {
+                return ResourceManager.GetString("HelpLuckMlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на один раз в день вы можете испытывать удачу откурывая один из друх закрытых квадратов. Если вы откроете изображение клевера, то событие будет добавлено как удачное, в противном случае как неудачное. Чтобы открыть квадрат нажмите на него и удреживайти в течении 1-2 секунд..
+        /// </summary>
+        public static string HelpLuckMtry {
+            get {
+                return ResourceManager.GetString("HelpLuckMtry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Добавить событие&quot;.
+        /// </summary>
+        public static string HelpLuckTitleAdd {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Список событий&quot;.
+        /// </summary>
+        public static string HelpLuckTitleList {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на страница &quot;Испытай удачу&quot;.
+        /// </summary>
+        public static string HelpLuckTitleTry {
+            get {
+                return ResourceManager.GetString("HelpLuckTitleTry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на гланое меню.
+        /// </summary>
+        public static string HelpMainMenu {
+            get {
+                return ResourceManager.GetString("HelpMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на помощь.
+        /// </summary>
+        public static string HelpPivotTitle {
+            get {
+                return ResourceManager.GetString("HelpPivotTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответить.
+        /// </summary>
+        public static string IntelPageBtnAnswer {
+            get {
+                return ResourceManager.GetString("IntelPageBtnAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ правильный. ваш уровень повысился.
+        /// </summary>
+        public static string IntelPageMBCorrect {
+            get {
+                return ResourceManager.GetString("IntelPageMBCorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ правильный.
+        /// </summary>
+        public static string IntelPageMBTitleCorrect {
+            get {
+                return ResourceManager.GetString("IntelPageMBTitleCorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ неправильный.
+        /// </summary>
+        public static string IntelPageMBTitleIncorrect {
+            get {
+                return ResourceManager.GetString("IntelPageMBTitleIncorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ответ неверный. повробуйте завтра.
+        /// </summary>
+        public static string IntelPageMBWrong {
+            get {
+                return ResourceManager.GetString("IntelPageMBWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы уже отвечали сегодня. Попробуйте завтра.
+        /// </summary>
+        public static string IntelPageTextAlreadyAnsweredToday {
+            get {
+                return ResourceManager.GetString("IntelPageTextAlreadyAnsweredToday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на введите ответ.
+        /// </summary>
+        public static string IntelPageTextAnswer {
+            get {
+                return ResourceManager.GetString("IntelPageTextAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на категория.
+        /// </summary>
+        public static string IntelPageTextCategory {
+            get {
+                return ResourceManager.GetString("IntelPageTextCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вопрос.
+        /// </summary>
+        public static string IntelPageTextQLabel {
+            get {
+                return ResourceManager.GetString("IntelPageTextQLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вопрос.
+        /// </summary>
+        public static string IntelPageTextQuestion {
+            get {
+                return ResourceManager.GetString("IntelPageTextQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на интеллект.
+        /// </summary>
+        public static string IntelPageTitle {
+            get {
+                return ResourceManager.GetString("IntelPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на найти в интернете.
+        /// </summary>
+        public static string IntePageLinkLabel {
+            get {
+                return ResourceManager.GetString("IntePageLinkLabel", resourceCulture);
             }
         }
         
@@ -399,6 +849,69 @@ namespace Human80Level.Resources {
         public static string NullOrEmptyMessageTitle {
             get {
                 return ResourceManager.GetString("NullOrEmptyMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на текущий.
+        /// </summary>
+        public static string PhyPageCurrentLabel {
+            get {
+                return ResourceManager.GetString("PhyPageCurrentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на введите ваш вес.
+        /// </summary>
+        public static string PhyPageEnterLabel {
+            get {
+                return ResourceManager.GetString("PhyPageEnterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Идеал = 50 + 0.75*(рост - 150)+(возраст - 20)/5.
+        /// </summary>
+        public static string PhyPageIdealFormula {
+            get {
+                return ResourceManager.GetString("PhyPageIdealFormula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на идеал.
+        /// </summary>
+        public static string PhyPageIdealLabel {
+            get {
+                return ResourceManager.GetString("PhyPageIdealLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        public static string PhyPageIdealValue {
+            get {
+                return ResourceManager.GetString("PhyPageIdealValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сохранить.
+        /// </summary>
+        public static string PhyPageSaveBtn {
+            get {
+                return ResourceManager.GetString("PhyPageSaveBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на телосложение.
+        /// </summary>
+        public static string PhyPageTitle {
+            get {
+                return ResourceManager.GetString("PhyPageTitle", resourceCulture);
             }
         }
         

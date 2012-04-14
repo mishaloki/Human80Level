@@ -1,14 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-
+﻿
 namespace Human80Level.Statistics
 {
     public class Indicator
@@ -25,9 +15,9 @@ namespace Human80Level.Statistics
 
         public string CurrentLevel { get; set; }
 
-        public int CurrentValue { get; set; }
+        public double CurrentValue { get; set; }
 
-        public Indicator(string title, string description, string beginIconUri, string endIconUri, string [] levels,int currentLevel, int currentValue)
+        public Indicator(string title, string description, string beginIconUri, string endIconUri, string [] levels,int currentLevel, double currentValue)
         {
             this.Title = title;
             this.Description = description;

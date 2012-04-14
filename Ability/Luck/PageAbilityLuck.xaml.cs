@@ -1,24 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Human80Level.Ability.Luck;
 using Human80Level.Database;
 using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
-using System.Linq;
 
 namespace Human80Level
 {
@@ -63,7 +55,6 @@ namespace Human80Level
         {
             try
             {
-                //DBHelper.DeleteDatabase();
                 DBHelper.CreateDatabase();
                 eventList = LuckEventManager.GetEventList();
                 listEventList.ItemsSource = eventList;
@@ -88,14 +79,22 @@ namespace Human80Level
 
         private void UpdateEventCounter(object sender, NotifyCollectionChangedEventArgs args)
         {
-            ObservableCollection<Event> eventMessages = sender as ObservableCollection<Event>;
-            int luckNumb = (from luckEventMessage in eventMessages
-                           where luckEventMessage.IsLuck == true
-                           select luckEventMessage).Count();
-            int failureNumb = eventMessages.Count - luckNumb;
+            try
+            {
+                ObservableCollection<Event> eventMessages = sender as ObservableCollection<Event>;
+                int luckNumb = (from luckEventMessage in eventMessages
+                                where luckEventMessage.IsLuck == true
+                                select luckEventMessage).Count();
+                int failureNumb = eventMessages.Count - luckNumb;
 
-            textFailureCounter.Text = failureNumb.ToString();
-            textLuckCounter.Text = luckNumb.ToString();
+                textFailureCounter.Text = failureNumb.ToString();
+                textLuckCounter.Text = luckNumb.ToString();
+            }
+            catch (Exception err)
+            {
+                Logger.Error("UpdateEventCounter", err.Message);
+            }
+
         }
 
         private void imgLeft_Hold(object sender, System.Windows.Input.GestureEventArgs e)
@@ -200,14 +199,18 @@ namespace Human80Level
         private void listEventList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Event message = listEventList.SelectedItem as Event;
-            if (message != null)
-            {
-                textMessage.Text = message.Message;
-            }
+            this.CopyMessageToInputField(message);
             
         }
 
 
+        private void CopyMessageToInputField(Event message)
+        {
+            if (message != null)
+            {
+                textMessage.Text = message.Message;
+            }
+        }
 
         private void listEventList_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -218,11 +221,19 @@ namespace Human80Level
 
         private void RemoveEventMessage(Event message)
         {
-            if (MessageBox.Show(RemoveEventMessageText,RemoveEventMessageTitle,MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            try
             {
-                eventList.Remove(message);
-                LuckEventManager.RemoveEventMessage(message);
+                if (MessageBox.Show(RemoveEventMessageText, RemoveEventMessageTitle, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                {
+                    eventList.Remove(message);
+                    LuckEventManager.RemoveEventMessage(message);
+                }
             }
+            catch (Exception err)
+            {
+                Logger.Error("RemoveEventMessage", err.Message);
+            }
+
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -256,7 +267,7 @@ namespace Human80Level
             }
             catch (Exception error)
             {
-                Logger.Error(string.Format(LoggerMessageFormat, "AddMessage", error.Message));
+                Logger.Error("SetClearButtonState", error.Message);
             }
             
         }
