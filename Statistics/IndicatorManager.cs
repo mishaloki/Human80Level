@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Human80Level.Ability.Endurance;
 using Human80Level.Ability.Intelligance;
 using Human80Level.Ability.Luck;
 using Human80Level.Ability.Physique;
@@ -19,6 +20,7 @@ namespace Human80Level.Statistics
         private static string powerDescript = "";
 
         private static string [] powerLevels = new string[] { AppResources.APower1, AppResources.APower2, AppResources.APower3, AppResources.APower4, AppResources.APower5 };
+
 
         private static string luckBeginIconUri = "/Images/Ability/Luck/loser.png";
 
@@ -45,6 +47,17 @@ namespace Human80Level.Statistics
         private static string intelDescript = AppResources.AIntelD;
 
         private static string[] intelLevels = new string[5] { AppResources.AIntelL1, AppResources.AIntelL2, AppResources.AIntelL3, AppResources.AIntelL4, AppResources.AIntelL5 };
+
+
+        private static string endurBeginIconUri = "/Images/Ability/Endurance/weak.png";
+
+        private static string endurEndIconUri = "/Images/Ability/Endurance/rocky.png";
+
+        private static string endurDescript = AppResources.AEndurD;
+
+        private static string[] endurLevels = new string[5] { AppResources.AEndurL1, AppResources.AEndurL2, AppResources.AEndurL3, AppResources.AEndurL4, AppResources.AEndurL5 };
+
+
 
         /// <summary>
         /// Gets list of all indicators
@@ -75,10 +88,15 @@ namespace Human80Level.Statistics
             title = AppResources.AbListBtnIntel;
             Indicator intelligence = new Indicator(title, intelDescript, intelBeginIconUri, intelEndIconUri, intelLevels, GetCurrentLevel("intelligence"), GetCurrentValue("intelligence"));
 
+            title = AppResources.AbLisgBtnEndurance;
+            Indicator endurance = new Indicator(title, endurDescript, endurBeginIconUri, endurEndIconUri, endurLevels, GetCurrentLevel("endurance"), GetCurrentValue("endurance"));
+
+
             indicators.Add(power);
             indicators.Add(physique);
             indicators.Add(luck);
             indicators.Add(intelligence);
+            indicators.Add(endurance);
         }
 
         /// <summary>
@@ -101,6 +119,9 @@ namespace Human80Level.Statistics
                         break;
                     case "intelligence":
                         level = IntelligenceManager.GetLevel();
+                        break;
+                    case "endurance":
+                        level = EnduranceManager.GetLevel();
                         break;
                 }
                 return level;
@@ -132,6 +153,9 @@ namespace Human80Level.Statistics
                         break;
                     case "intelligence":
                         value = IntelligenceManager.GetValue();
+                        break;
+                    case "endurance":
+                        value = EnduranceManager.GetValue();
                         break;
                 }
                 return value;

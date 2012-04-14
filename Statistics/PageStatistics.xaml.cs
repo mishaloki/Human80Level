@@ -26,6 +26,7 @@ namespace Human80Level.Statistics
             base.OnNavigatedTo(e);
             IndicatorManager.CreateIndicators();
             listIndicators.ItemsSource = IndicatorManager.GetIndicators();
+            //todo add extracting endurance totaldistance
         }
     }
 }
