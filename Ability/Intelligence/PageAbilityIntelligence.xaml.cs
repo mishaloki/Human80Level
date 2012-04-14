@@ -17,9 +17,8 @@ namespace Human80Level.Ability.Intelligence
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            IntelligenceManager.AddQuestion();
-            IntelligenceManager.ExtractRandomQuestion();
+            base.OnNavigatedTo(e);           
+
             this.DisplayQuestion();
         }
         
@@ -27,8 +26,15 @@ namespace Human80Level.Ability.Intelligence
         {
             try
             {
+                if (IntelligenceManager.IsAlreadyAsked())
+                {
+                    textQuestion.Text = AppResources.IntelPageTextAlreadyAnsweredToday;
+                    ContentPanel.IsHitTestVisible = false;
+                    return;
+                }
+                IntelligenceManager.ExtractRandomQuestion();
                 textQuestion.Text = IntelligenceManager.GetQuestion();
-                btnLink.NavigateUri = new Uri(IntelligenceManager.GetLink(),UriKind.RelativeOrAbsolute);
+                btnLink.NavigateUri = new Uri(IntelligenceManager.GetLink(),UriKind.Absolute);
             }
             catch (Exception err)
             {
@@ -58,6 +64,7 @@ namespace Human80Level.Ability.Intelligence
                     MessageBox.Show(AppResources.IntelPageMBWrong, AppResources.IntelPageMBTitleIncorrect,
                                     MessageBoxButton.OK);
                 }
+                IntelligenceManager.SetAlreadyAsked();
             }
             catch (Exception err)
             {

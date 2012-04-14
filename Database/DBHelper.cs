@@ -94,7 +94,7 @@ namespace Human80Level.Database
             }
         }
 
-        public static void UpdateQuestion(Question question)
+        public static void AddQuestion(Question question)
         {
             try
             {
@@ -109,20 +109,41 @@ namespace Human80Level.Database
             }
             catch (Exception err)
             {
-                Logger.Error("UpdateQuestion", err.Message);
+                Logger.Error("AddQuestion", err.Message);
             }
 
         }
 
-        public static Question GetQuestionById(int id)
+        public static void UpdateQuestion(Question question)
         {
             try
             {
                 using (var context = new ProfileStatisticsDataContext(ConnectionString))
                 {
-                    var questions = from question1 in context.Questions select question1;
-  
-                    Question question = (from q in questions where (q.Id == id) && (q.IsAnswered != true) select q).First();
+                    if (context.DatabaseExists())
+                    {
+                        var qToUpdate = (from qu in context.Questions where qu.Id == question.Id select qu).First();
+                        qToUpdate.IsAnswered = question.IsAnswered;
+                        context.SubmitChanges();
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("UpdateQuestion", err.Message);
+            }
+        }
+
+        public static Question GetRandomQuestion()
+        {
+            try
+            {
+                using (var context = new ProfileStatisticsDataContext(ConnectionString))
+                {
+                    var questions = from q in context.Questions where q.IsAnswered != true select q;
+                    int count = questions.Count();
+                    int index = new Random().Next(count);
+                    Question question = questions.Skip(index).FirstOrDefault();
                     return question;
                 }
             }
@@ -130,6 +151,42 @@ namespace Human80Level.Database
             {
                 Logger.Error("GetQuestionById", err.Message);
                 return null;
+            }
+
+        }
+
+        public static int GetCorrectAnswersCount()
+        {
+            try
+            {
+                using (var context = new ProfileStatisticsDataContext(ConnectionString))
+                {
+                    var questions = from q in context.Questions where q.IsAnswered select q;
+                    return questions.Count();
+                }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("GetCorrectAnswersCount", err.Message);
+                return 0;
+            }
+
+        }
+
+        public static int GetAnswersCount()
+        {
+            try
+            {
+                using (var context = new ProfileStatisticsDataContext(ConnectionString))
+                {
+                    var questions = from q in context.Questions select q;
+                    return questions.Count();
+                }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("GetAnswersCount", err.Message);
+                return 0;
             }
 
         }

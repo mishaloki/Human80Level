@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO.IsolatedStorage;
+using Human80Level.Ability.Intelligance;
 using Human80Level.Database;
 
 namespace Human80Level.Utils
@@ -62,6 +63,7 @@ namespace Human80Level.Utils
                 settings.Save();
                 CurrentProfile = profile;
                 DBHelper.CreateDatabase();
+                IntelligenceManager.AddQuestions();
                 Logger.Info("UpdateProfile", "Profile was updated");
             }
             catch (Exception err)
