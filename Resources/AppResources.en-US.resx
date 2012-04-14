@@ -420,4 +420,25 @@
   <data name="IntelPageMBTitleIncorrect" xml:space="preserve">
     <value>ответ неправильный</value>
   </data>
+  <data name="AIntelD" xml:space="preserve">
+    <value>показывает насколько вы умны</value>
+  </data>
+  <data name="AIntelL1" xml:space="preserve">
+    <value>умственно отсталые обыгрывают вас в шахматы</value>
+  </data>
+  <data name="AIntelL2" xml:space="preserve">
+    <value>вы явно не были отличником в школе</value>
+  </data>
+  <data name="AIntelL3" xml:space="preserve">
+    <value>а вы не дурак</value>
+  </data>
+  <data name="AIntelL4" xml:space="preserve">
+    <value>вам пора на передачу Кто хочет стать миллионером</value>
+  </data>
+  <data name="AIntelL5" xml:space="preserve">
+    <value>Вы Анатолий Вассерман</value>
+  </data>
+  <data name="IntelPageTextAlreadyAnsweredToday" xml:space="preserve">
+    <value>Вы уже отвечали сегодня. Попробуйте завтра</value>
+  </data>
 </root>

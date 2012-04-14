@@ -31,7 +31,7 @@ namespace Human80Level.Ability.Physique
                     dif = 30;
                 }
             }
-            return 50-50*dif/30;
+            return 100-100*dif/30;
         }
 
         public static int GetLevel()

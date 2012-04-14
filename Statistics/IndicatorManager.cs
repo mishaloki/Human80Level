@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Human80Level.Ability.Intelligance;
 using Human80Level.Ability.Luck;
 using Human80Level.Ability.Physique;
 using Human80Level.Resources;
@@ -37,6 +38,13 @@ namespace Human80Level.Statistics
         private static string[] phyLevels = new string[5] { AppResources.APhyL1, AppResources.APhyL2, AppResources.APhyL3, AppResources.APhyL4, AppResources.APhyL5 };
 
 
+        private static string intelBeginIconUri = "/Images/Ability/Intelligence/fool.png";
+
+        private static string intelEndIconUri = "/Images/Ability/Intelligence/genius.png";
+
+        private static string intelDescript = AppResources.AIntelD;
+
+        private static string[] intelLevels = new string[5] { AppResources.AIntelL1, AppResources.AIntelL2, AppResources.AIntelL3, AppResources.AIntelL4, AppResources.AIntelL5 };
 
         /// <summary>
         /// Gets list of all indicators
@@ -64,9 +72,13 @@ namespace Human80Level.Statistics
             title = AppResources.AbListBtnPhysique;
             Indicator physique = new Indicator(title, phyDescript, phyBeginIconUri, phyEndIconUri, phyLevels, GetCurrentLevel("physique"), GetCurrentValue("physique"));
 
+            title = AppResources.AbListBtnIntel;
+            Indicator intelligence = new Indicator(title, intelDescript, intelBeginIconUri, intelEndIconUri, intelLevels, GetCurrentLevel("intelligence"), GetCurrentValue("intelligence"));
+
             indicators.Add(power);
             indicators.Add(physique);
             indicators.Add(luck);
+            indicators.Add(intelligence);
         }
 
         /// <summary>
@@ -86,6 +98,9 @@ namespace Human80Level.Statistics
                         break;
                     case "physique":
                         level = PhysiqueManager.GetLevel();
+                        break;
+                    case "intelligence":
+                        level = IntelligenceManager.GetLevel();
                         break;
                 }
                 return level;
@@ -114,6 +129,9 @@ namespace Human80Level.Statistics
                         break;
                     case "physique":
                         value = PhysiqueManager.GetValue();
+                        break;
+                    case "intelligence":
+                        value = IntelligenceManager.GetValue();
                         break;
                 }
                 return value;

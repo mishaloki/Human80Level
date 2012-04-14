@@ -40,7 +40,7 @@
             </StackPanel>-->
             
             <TextBlock Text="{Binding Path=LocalizedResources.IntelPageTextQuestion, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Margin="12,0,0,0" Name="textQuestion"></TextBlock>
-            <HyperlinkButton Content="{Binding Path=LocalizedResources.IntePageLinkLabel, Source={StaticResource LocalizedStrings}}" NavigateUri="" Grid.Row="2" Name="btnLink"></HyperlinkButton>
+            <HyperlinkButton Content="{Binding Path=LocalizedResources.IntePageLinkLabel, Source={StaticResource LocalizedStrings}}" NavigateUri="" Grid.Row="2" Name="btnLink" TargetName="_blank"></HyperlinkButton>
             <TextBlock Text="{Binding Path=LocalizedResources.IntelPageTextAnswer, Source={StaticResource LocalizedStrings}}" Grid.Row="3" Margin="12,0,0,0"></TextBlock>
             <TextBox Grid.Row="4" Name="boxAnswer"></TextBox>
             <Button Content="{Binding Path=LocalizedResources.IntelPageBtnAnswer, Source={StaticResource LocalizedStrings}}" Grid.Row="5" Name="btnAnswer" Click="btnAnswer_Click"></Button>

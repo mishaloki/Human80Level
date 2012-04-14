@@ -142,6 +142,60 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает насколько вы умны.
+        /// </summary>
+        public static string AIntelD {
+            get {
+                return ResourceManager.GetString("AIntelD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на умственно отсталые обыгрывают вас в шахматы.
+        /// </summary>
+        public static string AIntelL1 {
+            get {
+                return ResourceManager.GetString("AIntelL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вы явно не были отличником в школе.
+        /// </summary>
+        public static string AIntelL2 {
+            get {
+                return ResourceManager.GetString("AIntelL2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на а вы не дурак.
+        /// </summary>
+        public static string AIntelL3 {
+            get {
+                return ResourceManager.GetString("AIntelL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вам пора на передачу Кто хочет стать миллионером.
+        /// </summary>
+        public static string AIntelL4 {
+            get {
+                return ResourceManager.GetString("AIntelL4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы Анатолий Вассерман.
+        /// </summary>
+        public static string AIntelL5 {
+            get {
+                return ResourceManager.GetString("AIntelL5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Текущий уровень.
         /// </summary>
         public static string ALevelLabel {
@@ -453,6 +507,15 @@ namespace Human80Level.Resources {
         public static string IntelPageMBWrong {
             get {
                 return ResourceManager.GetString("IntelPageMBWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы уже отвечали сегодня. Попробуйте завтра.
+        /// </summary>
+        public static string IntelPageTextAlreadyAnsweredToday {
+            get {
+                return ResourceManager.GetString("IntelPageTextAlreadyAnsweredToday", resourceCulture);
             }
         }
         
