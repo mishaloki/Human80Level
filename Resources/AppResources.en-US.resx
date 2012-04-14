@@ -480,4 +480,7 @@
   <data name="EndurPageTitle" xml:space="preserve">
     <value>выносливость</value>
   </data>
+  <data name="EndurPageWaitingMessasge" xml:space="preserve">
+    <value>ожидание подключения GPS</value>
+  </data>
 </root>

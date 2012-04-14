@@ -502,6 +502,15 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ожидание подключения GPS.
+        /// </summary>
+        public static string EndurPageWaitingMessasge {
+            get {
+                return ResourceManager.GetString("EndurPageWaitingMessasge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на общие сведения.
         /// </summary>
         public static string HelpCommon {
