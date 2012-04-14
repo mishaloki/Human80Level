@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 
@@ -22,10 +23,13 @@ namespace Human80Level.Ability.Endurance
             InitializeComponent();
             EnduranceManager.ExtractResult();
             UpdateTotalResult();
+            EnduranceManager.StartGps();
             StartWaiting();
         }
 
         private bool isBtnChecked;
+
+        private double waitingTime = 0;
 
         private void btnStart_Checked(object sender, RoutedEventArgs e)
         {
@@ -51,6 +55,7 @@ namespace Human80Level.Ability.Endurance
         {
             try
             {
+                EnduranceManager.StopGps();
                 isBtnChecked = false;
                 double distance = 2000;
                 TimeSpan time = new TimeSpan(0,1,3,0);
@@ -110,13 +115,22 @@ namespace Human80Level.Ability.Endurance
         {
             try
             {
-                int wait = 0;
                 //todo replace with real call
-                //while (!EnduranceManager.IsGpsAvailabel())
-                while (wait < 5)
+                while (!EnduranceManager.IsGpsAvailabel())
+                //while (wait < 5)
                 {
                     Thread.Sleep(1000);
-                    ++wait;
+                    waitingTime++;
+                    if (waitingTime > 10)
+                    {
+                        return;
+                    }
+                }
+                if (waitingTime > 10)
+                {
+                    MessageBox.Show(AppResources.EndurPageMBGpsReadyMessage, AppResources.EndurPageMBGpsFailTitle,
+                                    MessageBoxButton.OK);
+                    return;
                 }
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
