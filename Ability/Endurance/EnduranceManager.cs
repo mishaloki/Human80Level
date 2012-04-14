@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Human80Level.Database;
 using Human80Level.Utils;
 
 namespace Human80Level.Ability.Endurance
@@ -101,5 +102,58 @@ namespace Human80Level.Ability.Endurance
             return current*2;
         }
 
+        public static double GetValue()
+        {
+            double dif = totalReuslt.TotalDistance;
+            if (dif < 0)
+            {
+                dif = 0;
+            }
+            else
+            {
+                if (dif > 42185)
+                {
+                    dif = 42185;
+                }
+            }
+            return 100 * dif / 42185;
+        }
+
+        public static int GetLevel()
+        {
+            double dif = totalReuslt.TotalDistance;
+            int level = 0;
+            //todo replace
+            if (dif < 4000)
+            {
+                level = 0;
+            }
+            else
+            {
+                if (dif < 10000)
+                {
+                    level = 1;
+                }
+                else
+                {
+                    if (dif < 20000)
+                    {
+                        level = 2;
+                    }
+                    else
+                    {
+                        if (dif < 42185)
+                        {
+                            level = 3;
+                        }
+                        else
+                        {
+                            level = 4;
+                        }
+                    }
+                }
+            }
+            return level;
+        }
     }
 }

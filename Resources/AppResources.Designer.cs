@@ -142,6 +142,60 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает насколько вы выносливы.
+        /// </summary>
+        public static string AEndurD {
+            get {
+                return ResourceManager.GetString("AEndurD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вы с трудом можете дойти даже до туалета.
+        /// </summary>
+        public static string AEndurL1 {
+            get {
+                return ResourceManager.GetString("AEndurL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на советуем вам не выходить из дома в жару.
+        /// </summary>
+        public static string AEndurL2 {
+            get {
+                return ResourceManager.GetString("AEndurL2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на норма.
+        /// </summary>
+        public static string AEndurL3 {
+            get {
+                return ResourceManager.GetString("AEndurL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на на вас уже можно пахать.
+        /// </summary>
+        public static string AEndurL4 {
+            get {
+                return ResourceManager.GetString("AEndurL4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Марафонец.
+        /// </summary>
+        public static string AEndurL5 {
+            get {
+                return ResourceManager.GetString("AEndurL5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на показывает насколько вы умны.
         /// </summary>
         public static string AIntelD {

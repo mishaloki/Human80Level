@@ -483,4 +483,22 @@
   <data name="EndurPageWaitingMessasge" xml:space="preserve">
     <value>ожидание подключения GPS</value>
   </data>
+  <data name="AEndurD" xml:space="preserve">
+    <value>показывает насколько вы выносливы</value>
+  </data>
+  <data name="AEndurL1" xml:space="preserve">
+    <value>вы с трудом можете дойти даже до туалета</value>
+  </data>
+  <data name="AEndurL2" xml:space="preserve">
+    <value>советуем вам не выходить из дома в жару</value>
+  </data>
+  <data name="AEndurL3" xml:space="preserve">
+    <value>норма</value>
+  </data>
+  <data name="AEndurL4" xml:space="preserve">
+    <value>на вас уже можно пахать</value>
+  </data>
+  <data name="AEndurL5" xml:space="preserve">
+    <value>Марафонец</value>
+  </data>
 </root>
