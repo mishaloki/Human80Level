@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability\Endurance\EnduranceManager.cs" />
+    <Compile Include="Ability\Endurance\GpsData.cs" />
     <Compile Include="Ability\Endurance\PageAbilityEndurance.xaml.cs">
       <DependentUpon>PageAbilityEndurance.xaml</DependentUpon>
     </Compile>
