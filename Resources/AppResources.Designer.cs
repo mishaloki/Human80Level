@@ -385,6 +385,123 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на начать.
+        /// </summary>
+        public static string EndurPageBtnStart {
+            get {
+                return ResourceManager.GetString("EndurPageBtnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на стоп.
+        /// </summary>
+        public static string EndurPageBtnStop {
+            get {
+                return ResourceManager.GetString("EndurPageBtnStop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на в данный момент навигатор не работает.
+        /// </summary>
+        public static string EndurPageMBGpsFailMessage {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsFailMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на навигатор не доступен.
+        /// </summary>
+        public static string EndurPageMBGpsFailTitle {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsFailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на навигатор готов к использованию.
+        /// </summary>
+        public static string EndurPageMBGpsReadyMessage {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsReadyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сигнал получен.
+        /// </summary>
+        public static string EndurPageMBGpsReadyTitle {
+            get {
+                return ResourceManager.GetString("EndurPageMBGpsReadyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на средняя скорость.
+        /// </summary>
+        public static string EndurPageTextAvgSpeed {
+            get {
+                return ResourceManager.GetString("EndurPageTextAvgSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на текущая скорость.
+        /// </summary>
+        public static string EndurPageTextCurrentAvgSpeed {
+            get {
+                return ResourceManager.GetString("EndurPageTextCurrentAvgSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на пройдено.
+        /// </summary>
+        public static string EndurPageTextCurrentDistance {
+            get {
+                return ResourceManager.GetString("EndurPageTextCurrentDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на прошло.
+        /// </summary>
+        public static string EndurPageTextCurrentTime {
+            get {
+                return ResourceManager.GetString("EndurPageTextCurrentTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на общее расстояние.
+        /// </summary>
+        public static string EndurPageTextTotalDistance {
+            get {
+                return ResourceManager.GetString("EndurPageTextTotalDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на всего времени.
+        /// </summary>
+        public static string EndurPageTextTotalTime {
+            get {
+                return ResourceManager.GetString("EndurPageTextTotalTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на выносливость.
+        /// </summary>
+        public static string EndurPageTitle {
+            get {
+                return ResourceManager.GetString("EndurPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на общие сведения.
         /// </summary>
         public static string HelpCommon {

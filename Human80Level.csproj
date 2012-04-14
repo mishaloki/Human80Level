@@ -66,6 +66,10 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ability\Endurance\EnduranceManager.cs" />
+    <Compile Include="Ability\Endurance\PageAbilityEndurance.xaml.cs">
+      <DependentUpon>PageAbilityEndurance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ability\Intelligence\IntelligenceManager.cs" />
     <Compile Include="Ability\Intelligence\PageAbilityIntelligence.xaml.cs">
       <DependentUpon>PageAbilityIntelligence.xaml</DependentUpon>
@@ -129,6 +133,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Ability\Endurance\PageAbilityEndurance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ability\Intelligence\PageAbilityIntelligence.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

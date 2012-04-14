@@ -441,4 +441,43 @@
   <data name="IntelPageTextAlreadyAnsweredToday" xml:space="preserve">
     <value>Вы уже отвечали сегодня. Попробуйте завтра</value>
   </data>
+  <data name="EndurPageBtnStart" xml:space="preserve">
+    <value>начать</value>
+  </data>
+  <data name="EndurPageBtnStop" xml:space="preserve">
+    <value>стоп</value>
+  </data>
+  <data name="EndurPageMBGpsFailMessage" xml:space="preserve">
+    <value>в данный момент навигатор не работает</value>
+  </data>
+  <data name="EndurPageMBGpsFailTitle" xml:space="preserve">
+    <value>навигатор не доступен</value>
+  </data>
+  <data name="EndurPageMBGpsReadyMessage" xml:space="preserve">
+    <value>навигатор готов к использованию</value>
+  </data>
+  <data name="EndurPageMBGpsReadyTitle" xml:space="preserve">
+    <value>сигнал получен</value>
+  </data>
+  <data name="EndurPageTextAvgSpeed" xml:space="preserve">
+    <value>средняя скорость</value>
+  </data>
+  <data name="EndurPageTextCurrentAvgSpeed" xml:space="preserve">
+    <value>текущая скорость</value>
+  </data>
+  <data name="EndurPageTextCurrentDistance" xml:space="preserve">
+    <value>пройдено</value>
+  </data>
+  <data name="EndurPageTextCurrentTime" xml:space="preserve">
+    <value>прошло</value>
+  </data>
+  <data name="EndurPageTextTotalDistance" xml:space="preserve">
+    <value>общее расстояние</value>
+  </data>
+  <data name="EndurPageTextTotalTime" xml:space="preserve">
+    <value>всего времени</value>
+  </data>
+  <data name="EndurPageTitle" xml:space="preserve">
+    <value>выносливость</value>
+  </data>
 </root>
