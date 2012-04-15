@@ -18,7 +18,6 @@ namespace Human80Level.Ability.Intelligence
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);           
-
             this.DisplayQuestion();
         }
         
@@ -28,8 +27,7 @@ namespace Human80Level.Ability.Intelligence
             {
                 if (IntelligenceManager.IsAlreadyAsked())
                 {
-                    textQuestion.Text = AppResources.IntelPageTextAlreadyAnsweredToday;
-                    ContentPanel.IsHitTestVisible = false;
+                    BlockScreen();
                     return;
                 }
                 IntelligenceManager.ExtractRandomQuestion();
@@ -41,6 +39,12 @@ namespace Human80Level.Ability.Intelligence
                 Logger.Error("DisplayQuestion", err.Message);
             }
 
+        }
+
+        private void BlockScreen()
+        {
+            textQuestion.Text = AppResources.IntelPageTextAlreadyAnsweredToday;
+            ContentPanel.IsHitTestVisible = false;
         }
 
         private void btnAnswer_Click(object sender, RoutedEventArgs e)
@@ -65,13 +69,12 @@ namespace Human80Level.Ability.Intelligence
                                     MessageBoxButton.OK);
                 }
                 IntelligenceManager.SetAlreadyAsked();
+                BlockScreen();
             }
             catch (Exception err)
             {
                 Logger.Error("CheckAnswer", err.Message); 
             }
-
         }
-
     }
 }
