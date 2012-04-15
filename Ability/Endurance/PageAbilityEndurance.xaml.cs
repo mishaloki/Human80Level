@@ -114,9 +114,7 @@ namespace Human80Level.Ability.Endurance
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         textCurrentDistance.Text = EnduranceManager.GetCurrentDistance().ToString();
-                        //todo replace
-                        //textCurrentTime.Text = EnduranceManager.GetCurrentTime().ToString();
-                        textCurrentTime.Text = "x: " + EnduranceManager.Position.X.ToString() + ", y: " + EnduranceManager.Position.Y;
+                        textCurrentTime.Text = EnduranceManager.GetCurrentTime().ToString();
                         textCurrentSpeed.Text = EnduranceManager.GetCurrentSpeed().ToString();
                     });
                     Thread.Sleep(1000);
