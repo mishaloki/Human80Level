@@ -9,6 +9,8 @@ namespace Human80Level.Ability.Luck
 {
     public static class LuckEventManager
     {
+        #region database operations
+
         public static ObservableCollection<Event> GetEventList()
         {
             try
@@ -20,8 +22,7 @@ namespace Human80Level.Ability.Luck
             {
                 Logger.Error("GetEventList", e.Message);
                 return null;
-            }
-            
+            }           
         }
 
         public static void AddEventMessage(Event eventMessage)
@@ -37,7 +38,6 @@ namespace Human80Level.Ability.Luck
             
         }
 
-
         public static void RemoveEventMessage (Event eventMessage)
         {
             try
@@ -47,22 +47,25 @@ namespace Human80Level.Ability.Luck
             catch (Exception e)
             {
                 Logger.Error("RemoveEventMessage", e.Message);
-            }
-            
+            }            
         }
 
         public static void UpdateEventMessage (Event eventMessage)
         {
             try
             {
+                //todo check if I need this method
                 MessageBox.Show("UpdateEventMessage");
             }
             catch (Exception e)
             {
                 Logger.Error("UpdateEventMessage", e.Message);
-            }
-            
+            }            
         }
+
+        #endregion
+
+        #region statistics methods
 
         public static int GetValue()
         {
@@ -132,7 +135,9 @@ namespace Human80Level.Ability.Luck
                 Logger.Error("GetDifference", err.Message);
                 return 0;
             }
-            
+
         }
+
+        #endregion
     }
 }
