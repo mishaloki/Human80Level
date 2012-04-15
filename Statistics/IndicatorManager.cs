@@ -11,7 +11,9 @@ using Human80Level.Utils;
 namespace Human80Level.Statistics
 {
     public class IndicatorManager
-    {       
+    {
+        #region Ability constants 
+
         private static List<Indicator> indicators;
 
         private static string powerBeginIconUri = "/Images/Ability/Power/weak.png";
@@ -58,7 +60,7 @@ namespace Human80Level.Statistics
 
         private static string[] endurLevels = new string[5] { AppResources.AEndurL1, AppResources.AEndurL2, AppResources.AEndurL3, AppResources.AEndurL4, AppResources.AEndurL5 };
 
-
+        #endregion
 
         /// <summary>
         /// Gets list of all indicators
@@ -99,6 +101,8 @@ namespace Human80Level.Statistics
             indicators.Add(intelligence);
             indicators.Add(endurance);
         }
+
+        #region getting value/level
 
         /// <summary>
         /// Gets current indicator level
@@ -172,6 +176,9 @@ namespace Human80Level.Statistics
                 Logger.Error("GetCurrentValue",err.Message); 
                 return 0;
             }
-        }       
+        }
+
+        #endregion
+
     }
 }

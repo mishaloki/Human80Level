@@ -47,12 +47,7 @@
                 </ListBox>
             </controls:PivotItem>
 
-            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotHistoryItem, Source={StaticResource LocalizedStrings}}">
-                
-            </controls:PivotItem>
-
         </controls:Pivot>
-
 
     </Grid>
 
