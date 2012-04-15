@@ -421,6 +421,15 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает насколько вы сильны.
+        /// </summary>
+        public static string APowerD {
+            get {
+                return ResourceManager.GetString("APowerD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на HUMAN 80 LEVEL.
         /// </summary>
         public static string AppTitle {
@@ -966,6 +975,78 @@ namespace Human80Level.Resources {
         public static string PhyPageTitle {
             get {
                 return ResourceManager.GetString("PhyPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на начать.
+        /// </summary>
+        public static string PowerPageBtnStart {
+            get {
+                return ResourceManager.GetString("PowerPageBtnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на остановить.
+        /// </summary>
+        public static string PowerPageBtnStop {
+            get {
+                return ResourceManager.GetString("PowerPageBtnStop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на акселерометер недоступен.
+        /// </summary>
+        public static string PowerPageMBAccelErrorMessage {
+            get {
+                return ResourceManager.GetString("PowerPageMBAccelErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ошибка.
+        /// </summary>
+        public static string PowerPageMBAccelErrorTitle {
+            get {
+                return ResourceManager.GetString("PowerPageMBAccelErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сделано.
+        /// </summary>
+        public static string PowerPageTextCurrentAbs {
+            get {
+                return ResourceManager.GetString("PowerPageTextCurrentAbs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на звук.
+        /// </summary>
+        public static string PowerPageTextSound {
+            get {
+                return ResourceManager.GetString("PowerPageTextSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на всего.
+        /// </summary>
+        public static string PowerPageTextTotalAbs {
+            get {
+                return ResourceManager.GetString("PowerPageTextTotalAbs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на сила.
+        /// </summary>
+        public static string PowerPageTitle {
+            get {
+                return ResourceManager.GetString("PowerPageTitle", resourceCulture);
             }
         }
         

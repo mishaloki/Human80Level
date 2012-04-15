@@ -49,6 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Devices.Sensors" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604" />
@@ -81,6 +82,11 @@
       <DependentUpon>PageAbilityPhysique.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ability\Physique\PhysiqueManager.cs" />
+    <Compile Include="Ability\Power\PageAbilityPower.xaml.cs">
+      <DependentUpon>PageAbilityPower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ability\Power\PowerManager.cs" />
+    <Compile Include="Ability\Power\PowerResult.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -147,6 +153,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ability\Power\PageAbilityPower.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +201,7 @@
     <Content Include="Images\Ability\Power\chuck.png" />
     <Content Include="Images\Ability\Power\weak.png" />
     <Content Include="Images\Statistics\statistics.png" />
+    <Resource Include="Resources\beep.wav" />
     <Content Include="Utils\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
