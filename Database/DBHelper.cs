@@ -9,6 +9,8 @@ namespace Human80Level.Database
     {
         private const string ConnectionString = @"isostore:/ProfileStatistics.sdf";
 
+        #region create/delete database
+
         /// <summary>
         /// Creates database in Isolated storage
         /// </summary>
@@ -36,6 +38,10 @@ namespace Human80Level.Database
                 }
             }
         }
+
+        #endregion
+
+        #region Luck ability methods
 
         /// <summary>
         /// Adds event to database
@@ -93,6 +99,10 @@ namespace Human80Level.Database
                 return null;
             }
         }
+
+        #endregion
+
+        #region Intelligence ability methods
 
         public static void AddQuestion(Question question)
         {
@@ -188,8 +198,9 @@ namespace Human80Level.Database
                 Logger.Error("GetAnswersCount", err.Message);
                 return 0;
             }
-
         }
+
+        #endregion
 
     }
 }
