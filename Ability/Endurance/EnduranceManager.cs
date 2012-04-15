@@ -33,6 +33,8 @@ namespace Human80Level.Ability.Endurance
 
         private static DateTime StartTime;
 
+        private static bool NeedToCount = false;
+
         public static void StartGps()
         {
             try
@@ -40,7 +42,7 @@ namespace Human80Level.Ability.Endurance
                 if (watcher == null)
                 {
                     watcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-                    //watcher.MovementThreshold = 20;
+                    //watcher.MovementThreshold = 1;
                     watcher.StatusChanged += StatusListener;
                     watcher.PositionChanged += PositionListener;
                     CurrentResult = new GpsData(0,new TimeSpan(0,0,0,0),0 );
@@ -118,11 +120,14 @@ namespace Human80Level.Ability.Endurance
                 {
                     PreviousPosition = new GeoCoordinate(e.Position.Location.Latitude, e.Position.Location.Longitude);
                 }
+                
+                if (!NeedToCount)
+                {
+                    return;
+                }
+                
                 GeoCoordinate current = e.Position.Location;
-                //CurrentResult.TotalDistance += e.Position.Location.GetDistanceTo(PreviousPosition);
-                double cat1 = Math.Abs(current.Latitude - PreviousPosition.Latitude);
-                double cat2 = Math.Abs(current.Longitude - PreviousPosition.Longitude);
-                CurrentResult.TotalDistance += Math.Sqrt(cat1*cat1 + cat2*cat2);
+                CurrentResult.TotalDistance += e.Position.Location.GetDistanceTo(PreviousPosition);
                 PreviousPosition.Latitude = current.Latitude;
                 PreviousPosition.Longitude = current.Longitude;
                 Position.X = e.Position.Location.Latitude;
@@ -138,6 +143,16 @@ namespace Human80Level.Ability.Endurance
         public static bool IsGpsAvailabel()
         {
             return IsGpsAbailable;
+        }
+
+        public static void StartCount()
+        {
+            NeedToCount = true;
+        }
+
+        public static void StopCount()
+        {
+            NeedToCount = false;
         }
 
         public static void SaveResults()

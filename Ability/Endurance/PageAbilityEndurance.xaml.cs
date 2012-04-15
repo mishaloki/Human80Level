@@ -108,6 +108,7 @@ namespace Human80Level.Ability.Endurance
         {
             try
             {
+                EnduranceManager.StartCount();
                 while (isBtnChecked)
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -136,6 +137,7 @@ namespace Human80Level.Ability.Endurance
         {
             try
             {
+                EnduranceManager.StopCount();
                 EnduranceManager.StopGps();
                 EnduranceManager.SaveResults();
                 UpdateTotalResult();
