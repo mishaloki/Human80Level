@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
@@ -18,10 +9,14 @@ namespace Human80Level.Ability.Endurance
 {
     public partial class PageAbilityEndurance : PhoneApplicationPage
     {
+        #region private fields
+
         private bool isBtnChecked;
 
-        private double waitingTime = 0;
-        
+        private double waitingTime;
+
+        #endregion
+
         public PageAbilityEndurance()
         {
             InitializeComponent();
@@ -31,33 +26,19 @@ namespace Human80Level.Ability.Endurance
             StartWaiting();
         }
 
-        private void UpdateTotalResult()
-        {
-            try
-            {
-                textTotalTime.Text = EnduranceManager.GetTotalTime().ToString();
-                textTotalDistance.Text = EnduranceManager.GetTotalDistance().ToString();
-                textAvgSpeed.Text = EnduranceManager.GetAvgSpeed().ToString();
-            }
-            catch (Exception err)
-            {
-                Logger.Error("UpdateTotalResult", err.Message);
-            }
-        }
+        #region waiting GPS methods
 
         private void StartWaiting()
         {
-            Thread wait = new Thread(WaitForGPS);
+            Thread wait = new Thread(WaitForGps);
             wait.Start();
         }
 
-        private void WaitForGPS()
+        private void WaitForGps()
         {
             try
             {
-                //todo replace with real call
                 while (!EnduranceManager.IsGpsAvailabel())
-                //while (wait < 5)
                 {
                     Thread.Sleep(1000);
                     waitingTime++;
@@ -84,6 +65,9 @@ namespace Human80Level.Ability.Endurance
                 Logger.Error("WaitForGPS", err.Message);
             }
         }
+        #endregion
+
+        #region start GPS methods
 
         private void btnStart_Checked(object sender, RoutedEventArgs e)
         {
@@ -101,6 +85,22 @@ namespace Human80Level.Ability.Endurance
             catch (Exception err)
             {
                 Logger.Error("StartMeasure", err.Message);
+            }
+        }
+        #endregion
+
+        #region UI updators
+        private void UpdateTotalResult()
+        {
+            try
+            {
+                textTotalTime.Text = EnduranceManager.GetTotalTime().ToString();
+                textTotalDistance.Text = EnduranceManager.GetTotalDistance().ToString();
+                textAvgSpeed.Text = EnduranceManager.GetAvgSpeed().ToString();
+            }
+            catch (Exception err)
+            {
+                Logger.Error("UpdateTotalResult", err.Message);
             }
         }
 
@@ -125,7 +125,9 @@ namespace Human80Level.Ability.Endurance
                 Logger.Error("UpdateCurrentResult", err.Message);
             }
         }
+        #endregion
 
+        #region stop GPS methods
         private void btnStart_Unchecked(object sender, RoutedEventArgs e)
         {
             StopMeasure();
@@ -145,6 +147,7 @@ namespace Human80Level.Ability.Endurance
                 Logger.Error("StopMeasure", err.Message);
             }
         }
+        #endregion
 
     }
 }
