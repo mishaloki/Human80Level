@@ -501,4 +501,28 @@
   <data name="AEndurL5" xml:space="preserve">
     <value>Марафонец</value>
   </data>
+  <data name="PowerPageBtnStart" xml:space="preserve">
+    <value>начать</value>
+  </data>
+  <data name="PowerPageBtnStop" xml:space="preserve">
+    <value>остановить</value>
+  </data>
+  <data name="PowerPageMBAccelErrorMessage" xml:space="preserve">
+    <value>акселерометер недоступен</value>
+  </data>
+  <data name="PowerPageMBAccelErrorTitle" xml:space="preserve">
+    <value>ошибка</value>
+  </data>
+  <data name="PowerPageTextCurrentAbs" xml:space="preserve">
+    <value>сделано</value>
+  </data>
+  <data name="PowerPageTextSound" xml:space="preserve">
+    <value>звук</value>
+  </data>
+  <data name="PowerPageTextTotalAbs" xml:space="preserve">
+    <value>всего</value>
+  </data>
+  <data name="PowerPageTitle" xml:space="preserve">
+    <value>сила</value>
+  </data>
 </root>
