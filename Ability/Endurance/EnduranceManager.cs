@@ -21,17 +21,19 @@ namespace Human80Level.Ability.Endurance
 
         private const string ResultSetting = "GpsData";
 
-        private static int current = 0;
-
         private static GeoCoordinateWatcher watcher;
 
         private static bool IsGpsAbailable;
 
         private static GeoCoordinate PreviousPosition;
 
+        public static Point Position = new Point(0,0);
+
         private static GpsData CurrentResult;
 
         private static DateTime StartTime;
+
+        private static bool NeedToCount = false;
 
         public static void StartGps()
         {
@@ -40,7 +42,7 @@ namespace Human80Level.Ability.Endurance
                 if (watcher == null)
                 {
                     watcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-                    //watcher.MovementThreshold = 20;
+                    //watcher.MovementThreshold = 1;
                     watcher.StatusChanged += StatusListener;
                     watcher.PositionChanged += PositionListener;
                     CurrentResult = new GpsData(0,new TimeSpan(0,0,0,0),0 );
@@ -112,13 +114,30 @@ namespace Human80Level.Ability.Endurance
         
         private static void PositionListener(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
         {
-            if (PreviousPosition == null)
+            try
             {
-                PreviousPosition = new GeoCoordinate(e.Position.Location.Latitude,e.Position.Location.Longitude);
+                if (PreviousPosition == null)
+                {
+                    PreviousPosition = new GeoCoordinate(e.Position.Location.Latitude, e.Position.Location.Longitude);
+                }
+                
+                if (!NeedToCount)
+                {
+                    return;
+                }
+                
+                GeoCoordinate current = e.Position.Location;
+                CurrentResult.TotalDistance += e.Position.Location.GetDistanceTo(PreviousPosition);
+                PreviousPosition.Latitude = current.Latitude;
+                PreviousPosition.Longitude = current.Longitude;
+                Position.X = e.Position.Location.Latitude;
+                Position.Y = e.Position.Location.Longitude;
             }
-            CurrentResult.TotalDistance += e.Position.Location.GetDistanceTo(PreviousPosition);
-            PreviousPosition.Latitude = e.Position.Location.Latitude;
-            PreviousPosition.Longitude = e.Position.Location.Longitude;
+            catch (Exception err)
+            {
+                Logger.Error("PositionListener", err.Message);
+            }
+
         }
 
         public static bool IsGpsAvailabel()
@@ -126,7 +145,17 @@ namespace Human80Level.Ability.Endurance
             return IsGpsAbailable;
         }
 
-        public static void SaveResults(double distancem, TimeSpan time, double speed)
+        public static void StartCount()
+        {
+            NeedToCount = true;
+        }
+
+        public static void StopCount()
+        {
+            NeedToCount = false;
+        }
+
+        public static void SaveResults()
         {
             try
             {
@@ -139,9 +168,9 @@ namespace Human80Level.Ability.Endurance
                 {
                     totalReuslt = new GpsData(0,new TimeSpan(0,0,0,0),0);
                 }
-                totalReuslt.TotalDistance += distancem;
-                totalReuslt.TotalTime += time;
-                totalReuslt.AvgSpeed = totalReuslt.TotalDistance/totalReuslt.TotalTime.TotalHours;
+                totalReuslt.TotalDistance += CurrentResult.TotalDistance;
+                totalReuslt.TotalTime += CurrentResult.TotalTime;
+                totalReuslt.AvgSpeed = (totalReuslt.TotalDistance/1000)/totalReuslt.TotalTime.TotalHours;
                 settings.Add(ResultSetting, totalReuslt);
                 settings.Save();
 
@@ -221,8 +250,7 @@ namespace Human80Level.Ability.Endurance
         public static int GetLevel()
         {
             double dif = totalReuslt.TotalDistance;
-            int level = 0;
-            //todo replace
+            int level;
             if (dif < 4000)
             {
                 level = 0;
