@@ -83,31 +83,42 @@ namespace Human80Level.Ability.Power
                 _currentResult = new PowerResult();
                 AccelActive = true;
             }
-            catch (AccelerometerFailedException e)
+            catch (AccelerometerFailedException err)
             {
                 // the accelerometer couldn't be started.  No fun!
+                Logger.Error("StartAccel", err.Message);
                 AccelActive = false;
             }
-            catch (UnauthorizedAccessException e)
+            catch (UnauthorizedAccessException err)
             {
                 // This exception is thrown in the emulator-which doesn't support an accelerometer.
+                Logger.Error("StartAccel", err.Message);
                 AccelActive = false;
             }
         }
 
         public static void StopAccel()
         {
-            if (AccelActive)
+            try
             {
-                try
+                if (AccelActive)
                 {
-                    _accelSensor.Stop();
-                }
-                catch (AccelerometerFailedException e)
-                {
-                    // the accelerometer couldn't be stopped now.
+                    try
+                    {
+                        _accelSensor.Stop();
+                    }
+                    catch (AccelerometerFailedException err)
+                    {
+                        // the accelerometer couldn't be stopped now.
+                        Logger.Error("StopAccel", err.Message);
+                    }
                 }
             }
+            catch (Exception err)
+            {
+                Logger.Error("StopAccel", err.Message);
+            }
+
         }
 
         public static void ExtractResult()

@@ -421,6 +421,15 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на показывает насколько вы сильны.
+        /// </summary>
+        public static string APowerD {
+            get {
+                return ResourceManager.GetString("APowerD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на HUMAN 80 LEVEL.
         /// </summary>
         public static string AppTitle {

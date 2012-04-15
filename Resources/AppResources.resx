@@ -525,4 +525,7 @@
   <data name="PowerPageTitle" xml:space="preserve">
     <value>сила</value>
   </data>
+  <data name="APowerD" xml:space="preserve">
+    <value>показывает насколько вы сильны</value>
+  </data>
 </root>

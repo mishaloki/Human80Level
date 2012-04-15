@@ -4,6 +4,7 @@ using Human80Level.Ability.Endurance;
 using Human80Level.Ability.Intelligance;
 using Human80Level.Ability.Luck;
 using Human80Level.Ability.Physique;
+using Human80Level.Ability.Power;
 using Human80Level.Resources;
 using Human80Level.Utils;
 
@@ -17,7 +18,7 @@ namespace Human80Level.Statistics
 
         private static string powerEndIconUri = "/Images/Ability/Power/chuck.png";
 
-        private static string powerDescript = "";
+        private static string powerDescript = AppResources.APowerD;
 
         private static string [] powerLevels = new string[] { AppResources.APower1, AppResources.APower2, AppResources.APower3, AppResources.APower4, AppResources.APower5 };
 
@@ -111,6 +112,9 @@ namespace Human80Level.Statistics
                 int level = 0;
                 switch (title)
                 {
+                    case "power":
+                        level = PowerManager.GetLevel();
+                        break;
                     case "luck":
                         level = LuckEventManager.GetLevel();
                         break;
@@ -145,6 +149,9 @@ namespace Human80Level.Statistics
                 double value = 0;
                 switch (title)
                 {
+                    case "power":
+                        value = PowerManager.GetValue();
+                        break;
                     case "luck":
                         value = LuckEventManager.GetValue();
                         break;
