@@ -128,7 +128,6 @@
     <Compile Include="Statistics\PageStatistics.xaml.cs">
       <DependentUpon>PageStatistics.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Statistics\Statistic.cs" />
     <Compile Include="Utils\CultureManager.cs" />
     <Compile Include="Utils\LocalizedStrings.cs" />
     <Compile Include="Utils\Logger.cs" />

@@ -46,5 +46,10 @@ namespace Human80Level
             Navigator.NavigateTo(this,PhysiqueUri);
         }
 
+        private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        {
+            Navigator.NavigateTo(this,Navigator.HelpUri);
+        }
+
     }
 }

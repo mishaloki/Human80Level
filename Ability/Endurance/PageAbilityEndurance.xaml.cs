@@ -13,8 +13,6 @@ namespace Human80Level.Ability.Endurance
 
         private bool isBtnChecked;
 
-        private double waitingTime;
-
         #endregion
 
         public PageAbilityEndurance()
@@ -41,18 +39,8 @@ namespace Human80Level.Ability.Endurance
                 while (!EnduranceManager.IsGpsAvailabel())
                 {
                     Thread.Sleep(1000);
-                    waitingTime++;
-                    if (waitingTime > 10)
-                    {
-                        return;
-                    }
                 }
-                if (waitingTime > 10)
-                {
-                    MessageBox.Show(AppResources.EndurPageMBGpsReadyMessage, AppResources.EndurPageMBGpsFailTitle,
-                                    MessageBoxButton.OK);
-                    return;
-                }
+
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     btnStart.Visibility = System.Windows.Visibility.Visible;
@@ -149,5 +137,9 @@ namespace Human80Level.Ability.Endurance
         }
         #endregion
 
+        private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        {
+            Navigator.NavigateTo(this, Navigator.HelpUri);
+        }
     }
 }

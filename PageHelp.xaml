@@ -15,15 +15,49 @@
     shell:SystemTray.IsVisible="False">
 
     <Grid x:Name="LayoutRoot">
-        <controls:Pivot Title="{Binding Path=LocalizedResources.HelpPivotTitle, Source={StaticResource LocalizedStrings}}">
+        <controls:Pivot Title="{Binding Path=LocalizedResources.HelpPivotTitle, Source={StaticResource LocalizedStrings}}" Name="pivot">
             <controls:Pivot.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/Images/Statistics/statistics.png" Opacity="0.5" x:Name="pivotBgBrush"/>
             </controls:Pivot.Background>
-            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpCommon, Source={StaticResource LocalizedStrings}}">
-                
+            
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpMainMenu, Source={StaticResource LocalizedStrings}}">
+
             </controls:PivotItem>
 
-            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpMainMenu, Source={StaticResource LocalizedStrings}}">
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.ProfilePageTitle, Source={StaticResource LocalizedStrings}}">
+
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.StatPagePivotTitle, Source={StaticResource LocalizedStrings}}">
+
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListPageTitle, Source={StaticResource LocalizedStrings}}">
+
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListBtnPower, Source={StaticResource LocalizedStrings}}">
+
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbLisgBtnEndurance, Source={StaticResource LocalizedStrings}}">
+
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListBtnIntel, Source={StaticResource LocalizedStrings}}">
+                <ScrollViewer>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleAdd, Source={StaticResource LocalizedStrings}}" Margin="0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMadd, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleList, Source={StaticResource LocalizedStrings}}" Margin="0,30,0,0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMlist, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckTitleTry, Source={StaticResource LocalizedStrings}}" Margin="0,30,0,0"></TextBlock>
+                        <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMtry, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListBtnPhysique, Source={StaticResource LocalizedStrings}}">
 
             </controls:PivotItem>
 
@@ -38,6 +72,10 @@
                         <TextBlock Text="{Binding Path=LocalizedResources.HelpLuckMtry, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"></TextBlock>
                     </StackPanel>
                 </ScrollViewer>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpCommon, Source={StaticResource LocalizedStrings}}">
+
             </controls:PivotItem>
 
         </controls:Pivot>

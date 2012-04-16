@@ -56,5 +56,11 @@ namespace Human80Level.Ability.Physique
             textCurrentMarker.Margin = new Thickness(margLeft,90,0,0);
             imgCurrentMarker.Margin = new Thickness(margLeft,30,0,0);
         }
+
+        private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        {
+            Navigator.NavigateTo(this, Navigator.HelpUri);
+        }
+
     }
 }

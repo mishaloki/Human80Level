@@ -1,4 +1,5 @@
 ﻿using System.Windows.Navigation;
+using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 
 namespace Human80Level.Statistics
@@ -16,6 +17,11 @@ namespace Human80Level.Statistics
             IndicatorManager.CreateIndicators();
             listIndicators.ItemsSource = IndicatorManager.GetIndicators();
             //todo add extracting endurance totaldistance
+        }
+
+        private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        {
+            Navigator.NavigateTo(this, Navigator.HelpUri);
         }
     }
 }

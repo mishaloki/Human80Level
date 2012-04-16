@@ -54,7 +54,7 @@
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/AppBarIcons/appbar.questionmark.rest.png" Text="Help"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/AppBarIcons/appbar.questionmark.rest.png" Text="Help" Click="ApplicationBarIconButton_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

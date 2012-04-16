@@ -311,5 +311,10 @@ namespace Human80Level
                 Logger.Error("ShowProfile", e.Message);
             }
         }
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            Navigator.NavigateTo(this, Navigator.HelpUri);
+        }
     }
 }

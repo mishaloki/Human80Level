@@ -125,6 +125,7 @@ namespace Human80Level.Ability.Intelligance
                     settings.Remove(AppSettingAlreadyAnswered);
                 }
                 settings[AppSettingAlreadyAnswered] = DateTime.Now.ToShortDateString();
+                settings.Save();
             }
             catch (Exception err)
             {

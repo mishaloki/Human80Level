@@ -111,5 +111,10 @@ namespace Human80Level.Ability.Power
             }
 
         }
+
+        private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        {
+            Navigator.NavigateTo(this, Navigator.HelpUri);
+        }
     }
 }
