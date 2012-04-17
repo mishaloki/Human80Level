@@ -16,7 +16,13 @@ namespace Human80Level.Statistics
             base.OnNavigatedTo(e);
             IndicatorManager.CreateIndicators();
             listIndicators.ItemsSource = IndicatorManager.GetIndicators();
-            //todo add extracting endurance totaldistance
+            SetTotalLevel();
+        }
+
+        private void SetTotalLevel()
+        {
+            textTotalLevel.Text = IndicatorManager.GetTotalLevel().ToString();
+            progressTotal.Value = IndicatorManager.GetTotalLevel();
         }
 
         private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)

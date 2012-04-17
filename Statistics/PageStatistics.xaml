@@ -13,8 +13,14 @@
     shell:SystemTray.IsVisible="True" Title="statistics">
 
     <Grid x:Name="LayoutRoot">
-
-<ListBox Name="listIndicators" Grid.Row="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="some" HorizontalAlignment="Center" Name="textTotalLevel"></TextBlock>
+        <ProgressBar Grid.Row="1" Value="50" Name="progressTotal"></ProgressBar>
+            <ListBox Name="listIndicators" Grid.Row="2">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Width="460" Margin="0,20">
@@ -24,9 +30,11 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition></ColumnDefinition>
                                         <ColumnDefinition></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>   
+                                </Grid.ColumnDefinitions>
                                     <Image Name="imgBegin" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding BeginIconUri}"></Image>
-                                    <Image Name="imgEnd" Height="100" Width="100" Grid.Column="1" HorizontalAlignment="Right" Source="{Binding EndIconUri}"></Image>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding CurrentValue}" Grid.Column="1" VerticalAlignment="Bottom"></TextBlock>
+                                    <Image Name="imgEnd" Height="100" Width="100" Grid.Column="2" HorizontalAlignment="Right" Source="{Binding EndIconUri}"></Image>
                                 </Grid>
                                 <ProgressBar Name="abProgress" Value="{Binding CurrentValue}" Maximum="100"></ProgressBar>
                                 <StackPanel Orientation="Vertical">

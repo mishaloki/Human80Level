@@ -178,6 +178,13 @@ namespace Human80Level.Statistics
             }
         }
 
+        public static double GetTotalLevel()
+        {
+            double level = (PowerManager.GetValue()+LuckEventManager.GetValue()+EnduranceManager.GetValue()+PhysiqueManager.GetValue()+IntelligenceManager.GetValue())/5;
+
+            return Math.Round(level);
+        }
+
         #endregion
 
     }
