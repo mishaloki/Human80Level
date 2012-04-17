@@ -79,6 +79,7 @@ namespace Human80Level
         // Этот код не будет выполняться при закрытии приложения
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
+            TileManager.UpdateTile();
         }
 
         // Код для выполнения при закрытии приложения (например, при нажатии пользователем кнопки "Назад")

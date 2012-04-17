@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO.IsolatedStorage;
+using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Devices.Sensors;
 using Microsoft.Xna.Framework;
@@ -19,6 +20,8 @@ namespace Human80Level.Ability.Power
         private static PowerResult _totalReuslt;
 
         private const string ResultSetting = "PowerResult";
+
+        private const string tileUri = "/Images/Ability/Power/tile.png";
 
         private static PowerResult _currentResult;
 
@@ -156,7 +159,7 @@ namespace Human80Level.Ability.Power
                 _totalReuslt.Abs += _currentResult.Abs;
                 settings.Add(ResultSetting, _totalReuslt);
                 settings.Save();
-
+                TileManager.UpdateTile(AppResources.AbListBtnPower,GetValue(),tileUri);
                 Logger.Info("SaveResults", "Abs result was saved");
             }
             catch (Exception err)

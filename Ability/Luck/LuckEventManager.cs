@@ -3,12 +3,15 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Human80Level.Database;
+using Human80Level.Resources;
 using Human80Level.Utils;
 
 namespace Human80Level.Ability.Luck
 {
     public static class LuckEventManager
     {
+        private const string tileUri = "/Images/Ability/Luck/tile.png";
+        
         #region database operations
 
         public static ObservableCollection<Event> GetEventList()
@@ -30,6 +33,7 @@ namespace Human80Level.Ability.Luck
             try
             {
                 DBHelper.AddEvent(eventMessage);
+                TileManager.UpdateTile(AppResources.AbListBtnLuck,GetValue(),tileUri);
             }
             catch (Exception e)
             {
@@ -43,6 +47,7 @@ namespace Human80Level.Ability.Luck
             try
             {
                 DBHelper.RemoveEvent(eventMessage);
+                TileManager.UpdateTile(AppResources.AbListBtnLuck,GetValue(),tileUri);
             }
             catch (Exception e)
             {

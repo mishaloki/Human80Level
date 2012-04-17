@@ -763,6 +763,15 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на уровень.
+        /// </summary>
+        public static string LiveTileLevel {
+            get {
+                return ResourceManager.GetString("LiveTileLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на очистить.
         /// </summary>
         public static string LuckPageClearButtonCaption {

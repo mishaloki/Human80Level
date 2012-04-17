@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Device.Location;
 using System.IO.IsolatedStorage;
+using Human80Level.Resources;
 using Human80Level.Utils;
 
 namespace Human80Level.Ability.Endurance
@@ -10,6 +11,8 @@ namespace Human80Level.Ability.Endurance
         #region private fields
 
         private const string AppSettingsGpsName = "GpsData";
+
+        private const string tileUri = "/Images/Ability/Endurance/tile.png";
 
         private static GpsData todaysRusult;
 
@@ -52,7 +55,7 @@ namespace Human80Level.Ability.Endurance
                 
                 settings.Add(AppSettingsGpsName, todaysRusult);
                 settings.Save();
-
+                TileManager.UpdateTile(AppResources.AbLisgBtnEndurance,GetValue(),tileUri);
                 Logger.Info("SaveResults", "GPS data was saved");
             }
             catch (Exception err)

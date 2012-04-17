@@ -28,6 +28,7 @@ namespace Human80Level.Ability.Physique
                 if (double.TryParse(textWeigth, out weight))
                 {
                     ideal = PhysiqueManager.GetIdealWeight(weight); 
+                    PhysiqueManager.UpdateTile();
                     profile.Weight = weight;
                     ProfileManager.UpdateProfile(profile);
                     this.UpdateFigure(ideal,weight);

@@ -128,6 +128,7 @@
     <Compile Include="Statistics\PageStatistics.xaml.cs">
       <DependentUpon>PageStatistics.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TileManager.cs" />
     <Compile Include="Utils\CultureManager.cs" />
     <Compile Include="Utils\LocalizedStrings.cs" />
     <Compile Include="Utils\Logger.cs" />
@@ -189,18 +190,24 @@
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
     <Content Include="Images\Ability\Endurance\rocky.png" />
+    <Content Include="Images\Ability\Endurance\tile.png" />
     <Content Include="Images\Ability\Endurance\weak.png" />
     <Content Include="Images\Ability\Intelligence\fool.png" />
     <Content Include="Images\Ability\Intelligence\genius.png" />
+    <Content Include="Images\Ability\Intelligence\tile.png" />
     <Content Include="Images\Ability\Luck\loser.png" />
     <Content Include="Images\Ability\Luck\lucky.png" />
+    <Content Include="Images\Ability\Luck\tile.png" />
     <Content Include="Images\Ability\Physique\fat.png" />
     <Content Include="Images\Ability\Physique\slim.png" />
+    <Content Include="Images\Ability\Physique\tile.png" />
     <Content Include="Images\Ability\Physique\triangle.png" />
     <Content Include="Images\Ability\Power\chuck.png" />
+    <Content Include="Images\Ability\Power\tile.png" />
     <Content Include="Images\Ability\Power\weak.png" />
     <Content Include="Images\Statistics\statistics.png" />
     <Resource Include="Resources\beep.wav" />
+    <Content Include="Images\tile.png" />
     <Content Include="Utils\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

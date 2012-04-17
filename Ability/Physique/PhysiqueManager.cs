@@ -1,17 +1,26 @@
 ﻿using System;
+using Human80Level.Resources;
 using Human80Level.Utils;
 
 namespace Human80Level.Ability.Physique
 {
     public class PhysiqueManager
     {
+        private const string tileUri = "/Images/Ability/Physique/tile.png";
+        
         public static double GetIdealWeight(double currentWeight)
         {
             Profile.Profile profile = ProfileManager.GetProfile();
             int age = DateTime.Now.Year - profile.Birth.Year;
             //todo check warning
             double ideal = 50 + 0.75 * (profile.Heigth - 150) + (age - 20) / 5;
+            
             return ideal;
+        }
+
+        public static void UpdateTile ()
+        {
+            TileManager.UpdateTile(AppResources.AbListBtnPhysique, GetValue(), tileUri);
         }
 
         #region statistics methods

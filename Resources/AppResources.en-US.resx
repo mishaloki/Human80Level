@@ -528,4 +528,7 @@
   <data name="APowerD" xml:space="preserve">
     <value>показывает насколько вы сильны</value>
   </data>
+  <data name="LiveTileLevel" xml:space="preserve">
+    <value>уровень</value>
+  </data>
 </root>

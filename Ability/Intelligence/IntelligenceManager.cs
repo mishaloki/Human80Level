@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO.IsolatedStorage;
 using Human80Level.Database;
+using Human80Level.Resources;
 using Human80Level.Utils;
 
 namespace Human80Level.Ability.Intelligance
@@ -10,6 +11,8 @@ namespace Human80Level.Ability.Intelligance
         #region private fields
 
         private const string AppSettingAlreadyAnswered = "AlreadyAnswered";
+
+        private const string tileUri = "/Images/Ability/Intelligence/tile.png";
 
         private static Question currentQuestion;
 
@@ -72,14 +75,16 @@ namespace Human80Level.Ability.Intelligance
         {
             try
             {
+                bool isCorrect = false;
                 string correctAnswer = (CultureManager.IsRus())?currentQuestion.AnswerRus:currentQuestion.AnswerEng;
                 if (correctAnswer.Trim().ToLower() == answer.Trim().ToLower())
                 {
                     currentQuestion.IsAnswered = true;
                     DBHelper.UpdateQuestion(currentQuestion);
-                    return true;
+                    isCorrect = true;
                 }
-                return false;
+                TileManager.UpdateTile(AppResources.AbListBtnIntel,GetValue(),tileUri);
+                return isCorrect;
             }
             catch (Exception err)
             {

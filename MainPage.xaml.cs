@@ -23,6 +23,7 @@ namespace Human80Level
             InitializeComponent();
             ProfileManager.ExtractProfileFromSettings();
             Logger.Info("MainPage constructor","page was initialize, profile extracted");
+            TileManager.UpdateTile();
         }
 
         /// <summary>
