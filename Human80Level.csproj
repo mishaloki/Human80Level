@@ -189,9 +189,11 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
+    <Content Include="Images\Ability\Endurance\bg.png" />
     <Content Include="Images\Ability\Endurance\rocky.png" />
     <Content Include="Images\Ability\Endurance\tile.png" />
     <Content Include="Images\Ability\Endurance\weak.png" />
+    <Content Include="Images\Ability\Intelligence\bg.png" />
     <Content Include="Images\Ability\Intelligence\fool.png" />
     <Content Include="Images\Ability\Intelligence\genius.png" />
     <Content Include="Images\Ability\Intelligence\tile.png" />
@@ -205,6 +207,7 @@
     <Content Include="Images\Ability\Power\chuck.png" />
     <Content Include="Images\Ability\Power\tile.png" />
     <Content Include="Images\Ability\Power\weak.png" />
+    <Content Include="Images\profile.png" />
     <Content Include="Images\Statistics\statistics.png" />
     <Resource Include="Resources\beep.wav" />
     <Content Include="Images\tile.png" />
