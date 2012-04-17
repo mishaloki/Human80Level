@@ -13,15 +13,7 @@ namespace Human80Level
 
         private readonly string MBnewProfileMessage = AppResources.MainPageMainPageMBnewProfileMessage;
 
-        private const string AboutUri = "/PageAbout.xaml";
 
-        private const string StatUri = "/Statistics/PageStatistics.xaml";
-
-        private const string HelpUri = "/PageHelp.xaml";
-
-        private const string StartUri = "/PageAbilityList.xaml";
-
-        private const string ProfileUri = "/Profile/PageProfile.xaml";
         
         /// <summary>
         /// Main page constructor
@@ -60,7 +52,7 @@ namespace Human80Level
                         return;
                     }
                 }
-                Navigator.NavigateTo(this, ProfileUri + "?new=true");
+                Navigator.NavigateTo(this, Navigator.ProfileUri + "?new=true");
             }
             catch (Exception err)
             {
@@ -75,7 +67,7 @@ namespace Human80Level
         /// <param name="e"></param>
         private void btnStartFlow_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.NavigateTo(this, StartUri);           
+            Navigator.NavigateTo(this, Navigator.StartUri);           
         }
 
         /// <summary>
@@ -85,7 +77,7 @@ namespace Human80Level
         /// <param name="e"></param>
         private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.NavigateTo(this, AboutUri);          
+            Navigator.NavigateTo(this, Navigator.AboutUri);          
         }
 
         /// <summary>
@@ -95,7 +87,7 @@ namespace Human80Level
         /// <param name="e"></param>
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            Navigator.NavigateTo(this, HelpUri);
+            Navigator.NavigateTo(this, Navigator.HelpUri);
 
         }
 
@@ -118,7 +110,6 @@ namespace Human80Level
                     imgAvatar.Source = null;
                     textNickName.Text = string.Empty;
                     textProgress.Text = string.Empty;
-                    imgStatus.Source = null;
                     SetStartFlowBtnState(false);
                     Logger.Info("ShowProfileInfor", "Profile == null");
                     return;
@@ -161,7 +152,7 @@ namespace Human80Level
             {
                 if (ProfileManager.GetProfile() != null)
                 {
-                    Navigator.NavigateTo(this, ProfileUri);
+                    Navigator.NavigateTo(this, Navigator.ProfileUri);
                 }
             }
             catch (Exception err)
@@ -203,7 +194,7 @@ namespace Human80Level
         /// <param name="e"></param>
         private void btnStatistics_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.NavigateTo(this, StatUri);
+            Navigator.NavigateTo(this, Navigator.StatUri);
         }
     }
 }

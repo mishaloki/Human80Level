@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
@@ -18,6 +9,12 @@ namespace Human80Level.Ability.Endurance
 {
     public partial class PageAbilityEndurance : PhoneApplicationPage
     {
+        #region private fields
+
+        private bool isBtnChecked;
+
+        #endregion
+
         public PageAbilityEndurance()
         {
             InitializeComponent();
@@ -27,9 +24,38 @@ namespace Human80Level.Ability.Endurance
             StartWaiting();
         }
 
-        private bool isBtnChecked;
+        #region waiting GPS methods
 
-        private double waitingTime = 0;
+        private void StartWaiting()
+        {
+            Thread wait = new Thread(WaitForGps);
+            wait.Start();
+        }
+
+        private void WaitForGps()
+        {
+            try
+            {
+                while (!EnduranceManager.IsGpsAvailabel())
+                {
+                    Thread.Sleep(1000);
+                }
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    btnStart.Visibility = System.Windows.Visibility.Visible;
+                    textWait.Visibility = System.Windows.Visibility.Collapsed;
+                    progressWait.Visibility = System.Windows.Visibility.Collapsed;
+                });
+            }
+            catch (Exception err)
+            {
+                Logger.Error("WaitForGPS", err.Message);
+            }
+        }
+        #endregion
+
+        #region start GPS methods
 
         private void btnStart_Checked(object sender, RoutedEventArgs e)
         {
@@ -49,19 +75,59 @@ namespace Human80Level.Ability.Endurance
                 Logger.Error("StartMeasure", err.Message);
             }
         }
+        #endregion
 
+        #region UI updators
+        private void UpdateTotalResult()
+        {
+            try
+            {
+                textTotalTime.Text = EnduranceManager.GetTotalTime().ToString();
+                textTotalDistance.Text = EnduranceManager.GetTotalDistance().ToString();
+                textAvgSpeed.Text = EnduranceManager.GetAvgSpeed().ToString();
+            }
+            catch (Exception err)
+            {
+                Logger.Error("UpdateTotalResult", err.Message);
+            }
+        }
+
+        private void UpdateCurrentResult()
+        {
+            try
+            {
+                EnduranceManager.StartCount();
+                while (isBtnChecked)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        textCurrentDistance.Text = EnduranceManager.GetCurrentDistance().ToString();
+                        textCurrentTime.Text = EnduranceManager.GetCurrentTime().ToString();
+                        textCurrentSpeed.Text = EnduranceManager.GetCurrentSpeed().ToString();
+                    });
+                    Thread.Sleep(1000);
+                }
+            }
+            catch (Exception err)
+            {
+                Logger.Error("UpdateCurrentResult", err.Message);
+            }
+        }
+        #endregion
+
+        #region stop GPS methods
+        private void btnStart_Unchecked(object sender, RoutedEventArgs e)
+        {
+            StopMeasure();
+        }
 
         private void StopMeasure()
         {
             try
             {
+                EnduranceManager.StopCount();
                 EnduranceManager.StopGps();
-                isBtnChecked = false;
-                double distance = 2000;
-                TimeSpan time = new TimeSpan(0,1,3,0);
-                double speed = 8;
-
-                EnduranceManager.SaveResults(distance,time,speed);
+                EnduranceManager.SaveResults();
                 UpdateTotalResult();
             }
             catch (Exception err)
@@ -69,86 +135,11 @@ namespace Human80Level.Ability.Endurance
                 Logger.Error("StopMeasure", err.Message);
             }
         }
+        #endregion
 
-        private void StartWaiting ()
+        private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)
         {
-            Thread wait = new Thread(WaitForGPS);
-            wait.Start();
+            Navigator.NavigateTo(this, Navigator.HelpUri);
         }
-
-        private void UpdateTotalResult()
-        {
-            try
-            {
-                textTotalTime.Text = EnduranceManager.GetTotalTime().ToString();
-                textTotalDistance.Text = EnduranceManager.GetTotalDistance().ToString();
-                textAvgSpeed.Text = EnduranceManager.GetAvgSpeed().ToString();               
-            }
-            catch (Exception err)
-            {
-                Logger.Error("UpdateTotalResult", err.Message);
-            }                        
-        }
-
-        private void UpdateCurrentResult()
-        {
-            try
-            {
-                    while (isBtnChecked)
-                    {
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            textCurrentDistance.Text = EnduranceManager.GetCurrentDistance().ToString();
-                            textCurrentTime.Text =EnduranceManager.GetCurrentTime().ToString();
-                            textCurrentSpeed.Text = EnduranceManager.GetCurrentSpeed().ToString();                            
-                        });
-                        Thread.Sleep(1000);
-                    }
-            }
-            catch (Exception err)
-            {
-                Logger.Error("UpdateCurrentResult", err.Message);
-            }
-        }
-
-        private void WaitForGPS()
-        {
-            try
-            {
-                //todo replace with real call
-                while (!EnduranceManager.IsGpsAvailabel())
-                //while (wait < 5)
-                {
-                    Thread.Sleep(1000);
-                    waitingTime++;
-                    if (waitingTime > 10)
-                    {
-                        return;
-                    }
-                }
-                if (waitingTime > 10)
-                {
-                    MessageBox.Show(AppResources.EndurPageMBGpsReadyMessage, AppResources.EndurPageMBGpsFailTitle,
-                                    MessageBoxButton.OK);
-                    return;
-                }
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        btnStart.Visibility = System.Windows.Visibility.Visible;
-                        textWait.Visibility = System.Windows.Visibility.Collapsed;
-                        progressWait.Visibility = System.Windows.Visibility.Collapsed;
-                    });
-            }
-            catch (Exception err)
-            {
-                Logger.Error("WaitForGPS", err.Message);
-            }
-        }
-
-        private void btnStart_Unchecked(object sender, RoutedEventArgs e)
-        {
-            StopMeasure();
-        }
-
     }
 }

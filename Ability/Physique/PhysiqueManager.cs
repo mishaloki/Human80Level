@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Human80Level.Database;
 using Human80Level.Utils;
 
 namespace Human80Level.Ability.Physique
 {
     public class PhysiqueManager
     {
+        public static double GetIdealWeight(double currentWeight)
+        {
+            Profile.Profile profile = ProfileManager.GetProfile();
+            int age = DateTime.Now.Year - profile.Birth.Year;
+            //todo check warning
+            double ideal = 50 + 0.75 * (profile.Heigth - 150) + (age - 20) / 5;
+            return ideal;
+        }
+
+        #region statistics methods
+
         public static double GetValue()
         {
             double dif = GetDifference();
@@ -83,15 +82,9 @@ namespace Human80Level.Ability.Physique
                 Logger.Error("GetDifference", err.Message);
                 return 0;
             }
-
         }
 
-        public static double GetIdealWeight(double currentWeight)
-        {
-            Profile.Profile profile = ProfileManager.GetProfile();
-            int age = DateTime.Now.Year - profile.Birth.Year;
-            double ideal = 50 + 0.75 * (profile.Heigth - 150) + (age - 20) / 5;
-            return ideal;
-        }
+        #endregion
+
     }
 }
