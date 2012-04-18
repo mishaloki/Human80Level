@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
+using System.Windows.Navigation;
 using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
@@ -18,10 +19,23 @@ namespace Human80Level.Ability.Endurance
         public PageAbilityEndurance()
         {
             InitializeComponent();
+            LocalizedStrings.LocalizeHelpBtn(this);
             EnduranceManager.ExtractResult();
+            
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
             UpdateTotalResult();
             EnduranceManager.StartGps();
             StartWaiting();
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            EnduranceManager.StopGps();
         }
 
         #region waiting GPS methods

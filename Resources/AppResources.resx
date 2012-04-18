@@ -531,4 +531,10 @@
   <data name="LiveTileLevel" xml:space="preserve">
     <value>уровень</value>
   </data>
+  <data name="CommonBtnHelp" xml:space="preserve">
+    <value>помощь</value>
+  </data>
+  <data name="HelpAbilities" xml:space="preserve">
+    <value>список спокобностей</value>
+  </data>
 </root>

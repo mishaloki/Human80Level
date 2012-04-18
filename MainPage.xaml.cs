@@ -4,6 +4,7 @@ using System.Windows.Navigation;
 using Human80Level.Resources;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 
 namespace Human80Level
 {
@@ -23,7 +24,8 @@ namespace Human80Level
             InitializeComponent();
             ProfileManager.ExtractProfileFromSettings();
             Logger.Info("MainPage constructor","page was initialize, profile extracted");
-            TileManager.UpdateTile();
+            TileManager.UpdateTile();          
+            LocalizedStrings.LocalizeHelpBtn(this);
         }
 
         /// <summary>

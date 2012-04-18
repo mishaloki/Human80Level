@@ -439,6 +439,15 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на помощь.
+        /// </summary>
+        public static string CommonBtnHelp {
+            get {
+                return ResourceManager.GetString("CommonBtnHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Открыть клевер.
         /// </summary>
         public static string DefaultEventMessage {
@@ -570,6 +579,15 @@ namespace Human80Level.Resources {
         public static string EndurPageWaitingMessasge {
             get {
                 return ResourceManager.GetString("EndurPageWaitingMessasge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на список спокобностей.
+        /// </summary>
+        public static string HelpAbilities {
+            get {
+                return ResourceManager.GetString("HelpAbilities", resourceCulture);
             }
         }
         

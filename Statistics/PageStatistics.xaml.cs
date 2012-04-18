@@ -9,6 +9,7 @@ namespace Human80Level.Statistics
         public PageStatistics()
         {
             InitializeComponent();
+            LocalizedStrings.LocalizeHelpBtn(this);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

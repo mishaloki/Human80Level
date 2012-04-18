@@ -93,6 +93,7 @@ namespace Human80Level
         public PageProfile()
         {
             InitializeComponent();
+            LocalizedStrings.LocalizeHelpBtn(this);
         }
 
         /// <summary>

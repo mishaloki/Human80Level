@@ -10,6 +10,7 @@ namespace Human80Level.Ability.Physique
         public PageAbilityPhysique()
         {
             InitializeComponent();
+            LocalizedStrings.LocalizeHelpBtn(this);
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

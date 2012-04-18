@@ -14,6 +14,7 @@ namespace Human80Level.Ability.Power
         public PageAbilityPower()
         {
             InitializeComponent();
+            LocalizedStrings.LocalizeHelpBtn(this);
             PowerManager.ExtractResult();
             PowerManager.PrepareAccel();
             UpdateTotalResult();

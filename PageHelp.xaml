@@ -32,7 +32,7 @@
 
             </controls:PivotItem>
 
-            <controls:PivotItem Header="{Binding Path=LocalizedResources.AbListPageTitle, Source={StaticResource LocalizedStrings}}">
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.HelpAbilities, Source={StaticResource LocalizedStrings}}">
 
             </controls:PivotItem>
 

@@ -19,6 +19,7 @@ namespace Human80Level
         public PageAbilityList()
         {
             InitializeComponent();
+            LocalizedStrings.LocalizeHelpBtn(this);
         }
 
         private void btnLuck_Click(object sender, RoutedEventArgs e)

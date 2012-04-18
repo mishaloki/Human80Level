@@ -13,6 +13,7 @@ namespace Human80Level.Ability.Intelligence
         public PageIntelligence()
         {
             InitializeComponent();
+            LocalizedStrings.LocalizeHelpBtn(this);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
