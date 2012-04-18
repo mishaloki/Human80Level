@@ -1,4 +1,6 @@
 ﻿using System.Windows.Navigation;
+using Human80Level.Ability.Endurance;
+using Human80Level.Ability.Power;
 using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 
@@ -10,6 +12,8 @@ namespace Human80Level.Statistics
         {
             InitializeComponent();
             LocalizedStrings.LocalizeHelpBtn(this);
+            PowerManager.ExtractResult();
+            EnduranceManager.ExtractResult();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

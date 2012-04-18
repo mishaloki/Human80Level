@@ -25,6 +25,10 @@ namespace Human80Level
         {
             try
             {
+                if (ProfileManager.GetProfile() == null)
+                {
+                    return;
+                }
                 ShellTile appTile = ShellTile.ActiveTiles.First();
                 if (appTile != null)
                 {

@@ -264,6 +264,16 @@ namespace Human80Level.Database
             this.AnswerEng = answer;
             this.Link = link;
         }
+
+        public Question(string questionRus,string questionEng, string answerRus,string answerEng, string link)
+        {
+            this.IsAnswered = false;
+            this.QuestionRus = questionRus;
+            this.QuestionEng = questionEng;
+            this.AnswerRus = answerRus;
+            this.AnswerEng = answerEng;
+            this.Link = link;
+        }
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id

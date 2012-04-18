@@ -66,6 +66,7 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability\Endurance\EnduranceManager.cs" />
@@ -211,6 +212,7 @@
     <Content Include="Images\Statistics\statistics.png" />
     <Resource Include="Resources\beep.wav" />
     <Content Include="Images\tile.png" />
+    <Content Include="Resources\Questions.xml" />
     <Content Include="Utils\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

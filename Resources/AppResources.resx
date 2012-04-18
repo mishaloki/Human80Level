@@ -322,13 +322,13 @@
     <value>помощь</value>
   </data>
   <data name="AboutAuthor" xml:space="preserve">
-    <value>Автор</value>
+    <value>Автор: Кожин Михаил</value>
   </data>
   <data name="AboutTitle" xml:space="preserve">
     <value>о программе</value>
   </data>
   <data name="AboutVersion" xml:space="preserve">
-    <value>Версия</value>
+    <value>Версия: 0.7</value>
   </data>
   <data name="HelpLuckMadd" xml:space="preserve">
     <value>на этой страцице вы можете ввести любое событие вашей жизни произошедшее в текущий день. Данное событие может быть либо удачным для вас, либо наоборот неудачным. В записимости от этого после ввода события нажмити одну из друз кнопок - с клевером или перечеркнутым клевером. После этого событие будет добавлено в список событий. Вы можете ввести любое количество событий, но все они будут сохранены со временм ввода.</value>
@@ -536,5 +536,8 @@
   </data>
   <data name="HelpAbilities" xml:space="preserve">
     <value>список спокобностей</value>
+  </data>
+  <data name="StatPageTextTotalLevel" xml:space="preserve">
+    <value>общий уровень: </value>
   </data>
 </root>

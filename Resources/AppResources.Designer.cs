@@ -115,7 +115,7 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Автор.
+        ///   Ищет локализованную строку, похожую на Автор: Кожин Михаил.
         /// </summary>
         public static string AboutAuthor {
             get {
@@ -133,7 +133,7 @@ namespace Human80Level.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Версия.
+        ///   Ищет локализованную строку, похожую на Версия: 0.7.
         /// </summary>
         public static string AboutVersion {
             get {
@@ -1308,6 +1308,15 @@ namespace Human80Level.Resources {
         public static string StatPagePivotTitle {
             get {
                 return ResourceManager.GetString("StatPagePivotTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на общий уровень: .
+        /// </summary>
+        public static string StatPageTextTotalLevel {
+            get {
+                return ResourceManager.GetString("StatPageTextTotalLevel", resourceCulture);
             }
         }
         

@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Human80Level.Ability.Endurance;
 using Human80Level.Ability.Power;
+using Human80Level.Utils;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
@@ -65,8 +66,11 @@ namespace Human80Level
         // Этот код не будет выполняться при повторной активации приложения
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            PowerManager.ExtractResult();
-            EnduranceManager.ExtractResult(); 
+            if (ProfileManager.GetProfile() != null)
+            {
+                PowerManager.ExtractResult();
+                EnduranceManager.ExtractResult(); 
+            }           
         }
 
         // Код для выполнения при активации приложения (переводится в основной режим)

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO.IsolatedStorage;
+using System.Linq;
+using System.Xml.Linq;
 using Human80Level.Database;
 using Human80Level.Resources;
 using Human80Level.Utils;
@@ -28,11 +30,24 @@ namespace Human80Level.Ability.Intelligance
             {
                 if (DBHelper.GetAnswersCount() < 1)
                 {
-                    for (int i = 0; i < 5; i++)
+
+                    XDocument loadedData = XDocument.Load("Resources/Questions.xml");
+
+                    var data = from query in loadedData.Descendants("question")
+                               select new Question()
+                               {
+                                   QuestionRus = (string)query.Element("qrus"),
+                                   QuestionEng = (string)query.Element("qeng"),
+                                   AnswerRus = (string)query.Element("arus"),
+                                   AnswerEng = (string)query.Element("aeng"),
+                                   Link = (string)query.Element("link"),
+                               };
+                                       
+                    foreach (Question question in data)
                     {
-                        Question question = new Question("q" + i.ToString(), "a" + i.ToString(), "http://google.com");
                         DBHelper.AddQuestion(question);
                     }
+                    Logger.Info("AddQuestion", data.Count().ToString() + " questions were added");
                 }
             }
             catch (Exception err)

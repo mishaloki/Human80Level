@@ -537,4 +537,7 @@
   <data name="HelpAbilities" xml:space="preserve">
     <value>список спокобностей</value>
   </data>
+  <data name="StatPageTextTotalLevel" xml:space="preserve">
+    <value>общий уровень: </value>
+  </data>
 </root>
