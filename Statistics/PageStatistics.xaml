@@ -35,7 +35,7 @@
             <TextBlock Text="" HorizontalAlignment="Center" Name="textTotalLevel" Style="{StaticResource HeaderTextStyle}"></TextBlock>
         </StackPanel>
             <ProgressBar Grid.Row="1" Value="50" Name="progressTotal" Height="10" Margin="0,0,0,30"></ProgressBar>
-            <ListBox Name="listIndicators" Grid.Row="2">
+            <ListBox Name="listIndicators" Grid.Row="2" Margin="12,0,0,12">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Width="460" Margin="0,20">

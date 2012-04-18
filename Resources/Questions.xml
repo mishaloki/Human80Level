@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<questions>
+  <question>
+    <qrus>q1</qrus>
+    <qeng>q1</qeng>
+    <arus>a1</arus>
+    <aeng>a1</aeng>
+    <link>http://google.com</link>
+  </question>
+  
+  <question>
+    <qrus>q2</qrus>
+    <qeng>q2</qeng>
+    <arus>a2</arus>
+    <aeng>a2</aeng>
+    <link>http://google.com</link>
+  </question>
+  
+</questions> 
